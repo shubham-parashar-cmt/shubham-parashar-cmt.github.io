@@ -58,9 +58,17 @@
     @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px)}
     nav{display:flex; align-items:center; justify-content:space-between; gap:14px; background:color-mix(in oklab, var(--panel) 86%, transparent); border:1px solid color-mix(in oklab, var(--text) 18%, transparent); padding:10px 14px; border-radius:14px}
-    .brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none}
-    .avatar{width:44px; height:44px; border-radius:50%; border:2px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); object-fit:cover; object-position:center; box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 35%, transparent)}
-    .brand .name{font-weight:800; letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
+    .brand picture{display:flex; align-items:center;}
+    .avatar{display:block; width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center; background:#0b1220; border:2px solid #ffffff; box-shadow:0 0 0 3px rgba(124,131,255,.25)}
+    .brand .name{
+      font-weight:800; letter-spacing:.2px;
+      background:linear-gradient(90deg, var(--text) 0%,
+        color-mix(in oklab, var(--text) 85%, var(--accent) 15%) 50%,
+        color-mix(in oklab, var(--text) 75%, var(--accent-2) 25%) 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
     .navlinks{display:flex; gap:10px; flex-wrap:wrap}
     .navlinks a{color:var(--muted); padding:6px 10px; border-radius:10px; position:relative}
     .navlinks a::before{content:""; position:absolute; inset:auto 10px -6px 10px; height:2px; border-radius:2px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transform:scaleX(0); transform-origin:0 50%; transition:transform .18s ease}
@@ -115,8 +123,16 @@
     <nav aria-label="Primary">
       <a class="brand" href="#top">
         <picture>
-          <source srcset="resume_headshot_square.webp" type="image/webp">
-          <img src="resume_headshot_square.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" loading="eager" decoding="async">
+          <source srcset="resume_headshot_square_56.webp?v=3 1x, resume_headshot_square_112.webp?v=3 2x" type="image/webp">
+          <img
+            src="resume_headshot_square_56.jpg?v=3"
+            srcset="resume_headshot_square_56.jpg?v=3 1x, resume_headshot_square_112.jpg?v=3 2x"
+            alt="Portrait of Pathak Shubham Parashar"
+            class="avatar"
+            width="56" height="56"
+            loading="eager" decoding="async" fetchpriority="high"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><rect width=%22120%22 height=%22120%22 rx=%2224%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2274%22 font-size=%2254%22 font-family=%22Arial,sans-serif%22 fill=%22%23ffffff%22>PS</text></svg>';"
+          >
         </picture>
         <span class="name">Pathak Shubham Parashar</span>
       </a>
