@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Super-polished single-file academic site → Pathak Shubham Parashar -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pathak Shubham Parashar — Academic Profile</title>
@@ -19,166 +18,101 @@
   <meta property="og:url" content="https://shubham-parashar-cmt.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <link rel="alternate" type="application/rss+xml" title="News — Pathak Shubham Parashar" href="feed.xml">
+
+  <!-- Preload the navbar avatar for instant render -->
+  <link rel="preload" as="image" href="/nav-avatar.jpg?v=1" imagesrcset="/nav-avatar.jpg?v=1" imagesizes="56px">
 
   <!-- Perf hints -->
   <link rel="preconnect" href="https://plausible.io">
   <link rel="dns-prefetch" href="//plausible.io">
 
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f172a'/><text x='50' y='60' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='%2322d3ee'>PS</text></svg>">
+  <!-- Favicon (PNG + inline SVG fallback) -->
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f172a'/><text x='50' y='60' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='%2310b981'>PS</text></svg>'>
 
-  <!-- Plausible privacy-friendly analytics -->
+  <!-- Plausible analytics -->
   <script defer data-domain="shubham-parashar-cmt.github.io" src="https://plausible.io/js/script.js"></script>
 
   <style>
-    /* =====================
-       Design tokens
-       ===================== */
     :root{
-      --bg: #070b14;          /* deep slate */
-      --panel: #0c1220;       /* card base */
-      --panel-2:#0e162a;      /* card deep */
-      --muted:#9fb0c8;        /* text muted */
-      --text:#e8edf4;         /* text base */
-      --line:#1c2742;         /* borders */
-      --accent:#22d3ee;       /* cyan */
-      --accent-2:#7c83ff;     /* indigo */
-      --ring: rgba(124,131,255,.28);
-      --radius:18px;
-      --shadow: 0 10px 36px rgba(0,0,0,.35);
-      --w: 1100px;
-      --grad: radial-gradient(60% 90% at 20% 10%, rgba(124,131,255,.18), transparent 60%),
-              radial-gradient(40% 70% at 90% 20%, rgba(34,211,238,.18), transparent 60%),
-              radial-gradient(50% 80% at 60% 120%, rgba(34,211,238,.1), transparent 60%);
-      --chip-text:#a9b7cf; /* better contrast */
+      --bg:#070b14; --panel:#0c1220; --panel-2:#0e162a;
+      --muted:#9fb0c8; --text:#e8edf4; --line:#1c2742;
+      --accent:#10b981; --accent-2:#a78bfa; /* emerald/violet */
+      --ring:rgba(124,131,255,.28); --radius:18px; --shadow:0 10px 36px rgba(0,0,0,.35); --w:1100px;
+      --grad:radial-gradient(60% 90% at 20% 10%, rgba(124,131,255,.18), transparent 60%),
+             radial-gradient(40% 70% at 90% 20%, rgba(34,211,238,.18), transparent 60%),
+             radial-gradient(50% 80% at 60% 120%, rgba(34,211,238,.1), transparent 60%);
+      --chip-text:#a9b7cf;
     }
     @media (prefers-color-scheme: light){
       :root{ --bg:#f7fafc; --panel:#ffffff; --panel-2:#ffffff; --muted:#475569; --text:#0f172a; --line:#e5e7eb; --accent:#0891b2; --accent-2:#4f46e5; --ring:rgba(79,70,229,.18); --grad: radial-gradient(60% 90% at 20% 10%, rgba(79,70,229,.10), transparent 60%), radial-gradient(40% 70% at 90% 20%, rgba(8,145,178,.10), transparent 60%); --chip-text:#334155; }
     }
-
-    /* =====================
-       Base
-       ===================== */
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; background:var(--bg); color:var(--text); background-image:var(--grad), radial-gradient(1200px 800px at 10% -10%, rgba(255,255,255,.04), transparent 42%), radial-gradient(900px 700px at 110% 10%, rgba(255,255,255,.03), transparent 46%), radial-gradient(800px 600px at 50% 120%, rgba(255,255,255,.035), transparent 50%)}
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font:17px/1.65 'Minion Pro','Source Serif 4','EB Garamond','Times New Roman',Times,serif; background:var(--bg); color:var(--text);
+         background-image:var(--grad), radial-gradient(1200px 800px at 10% -10%, rgba(255,255,255,.04), transparent 42%), radial-gradient(900px 700px at 110% 10%, rgba(255,255,255,.03), transparent 46%), radial-gradient(800px 600px at 50% 120%, rgba(255,255,255,.035), transparent 50%)}
     .wrap{max-width:var(--w); margin:0 auto; padding:24px}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{filter:brightness(1.08)}
-    a:focus-visible { text-decoration: underline; }
+    a{color:var(--accent); text-decoration:none} a:hover{filter:brightness(1.08)}
+    a:focus-visible{text-decoration:underline}
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, transparent), color-mix(in oklab, var(--panel-2) 96%, transparent)) padding-box,
+                    linear-gradient(120deg, color-mix(in oklab, var(--accent) 55%, transparent), color-mix(in oklab, var(--accent-2) 55%, transparent)) border-box;
+          border:1px solid transparent; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); backdrop-filter: blur(8px) saturate(120%); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .card:hover{transform:translateY(-2px); box-shadow:0 16px 44px rgba(0,0,0,.45)}
+    h1{font-size:clamp(32px,4vw,52px); margin:0 0 10px; letter-spacing:.2px; background:linear-gradient(90deg,var(--text) 0%,color-mix(in oklab,var(--text) 80%,var(--accent) 20%) 50%,color-mix(in oklab,var(--text) 70%,var(--accent-2) 30%) 100%); -webkit-background-clip:text; background-clip:text; color:transparent font-variant-caps: small-caps; letter-spacing:.06em;}
+    h2{font-size:clamp(22px,2.6vw,32px); margin:8px 0 12px font-variant-caps: small-caps; letter-spacing:.08em;} h3{font-size:18px; margin:6px 0 font-variant-caps: small-caps; letter-spacing:.06em;} p{margin:10px 0}
+    .muted{color:var(--muted)} .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important; scroll-behavior:auto!important}}
 
-    .card{
-      background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, transparent), color-mix(in oklab, var(--panel-2) 96%, transparent)) padding-box,
-                  linear-gradient(120deg, color-mix(in oklab, var(--accent) 55%, transparent), color-mix(in oklab, var(--accent-2) 55%, transparent)) border-box;
-      border:1px solid transparent; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); backdrop-filter: blur(8px) saturate(120%); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease
-    }
-    .card:hover{transform:translateY(-2px); box-shadow:0 16px 44px rgba(0,0,0,.45); border-color:transparent}
-    h1{font-size:clamp(32px, 4vw, 52px); margin:0 0 10px; letter-spacing:.2px; background:linear-gradient(90deg, var(--text) 0%, color-mix(in oklab, var(--text) 80%, var(--accent) 20%) 50%, color-mix(in oklab, var(--text) 70%, var(--accent-2) 30%) 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
-    h2{font-size:clamp(22px, 2.6vw, 32px); margin:8px 0 12px}
-    h3{font-size:18px; margin:6px 0}
-    p{margin:10px 0}
-    .muted{color:var(--muted)}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
-
-    /* Reduced motion support */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none!important; transition:none!important; scroll-behavior:auto!important}
-    }
-
-    /* =====================
-       Header / Nav
-       ===================== */
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px)}
     nav{display:flex; align-items:center; justify-content:space-between; gap:14px; background:color-mix(in oklab, var(--panel) 86%, transparent); border:1px solid color-mix(in oklab, var(--text) 18%, transparent); padding:10px 14px; border-radius:14px}
     .brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
     .brand picture{display:flex; align-items:center;}
-    .avatar{
-      display:block; width:56px; height:56px; border-radius:50%;
-      object-fit:cover; object-position:center;
-      background:#0b1220 url('/resume_headshot_square.jpg?v=9') center/cover no-repeat; /* CSS fallback layer */
-      border:2px solid #ffffff; box-shadow:0 0 0 3px rgba(124,131,255,.25)
-    }
-    .brand .name{
-      font-weight:800; letter-spacing:.2px;
-      background:linear-gradient(90deg, var(--text) 0%,
-        color-mix(in oklab, var(--text) 85%, var(--accent) 15%) 50%,
-        color-mix(in oklab, var(--text) 75%, var(--accent-2) 25%) 100%);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    }
+    .avatar{display:block; width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center;
+            background:#0b1220 url('/nav-avatar.jpg?v=1') center/cover no-repeat; border:2px solid #fff; box-shadow:0 0 0 3px rgba(124,131,255,.25)}
+    .brand .name{font-weight:800; letter-spacing:.2px; background:linear-gradient(90deg,var(--text) 0%, color-mix(in oklab,var(--text) 85%,var(--accent) 15%) 50%, color-mix(in oklab,var(--text) 75%,var(--accent-2) 25%) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
     .navlinks{display:flex; gap:10px; flex-wrap:wrap}
     .navlinks a{color:var(--muted); padding:6px 10px; border-radius:10px; position:relative}
     .navlinks a::before{content:""; position:absolute; inset:auto 10px -6px 10px; height:2px; border-radius:2px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transform:scaleX(0); transform-origin:0 50%; transition:transform .18s ease}
     .navlinks a:hover,.navlinks a:focus{color:var(--text); background:color-mix(in oklab, var(--ring) 85%, transparent)}
     .navlinks a.active::before{transform:scaleX(1)}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; border:1px solid transparent; color:var(--text); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 80%, transparent), color-mix(in oklab, var(--panel) 92%, transparent)) padding-box, linear-gradient(90deg, var(--accent), var(--accent-2)) border-box}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; border:1px solid transparent; color:var(--text);
+         background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 80%, transparent), color-mix(in oklab, var(--panel) 92%, transparent)) padding-box, linear-gradient(90deg, var(--accent), var(--accent-2)) border-box}
     .btn:hover{box-shadow:0 0 0 3px var(--ring) inset}
-
-    /* Progress bar */
     .progress{position:fixed; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transform-origin:0 50%; transform:scaleX(0); z-index:50}
 
-    /* =====================
-       Layout helpers & sections
-       ===================== */
-    section { scroll-margin-top: 84px; }
+    section{scroll-margin-top:84px}
     .hero{margin:28px 0 10px; display:grid; grid-template-columns:1.2fr .8fr; gap:22px}
-    .tagline{color:var(--muted); font-size:clamp(14px, 1.4vw, 16px); margin-bottom:12px}
+    .tagline{color:var(--muted); font-size:clamp(14px,1.4vw,16px); margin-bottom:12px}
     .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
     .chip{font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); color:var(--chip-text); box-shadow:0 1px 0 rgba(0,0,0,.22)}
-
-    /* Accent heading bar */
     .section-title{display:flex; align-items:center; gap:10px; position:relative}
     .bar{flex:0 0 10px; height:10px; border-radius:20px; background:linear-gradient(90deg, var(--accent), var(--accent-2))}
     .section-title::after{content:""; height:1px; background:linear-gradient(90deg, transparent, color-mix(in oklab, var(--accent) 40%, var(--accent-2) 60%), transparent); position:absolute; left:72px; right:0; bottom:-6px; opacity:.8}
-
     .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:18px}
-    .col-7{grid-column:span 7}
-    .col-5{grid-column:span 5}
-    .split{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-
+    .col-7{grid-column:span 7} .col-5{grid-column:span 5} .split{display:grid; grid-template-columns:1fr 1fr; gap:16px}
     .pub{padding:14px; border-left:3px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:color-mix(in oklab, var(--panel) 94%, transparent); border-radius:12px}
-    .pub small{color:var(--muted)}
-    .pub-actions{margin-top:6px; display:flex; gap:10px; flex-wrap:wrap}
-
+    .pub small{color:var(--muted)} .pub-actions{margin-top:6px; display:flex; gap:10px; flex-wrap:wrap}
     .input{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 95%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent)); color:var(--text)}
-
-    footer{margin:44px 0 10px; color:var(--muted); text-align:center}
-    .footlinks{display:flex; justify-content:center; gap:14px; flex-wrap:wrap}
-
-    /* Floating back-to-top */
-    .to-top{position:fixed; right:18px; bottom:18px; z-index:40; opacity:0; pointer-events:none; transition:opacity .25s ease}
-    .to-top.show{opacity:1; pointer-events:auto}
-
-    /* Talks & Awards styles */
-    .talks{display:grid; gap:12px}
-    .talk{padding:12px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
+    footer{margin:44px 0 10px; color:var(--muted); text-align:center} .footlinks{display:flex; justify-content:center; gap:14px; flex-wrap:wrap}
+    .to-top{position:fixed; right:18px; bottom:18px; z-index:40; opacity:0; pointer-events:none; transition:opacity .25s ease} .to-top.show{opacity:1; pointer-events:auto}
+    .talks{display:grid; gap:12px} .talk{padding:12px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
     .badge{display:inline-block; font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
-    .badge-year{color:#ffffff; font-weight:700; border-color:color-mix(in oklab, var(--accent-2) 40%, transparent); background:linear-gradient(90deg, var(--accent), var(--accent-2))}
+    .badge-year{color:#fff; font-weight:700; border-color:color-mix(in oklab, var(--accent-2) 40%, transparent); background:linear-gradient(90deg, var(--accent), var(--accent-2))}
     .badge-venue{border-color:color-mix(in oklab, var(--text) 14%, transparent)}
-    .awards{display:grid; gap:12px}
-    .award{padding:12px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
-
-    /* Print stylesheet */
-    @media print{
-      nav, .to-top { display:none!important; }
-      body { background:none; }
-      .card { box-shadow:none; border:0; }
-      a::after { content:" (" attr(href) ")"; font-size:12px; color:#555; }
-      section { break-inside: avoid; }
-    }
+    .awards{display:grid; gap:12px} .award{padding:12px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
+    @media print{ nav, .to-top{display:none!important} body{background:none} .card{box-shadow:none; border:0} a::after{content:" (" attr(href) ")"; font-size:12px; color:#555} section{break-inside:avoid} }
   </style>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Pathak Shubham Parashar",
-    "affiliation": {"@type":"Organization","name":"UC San Diego"},
-    "jobTitle": "Researcher",
-    "email": "mailto:psparash@ucsd.edu",
-    "url": "https://shubham-parashar-cmt.github.io/",
-    "sameAs": ["https://github.com/shubham-parashar-cmt"]
+    "@context":"https://schema.org","@type":"Person",
+    "name":"Pathak Shubham Parashar",
+    "affiliation":{"@type":"Organization","name":"UC San Diego"},
+    "jobTitle":"Researcher",
+    "email":"mailto:psparash@ucsd.edu",
+    "url":"https://shubham-parashar-cmt.github.io/",
+    "sameAs":["https://github.com/shubham-parashar-cmt"]
   }
   </script>
 </head>
@@ -189,13 +123,7 @@
   <header class="wrap" role="banner">
     <nav aria-label="Primary">
       <a class="brand" href="#top">
-        <!-- Keep it simple and robust: absolute path + cache buster; CSS provides a background fallback -->
-        <img
-          src="/resume_headshot_square.jpg?v=9"
-          alt="Portrait of Pathak Shubham Parashar"
-          class="avatar"
-          width="56" height="56"
-          loading="eager" decoding="async" fetchpriority="high">
+        <img src="/nav-avatar.jpg?v=1" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
       <div class="navlinks" id="navlinks">
@@ -208,13 +136,10 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="btn" id="styleBtn" aria-label="Cycle accent palette">🎨 Style</button>
-      <button class="btn" id="themeBtn" aria-label="Toggle theme">🌗 Theme</button>
     </nav>
   </header>
 
   <main id="main" class="wrap" role="main">
-    <!-- HERO -->
     <section class="hero" id="top">
       <div class="card">
         <h1>Pathak Shubham Parashar</h1>
@@ -230,8 +155,8 @@
           <a class="btn" href="mailto:psparash@ucsd.edu">Email</a>
           <a class="btn" href="cv.pdf">CV (PDF)</a>
           <a class="btn" href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="#" title="Google Scholar (coming soon)">Scholar</a>
-          <a class="btn" href="#" title="ORCID (coming soon)">ORCID</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
+          <a class="btn" href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
         </div>
       </div>
       <aside class="card" aria-label="At a glance">
@@ -250,24 +175,12 @@
       </aside>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">About</h2></div>
-      <p>
-        I study <strong>quantum Hall physics in higher Landau levels</strong>,
-        <strong>magneto-transport in high magnetic fields</strong>, and
-        <strong>itinerant phases in correlated two-dimensional systems</strong>. I also pursue
-        exploratory work on <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>, drawing connections between
-        condensed-matter transport, effective field theory, and gravitational dynamics where appropriate.
-      </p>
-      <p>
-        My approach blends analytical methods (field theory, kinetic/semiclassical techniques), targeted numerical
-        modeling, and publication-grade visualization. I am currently with the Department of Physics at UC San Diego and
-        collaborate across condensed-matter and theory groups.
-      </p>
+      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also pursue exploratory work on <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>, drawing connections between condensed-matter transport, effective field theory, and gravitational dynamics where appropriate.</p>
+      <p>My approach blends analytical methods (field theory, kinetic/semiclassical techniques), targeted numerical modeling, and publication-grade visualization. I am currently with the Department of Physics at UC San Diego and collaborate across condensed-matter and theory groups.</p>
     </section>
 
-    <!-- RESEARCH -->
     <section id="research" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Research</h2></div>
       <div class="grid">
@@ -291,7 +204,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Selected Projects</h2></div>
       <div class="split">
@@ -313,7 +225,6 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
     <section id="publications" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Publications (in preparation)</h2></div>
       <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., hydrodynamic, graphene, 2025)…" aria-label="Filter publications" />
@@ -321,29 +232,15 @@
       <p class="mono muted" style="margin-top:10px">Add Google Scholar / ORCID here when ready.</p>
     </section>
 
-    <!-- AWARDS -->
     <section id="awards" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Awards & Grants</h2></div>
       <div class="awards">
-        <div class="award">
-          <div class="chips"><span class="badge badge-year">2025</span></div>
-          <div><strong>Bhadra Fellowship</strong></div>
-          <div class="pub-actions"><a class="btn" href="#" title="Add announcement link">Details</a></div>
-        </div>
-        <div class="award">
-          <div class="chips"><span class="badge badge-year">2018–2020</span></div>
-          <div><strong>NSF Grant</strong> <span class="muted">(2018–2020)</span></div>
-          <div class="pub-actions"><a class="btn" href="#">Details</a></div>
-        </div>
-        <div class="award">
-          <div class="chips"><span class="badge badge-year">2017</span></div>
-          <div><strong>UCSD Scholar's grant</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Details</a></div>
-        </div>
+        <div class="award"><div class="chips"><span class="badge badge-year">2025</span></div><div><strong>Bhadra Fellowship</strong></div><div class="pub-actions"><a class="btn" href="#" title="Add announcement link">Details</a></div></div>
+        <div class="award"><div class="chips"><span class="badge badge-year">2018–2020</span></div><div><strong>NSF Grant</strong> <span class="muted">(2018–2020)</span></div><div class="pub-actions"><a class="btn" href="#">Details</a></div></div>
+        <div class="award"><div class="chips"><span class="badge badge-year">2017</span></div><div><strong>UCSD Scholar's grant</strong></div><div class="pub-actions"><a class="btn" href="#">Details</a></div></div>
       </div>
     </section>
 
-    <!-- TEACHING -->
     <section id="teaching" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Teaching</h2></div>
       <div class="split">
@@ -364,60 +261,26 @@
       </div>
     </section>
 
-    <!-- TALKS -->
     <section id="talks" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Talks & Presentations</h2></div>
       <div class="talks">
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2025</span><span class="badge badge-venue">APS March Meeting</span></div>
-          <div><strong>Hydrodynamic & diffusive magneto-transport near local inhomogeneities</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2024</span><span class="badge badge-venue">UCSD Condensed Matter Seminar</span></div>
-          <div><strong>Vorticity patterns around obstacles in 2D systems</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2023</span><span class="badge badge-venue">UC San Diego</span></div>
-          <div><strong>Spin-split collapse in higher Landau levels</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2022</span><span class="badge badge-venue">Columbia University, NY</span></div>
-          <div><strong>Vorticity patterns</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2020</span><span class="badge badge-venue">APS March Meeting</span></div>
-          <div><strong>Magneto-transport across local inhomogeneities</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2019</span><span class="badge badge-venue">APS March Meeting</span></div>
-          <div><strong>Non-associative operators inspired from string theory</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
-        <div class="talk">
-          <div class="chips"><span class="badge badge-year">2018</span><span class="badge badge-venue">UC Irvine</span></div>
-          <div><strong>Quantum double models in icosahedral structures</strong></div>
-          <div class="pub-actions"><a class="btn" href="#">Slides</a></div>
-        </div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2025</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Hydrodynamic & diffusive magneto-transport near local inhomogeneities</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2024</span><span class="badge badge-venue">UCSD Condensed Matter Seminar</span></div><div><strong>Vorticity patterns around obstacles in 2D systems</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2023</span><span class="badge badge-venue">UC San Diego</span></div><div><strong>Spin-split collapse in higher Landau levels</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2022</span><span class="badge badge-venue">Columbia University, NY</span></div><div><strong>Vorticity patterns</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2020</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Magneto-transport across local inhomogeneities</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2019</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Non-associative operators inspired from string theory</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
+        <div class="talk"><div class="chips"><span class="badge badge-year">2018</span><span class="badge badge-venue">UC Irvine</span></div><div><strong>Quantum double models in icosahedral structures</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Contact</h2></div>
       <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a> <a class="btn" href="Pathak_Sh_P.vcf" download style="margin-left:8px">vCard</a></p>
     </section>
 
     <footer>
-      <div class="footlinks">
-        <a href="#top">Back to top</a>
-        <span>·</span>
-        <a href="cv.pdf">CV</a>
-      </div>
+      <div class="footlinks"><a href="#top">Back to top</a><span>·</span><a href="cv.pdf">CV</a></div>
       <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
@@ -425,149 +288,23 @@
   <a href="#top" class="btn to-top" id="toTop" aria-label="Back to top">↑ Top</a>
 
   <script>
-    // Style palettes (default to emerald/violet for a calmer look)
-    const palettes = [
-      ['#22d3ee','#7c83ff'], // cyan / indigo
-      ['#10b981','#a78bfa'], // emerald / violet (default)
-      ['#f59e0b','#f43f5e'], // amber / rose
-      ['#14b8a6','#06b6d4']  // teal / cyan
-    ];
-    const styleBtn = document.getElementById('styleBtn');
-    let pIndex = parseInt(localStorage.getItem('paletteIndex')||'1',10);
-    function applyPalette(i){
-      const [a,b] = palettes[i % palettes.length];
-      const r = document.documentElement;
-      r.style.setProperty('--accent', a);
-      r.style.setProperty('--accent-2', b);
-      localStorage.setItem('paletteIndex', (i % palettes.length).toString());
-    }
-    applyPalette(pIndex);
-    styleBtn && styleBtn.addEventListener('click', ()=>{ pIndex = (pIndex+1) % palettes.length; applyPalette(pIndex); });
-
-    // Theme toggle with localStorage
-    const themeBtn = document.getElementById('themeBtn');
-    const stored = localStorage.getItem('theme') || 'auto';
-    if(stored !== 'auto') document.documentElement.dataset.theme = stored;
-    themeBtn.addEventListener('click', () => {
-      const cur = document.documentElement.dataset.theme || 'dark';
-      const next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.dataset.theme = next; localStorage.setItem('theme', next);
-    });
-
-    // Publications data
+    // Publications data & filter
     const publications = [
-      {
-        authors: 'P. Shubham Parashar, M. M. Fogler',
-        title: 'Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas',
-        venue: 'in preparation', year: 2025,
-        bibtex: `@unpublished{parashar2025hydrodiff,
-  title={Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas},
-  author={Parashar, P. Shubham and Fogler, M. M.},
-  note={in preparation},
-  year={2025}
-}`,
-        tags: ['hydrodynamic','magnetotransport','2DEG']
-      },
-      {
-        authors: 'Zachary J. Krebs, Wyatt A. Behn, Keenan J. Smith, Margaret A. Fortman, Kenji Watanabe, Takashi Taniguchi, Pathak S. Parashar, Michael M. Fogler, Victor W. Brar',
-        title: 'Imaging diffusive-to-ballistic crossover of magnetotransport in graphene',
-        venue: 'in preparation', year: 2025,
-        bibtex: `@unpublished{krebs2025imaging,
-  title={Imaging diffusive-to-ballistic crossover of magnetotransport in graphene},
-  author={Krebs, Zachary J. and Behn, Wyatt A. and Smith, Keenan J. and Fortman, Margaret A. and Watanabe, Kenji and Taniguchi, Takashi and Parashar, Pathak S. and Fogler, Michael M. and Brar, Victor W.},
-  note={in preparation},
-  year={2025}
-}`,
-        tags: ['graphene','ballistic','diffusive','magnetotransport']
-      },
-      {
-        authors: 'Pathak S. Parashar, D. P. Arovas, M. M. Fogler',
-        title: 'Thermodynamics of the spin-splitting transition in quantum Hall effect',
-        venue: 'in preparation', year: 2025,
-        bibtex: `@unpublished{parashar2025qhe,
-  title={Thermodynamics of the spin-splitting transition in quantum Hall effect},
-  author={Parashar, Pathak S. and Arovas, D. P. and Fogler, M. M.},
-  note={in preparation},
-  year={2025}
-}`,
-        tags: ['quantum Hall','spin-splitting','thermodynamics']
-      },
-      {
-        authors: 'Zi Cai, Pathak S. Parashar, Congjun Wu',
-        title: 'Symplectic ferromagnetism and phase transitions in multi-component fermionic systems',
-        venue: 'in preparation', year: 2025,
-        bibtex: `@unpublished{cai2025symplectic,
-  title={Symplectic ferromagnetism and phase transitions in multi-component fermionic systems},
-  author={Cai, Zi and Parashar, Pathak S. and Wu, Congjun},
-  note={in preparation},
-  year={2025}
-}`,
-        tags: ['symplectic','ferromagnetism','multicomponent','fermions']
-      }
+      {authors:'P. Shubham Parashar, M. M. Fogler', title:'Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas', venue:'in preparation', year:2025, bibtex:`@unpublished{parashar2025hydrodiff,\n  title={Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas},\n  author={Parashar, P. Shubham and Fogler, M. M.},\n  note={in preparation},\n  year={2025}\n}`, tags:['hydrodynamic','magnetotransport','2DEG']},
+      {authors:'Zachary J. Krebs, Wyatt A. Behn, Keenan J. Smith, Margaret A. Fortman, Kenji Watanabe, Takashi Taniguchi, Pathak S. Parashar, Michael M. Fogler, Victor W. Brar', title:'Imaging diffusive-to-ballistic crossover of magnetotransport in graphene', venue:'in preparation', year:2025, bibtex:`@unpublished{krebs2025imaging,\n  title={Imaging diffusive-to-ballistic crossover of magnetotransport in graphene},\n  author={Krebs, Zachary J. and Behn, Wyatt A. and Smith, Keenan J. and Fortman, Margaret A. and Watanabe, Kenji and Taniguchi, Takashi and Parashar, Pathak S. and Fogler, Michael M. and Brar, Victor W.},\n  note={in preparation},\n  year={2025}\n}`, tags:['graphene','ballistic','diffusive','magnetotransport']},
+      {authors:'Pathak S. Parashar, D. P. Arovas, M. M. Fogler', title:'Thermodynamics of the spin-splitting transition in quantum Hall effect', venue:'in preparation', year:2025, bibtex:`@unpublished{parashar2025qhe,\n  title={Thermodynamics of the spin-splitting transition in quantum Hall effect},\n  author={Parashar, Pathak S. and Arovas, D. P. and Fogler, M. M.},\n  note={in preparation},\n  year={2025}\n}`, tags:['quantum Hall','spin-splitting','thermodynamics']},
+      {authors:'Zi Cai, Pathak S. Parashar, Congjun Wu', title:'Symplectic ferromagnetism and phase transitions in multi-component fermionic systems', venue:'in preparation', year:2025, bibtex:`@unpublished{cai2025symplectic,\n  title={Symplectic ferromagnetism and phase transitions in multi-component fermionic systems},\n  author={Cai, Zi and Parashar, Pathak S. and Wu, Congjun},\n  note={in preparation},\n  year={2025}\n}`, tags:['symplectic','ferromagnetism','multicomponent','fermions']}
     ];
+    const pubList=document.getElementById('pubList'); const pubSearch=document.getElementById('pubSearch');
+    function renderPubs(filter=''){ pubList.innerHTML=''; const f=filter.toLowerCase(); publications.filter(p=>!f||p.title.toLowerCase().includes(f)||p.authors.toLowerCase().includes(f)||p.tags.join(' ').toLowerCase().includes(f)||String(p.year).includes(f)).sort((a,b)=>b.year-a.year).forEach(p=>{ const el=document.createElement('article'); el.className='pub'; el.innerHTML=`<div><strong>${p.title}</strong> <small>(${p.year})</small></div><div>${p.authors}</div><div class="muted">${p.venue}</div><div class="pub-actions"><button class="btn mono" data-bib aria-live="polite">Copy BibTeX</button></div><div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>`; el.querySelector('[data-bib]').addEventListener('click',()=>{ navigator.clipboard.writeText(p.bibtex).then(()=>{ const btn=el.querySelector('[data-bib]'); const txt=btn.textContent; btn.textContent='Copied!'; setTimeout(()=>btn.textContent=txt,1200); }); }); pubList.appendChild(el); }); }
+    renderPubs(); pubSearch.addEventListener('input',e=>renderPubs(e.target.value));
 
-    const pubList = document.getElementById('pubList');
-    const pubSearch = document.getElementById('pubSearch');
+    document.getElementById('year').textContent=new Date().getFullYear();
 
-    function renderPubs(filter=''){
-      pubList.innerHTML = '';
-      const f = filter.toLowerCase();
-      publications
-        .filter(p => !f || p.title.toLowerCase().includes(f) || p.authors.toLowerCase().includes(f) || p.tags.join(' ').toLowerCase().includes(f) || String(p.year).includes(f))
-        .sort((a,b) => b.year - a.year)
-        .forEach(p => {
-          const el = document.createElement('article');
-          el.className = 'pub';
-          el.innerHTML = `
-            <div><strong>${p.title}</strong> <small>(${p.year})</small></div>
-            <div>${p.authors}</div>
-            <div class="muted">${p.venue}</div>
-            <div class="pub-actions">
-              <button class="btn mono" data-bib aria-live="polite">Copy BibTeX</button>
-            </div>
-            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
-          `;
-          el.querySelector('[data-bib]').addEventListener('click', () => {
-            navigator.clipboard.writeText(p.bibtex).then(()=>{
-              const btn = el.querySelector('[data-bib]');
-              const txt = btn.textContent; btn.textContent = 'Copied!';
-              setTimeout(()=> btn.textContent = txt, 1200);
-            });
-          });
-          pubList.appendChild(el);
-        });
-    }
-    renderPubs();
-    pubSearch.addEventListener('input', (e)=> renderPubs(e.target.value));
+    const progress=document.getElementById('progress'); const toTop=document.getElementById('toTop'); const navlinks=[...document.querySelectorAll('#navlinks a')]; const sections=navlinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    window.addEventListener('scroll',()=>{ const h=document.documentElement; const scrolled=h.scrollTop/(h.scrollHeight-h.clientHeight); progress.style.transform=`scaleX(${scrolled})`; toTop.classList.toggle('show', h.scrollTop>900); });
 
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Scroll progress, back-to-top visibility, and scrollspy with aria-current
-    const progress = document.getElementById('progress');
-    const toTop = document.getElementById('toTop');
-    const navlinks = [...document.querySelectorAll('#navlinks a')];
-    const sections = navlinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-      progress.style.transform = `scaleX(${scrolled})`;
-      toTop.classList.toggle('show', h.scrollTop > 900);
-    });
-
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        const id = '#' + e.target.id;
-        const link = navlinks.find(a => a.getAttribute('href') === id);
-        if(link){
-          const active = e.isIntersecting && e.intersectionRatio > 0.6;
-          link.classList.toggle('active', active);
-          link.setAttribute('aria-current', active ? 'page' : 'false');
-        }
-      });
-    },{threshold:[0.6]});
-    sections.forEach(s => s && obs.observe(s));
+    const obs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ const id='#'+e.target.id; const link=navlinks.find(a=>a.getAttribute('href')===id); if(link){ const active=e.isIntersecting&&e.intersectionRatio>0.6; link.classList.toggle('active', active); link.setAttribute('aria-current', active ? 'page':'false'); } }); }, {threshold:[0.6]}); sections.forEach(s=>s&&obs.observe(s));
   </script>
 </body>
 </html>
