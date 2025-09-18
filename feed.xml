@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>News — Pathak Shubham Parashar</title>
+    <link>https://shubham-parashar-cmt.github.io/</link>
+    <description>Updates from the group of Pathak Shubham Parashar (UC San Diego)</description>
+    <lastBuildDate>Thu, 18 Sep 2025 19:49:14 +0000</lastBuildDate>
+    <item>
+      <title>Manuscripts in preparation</title>
+      <link>https://shubham-parashar-cmt.github.io/#news</link>
+      <guid>news-2025-prep</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <description>Hydrodynamic magnetotransport, graphene crossover imaging, and quantum Hall spin-splitting.</description>
+    </item>
+    <item>
+      <title>Collaborations at UC San Diego</title>
+      <link>https://shubham-parashar-cmt.github.io/#news</link>
+      <guid>news-2025-ucsd</guid>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <description>Ongoing theory collaborations at UCSD.</description>
+    </item>
+  </channel>
+</rss>

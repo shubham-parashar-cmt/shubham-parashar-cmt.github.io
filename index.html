@@ -6,15 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pathak Shubham Parashar — Academic Profile</title>
   <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego): research, publications, awards, projects, teaching, talks, contact." />
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0f172a" />
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego">
   <meta property="og:description" content="Quantum Hall, high‑field magnetotransport, and correlated 2D phases.">
-  <meta property="og:image" content="resume_headshot_portrait.jpg">
+  <meta property="og:image" content="og-card.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shubham-parashar-cmt.github.io/">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://plausible.io">
+  <link rel="dns-prefetch" href="//plausible.io">
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
+  <link rel="alternate" type="application/rss+xml" title="News — Pathak Shubham Parashar" href="feed.xml">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f172a'/><text x='50' y='60' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='%2322d3ee'>PS</text></svg>">
   <link rel="preload" as="image" href="resume_headshot_square.jpg">
@@ -49,7 +53,8 @@
     .card:hover{transform:translateY(-2px); box-shadow:0 16px 44px rgba(0,0,0,.45)}
     h1{font-size:clamp(32px, 4vw, 52px); margin:0 0 10px; letter-spacing:.2px; background:linear-gradient(90deg, var(--text) 0%, color-mix(in oklab, var(--text) 80%, var(--accent) 20%) 50%, color-mix(in oklab, var(--text) 70%, var(--accent-2) 30%) 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
     h2{font-size:clamp(22px, 2.6vw, 32px); margin:8px 0 12px} h3{font-size:18px; margin:6px 0} p{margin:10px 0}
-    .muted{color:var(--muted)} .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    .muted{color:var(--muted)}
+    a:focus-visible { text-decoration: underline; } .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
     @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px)}
     nav{display:flex; align-items:center; justify-content:space-between; gap:14px; background:color-mix(in oklab, var(--panel) 86%, transparent); border:1px solid color-mix(in oklab, var(--text) 18%, transparent); padding:10px 14px; border-radius:14px}
@@ -86,7 +91,8 @@
     .badge-year{color:#ffffff; font-weight:700; border-color:color-mix(in oklab, var(--accent-2) 40%, transparent); background:linear-gradient(90deg, var(--accent), var(--accent-2))}
     .badge-venue{border-color:color-mix(in oklab, var(--text) 14%, transparent)}
     .awards{display:grid; gap:12px} .award{padding:12px; border-radius:12px; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
-    @media print{ nav, .to-top { display:none!important; } body { background:none; } .card { box-shadow:none; border:0; } a::after { content:" (" attr(href) ")"; font-size:12px; color:#555; } }
+    @media print{
+      section { break-inside: avoid; } nav, .to-top { display:none!important; } body { background:none; } .card { box-shadow:none; border:0; } a::after { content:" (" attr(href) ")"; font-size:12px; color:#555; } }
   </style>
 
   <script type="application/ld+json">
@@ -276,14 +282,14 @@
       </div>
     </section>
 
-    <section id="publications" class="card">
+    <section id="contact" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Contact</h2></div>
-      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
+      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a> <a class="btn" href="Pathak_Sh_P.vcf" download style="margin-left:8px">vCard</a></p>
     </section>
 
     <footer>
       <div class="footlinks"><a href="#top">Back to top</a><span>·</span><a href="cv.pdf">CV</a></div>
-      <p>© <span id="year"></span> Pathak Shubham Parashar. Single-file site on GitHub Pages.</p>
+      <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
 
@@ -291,7 +297,7 @@
 
   <script>
     const palettes = [['#22d3ee','#7c83ff'], ['#10b981','#a78bfa'], ['#f59e0b','#f43f5e'], ['#14b8a6','#06b6d4']];
-    const styleBtn = document.getElementById('styleBtn'); let pIndex = parseInt(localStorage.getItem('paletteIndex')||'0',10);
+    const styleBtn = document.getElementById('styleBtn'); let pIndex = parseInt(localStorage.getItem('paletteIndex')||'1',10);
     function applyPalette(i){ const [a,b] = palettes[i % palettes.length]; const r=document.documentElement; r.style.setProperty('--accent',a); r.style.setProperty('--accent-2',b); localStorage.setItem('paletteIndex',(i%palettes.length).toString()); }
     applyPalette(pIndex); styleBtn && styleBtn.addEventListener('click', ()=>{ pIndex=(pIndex+1)%palettes.length; applyPalette(pIndex); });
     const themeBtn=document.getElementById('themeBtn'); const stored=localStorage.getItem('theme')||'auto'; if(stored!=='auto') document.documentElement.dataset.theme=stored;

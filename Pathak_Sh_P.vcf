@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Parashar;Pathak Shubham;;;
+FN:Pathak Shubham Parashar
+ORG:UC San Diego;Department of Physics
+TITLE:Researcher
+EMAIL;TYPE=INTERNET;TYPE=WORK:psparash@ucsd.edu
+URL:https://shubham-parashar-cmt.github.io/
+NOTE:Magnetotransport, Quantum Hall, correlated 2D phases
+END:VCARD
