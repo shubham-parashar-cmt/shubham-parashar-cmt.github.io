@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Pathak Shubham Parashar</title>
+  <meta name="color-scheme" content="light">
+  <style>
+    :root{
+      --fg:#0f172a; --muted:#334155; --line:#e2e8f0; --link:#0f766e; --accent:#0ea5e9;
+      --max:900px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#ffffff;color:var(--fg)}
+    body{font:17px/1.65 'Minion Pro','Source Serif 4','EB Garamond','Times New Roman',Times,serif; margin:0 auto; padding:28px}
+    h1,h2,h3{margin:0 0 6px}
+    h1{font-size:28px; letter-spacing:.2px}
+    h2{font-size:16px; margin-top:20px; padding-top:10px; border-top:2px solid var(--line); text-transform:uppercase; letter-spacing:.6px}
+    h3{font-size:15px}
+    p{margin:4px 0}
+    ul{margin:6px 0 0 18px} li{margin:3px 0}
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .row{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .grid-3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px}
+    .tight li{margin:2px 0}
+    .item{margin:6px 0}
+
+    /* Header with photo */
+    .hdr{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center}
+    .avatar{width:96px; height:96px; border-radius:50%; object-fit:cover; border:1px solid var(--line)}
+    .hdr .name{font-size:28px; margin:0}
+    .hdr .affil{color:var(--muted)}
+
+    /* Timeline */
+    .timeline{position:relative; list-style:none; margin:8px 0 0; padding:0 0 0 0}
+    .timeline::before{
+      content:""; position:absolute; left:12px; top:0; bottom:0; width:2px; background:linear-gradient(#e2e8f0, #cbd5e1);
+    }
+    .tl-item{position:relative; display:grid; grid-template-columns:140px 1fr; gap:14px; padding-left:28px; margin:10px 0}
+    .tl-item::before{
+      content:""; position:absolute; left:6px; top:.8em; width:14px; height:14px; background:#0ea5e9; border:2px solid #e0f2fe; border-radius:50%;
+      box-shadow:0 0 0 3px #e0f2fe;
+    }
+    .tl-date{font-weight:700; white-space:nowrap}
+    .tl-role{font-weight:700}
+    .tl-inst{}
+    .tl-advisor{color:var(--muted); font-style:italic}
+    .tl-meta{color:var(--muted); font-size:13px}
+
+    /* Print optimisation */
+    @media print{
+      @page{size:A4; margin:12mm 14mm}
+      .page{padding:0}
+      a{color:inherit; text-decoration:none}
+      a::after{content:" (" attr(href) ")"; font-size:12px; color:#555}
+      .grid-3{grid-template-columns:1fr 1fr 1fr}
+      .grid-2{grid-template-columns:1fr 1fr}
+      .row{gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header with photo -->
+    <div class="hdr">
+      <img class="avatar" src="nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar">
+      <div>
+        <h1 class="name">Pathak Shubham Parashar</h1>
+        <p class="affil">Department of Physics, University of California San Diego</p>
+        <p><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · <a href="https://shubham-parashar-cmt.github.io/">shubham-parashar-cmt.github.io</a> · <a href="https://github.com/shubham-parashar-cmt">github.com/shubham-parashar-cmt</a></p>
+        <p><a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1">Google Scholar</a> · <a href="https://orcid.org/0009-0007-8741-9101">ORCID: 0009-0007-8741-9101</a></p>
+      </div>
+    </div>
+
+    <!-- Research Interests -->
+    <h2>Research Interests</h2>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li>Quantum Hall physics in higher Landau levels</li>
+          <li>Magneto-transport in high magnetic fields</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="tight">
+          <li>Itinerant phases in correlated two-dimensional systems</li>
+          <li>In-spiral black hole merger in D &gt; 5 dimensions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Publications -->
+    <h2>Publications — in preparation</h2>
+    <div class="item">
+      <strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
+      <span class="muted">P. Shubham Parashar, M. M. Fogler · 2025</span>
+    </div>
+    <div class="item">
+      <strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
+      <span class="muted">Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, <u>Pathak S. Parashar</u>, M. M. Fogler, V. W. Brar · 2025</span>
+    </div>
+    <div class="item">
+      <strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
+      <span class="muted">Pathak S. Parashar, D. P. Arovas, M. M. Fogler · 2025</span>
+    </div>
+    <div class="item">
+      <strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
+      <span class="muted">Zi Cai, Pathak S. Parashar, Congjun Wu · 2025</span>
+    </div>
+
+    <!-- Education & Appointments (reverse chronological) -->
+    <h2>Education & Appointments</h2>
+    <ol class="timeline">
+      <li class="tl-item">
+        <div class="tl-date">2022–2025</div>
+        <div>
+          <div class="tl-role">Ph.D., Physics</div>
+          <div class="tl-inst">University of California San Diego</div>
+          <div class="tl-advisor">Advisor: Michael M. Fogler</div>
+          <div class="tl-meta">Focus: quantum Hall physics in higher Landau levels; magneto-transport</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">2017–2022</div>
+        <div>
+          <div class="tl-role">Researcher</div>
+          <div class="tl-inst">University of California San Diego</div>
+          <div class="tl-advisor">Advisors: Benjamin Grinstein, Congjun Wu</div>
+          <div class="tl-meta">Theory & computation across 2D correlated systems and transport</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">2016–2017</div>
+        <div>
+          <div class="tl-role">M.S., Physics</div>
+          <div class="tl-inst">Indian Institute of Science, Bangalore</div>
+          <div class="tl-advisor">Advisor: Rahul Pandit</div>
+          <div class="tl-meta">Condensed matter theory; hydrodynamic phenomena</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">2012–2016</div>
+        <div>
+          <div class="tl-role">B.S., Physics</div>
+          <div class="tl-inst">Indian Institute of Science, Bangalore</div>
+          <div class="tl-advisor">Advisor: Rahul Pandit</div>
+          <div class="tl-meta">Foundations in theoretical & computational physics</div>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Talks -->
+    <h2>Talks & Presentations</h2>
+    <ul class="tight">
+      <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
+      <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
+      <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
+      <li><strong>Non-associative operators inspired from string theory</strong> — APS March Meeting, 2019</li>
+      <li><strong>Quantum double models in icosahedral structures</strong> — UC Irvine, 2018</li>
+    </ul>
+
+    <!-- Awards -->
+    <h2>Awards & Grants</h2>
+    <div class="grid-3">
+      <div><strong>Bhadra Fellowship</strong><br><span class="muted">2025</span></div>
+      <div><strong>NSF Grant</strong><br><span class="muted">2018–2020</span></div>
+      <div><strong>UCSD Scholar's grant</strong><br><span class="muted">2017</span></div>
+    </div>
+
+    <!-- Skills -->
+    <h2>Selected Tools & Methods</h2>
+    <ul class="tight">
+      <li>Field theory, kinetic/semiclassical techniques, asymptotics/WKB</li>
+      <li>Numerical modeling for transport; figure/visualization workflows</li>
+    </ul>
+
+    <div style="height:6px"></div>
+    <p class="muted" style="font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Last updated: <span id="updated"></span></p>
+  </div>
+
+  <script>
+    // Fill in today's date (ISO) for the last-updated stamp
+    document.getElementById('updated').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
