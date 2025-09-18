@@ -134,6 +134,9 @@
       /* ===== Awards cards ===== */
     .awards{display:grid; gap:12px}
     .award{padding:12px; border-radius:12px; border:1px solid var(--line); background:color-mix(in oklab, var(--panel) 94%, transparent)}
+      /* === Hero portrait image === */
+    .hero-portrait{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:calc(var(--radius) - 6px); border:1px solid color-mix(in oklab, var(--accent) 18%, var(--line)); box-shadow:0 14px 36px rgba(0,0,0,.35); display:block}
+    .hero-portrait+figcaption{margin-top:6px}
   </style>
   <script type="application/ld+json">
   {
@@ -150,6 +153,7 @@
   }
   </script>
   <link rel="preload" as="image" href="headshot.jpg">
+  <link rel="preload" as="image" href="headshot-hero.jpg">
 </head>
 <body>
   <div class="progress" id="progress"></div>
@@ -194,6 +198,10 @@
         </div>
       </div>
       <aside class="card" aria-label="At a glance">
+        <figure style="margin:0 0 14px 0">
+          <img src="headshot-hero.jpg" alt="Pathak Shubham Parashar portrait" class="hero-portrait" loading="eager" decoding="async">
+          <figcaption class="muted">UC San Diego · Department of Physics</figcaption>
+        </figure>
         <div class="section-title"><span class="bar"></span><h2 style="margin:0">At a Glance</h2></div>
         <ul>
           <li>Department of Physics, UC San Diego</li>
