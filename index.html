@@ -115,8 +115,7 @@
     .badge{display:inline-block; font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
     .badge-year{color:#ffffff; font-weight:700; border-color:color-mix(in oklab, var(--accent-2) 40%, transparent); background:linear-gradient(90deg, var(--accent), var(--accent-2))}
     .badge-venue{border-color:color-mix(in oklab, var(--text) 14%, transparent)}
-
-    /* === Fancy aurora background & subtle motion === */
+      /* === Fancy aurora background & subtle motion === */
     body::before, body::after{content:""; position:fixed; inset:auto; pointer-events:none; z-index:-1; filter:blur(60px); opacity:.35}
     body::before{width:55vw; height:55vh; left:-10vw; top:-6vh; background:radial-gradient(closest-side, color-mix(in oklab, var(--accent) 24%, transparent), transparent 60%); animation:drift1 22s ease-in-out infinite alternate}
     body::after{width:50vw; height:50vh; right:-15vw; top:10vh; background:radial-gradient(closest-side, color-mix(in oklab, var(--accent-2) 24%, transparent), transparent 60%); animation:drift2 26s ease-in-out infinite alternate}
@@ -132,8 +131,10 @@
 
     /* === Buttons glow === */
     .btn:hover{box-shadow:0 0 0 3px var(--ring) inset}
+      /* ===== Awards cards ===== */
+    .awards{display:grid; gap:12px}
+    .award{padding:12px; border-radius:12px; border:1px solid var(--line); background:color-mix(in oklab, var(--panel) 94%, transparent)}
   </style>
-  <link rel="preload" as="image" href="headshot.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -148,6 +149,7 @@
     ]
   }
   </script>
+  <link rel="preload" as="image" href="headshot.jpg">
 </head>
 <body>
   <div class="progress" id="progress"></div>
@@ -161,8 +163,9 @@
       <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
+        <a href=\"#publications\">Publications</a>
+        <a href=\"#awards\">Awards</a>
+        <a href=\"#teaching\">Teaching</a>
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
@@ -255,6 +258,25 @@
       <p class="mono muted" style="margin-top:10px">Add Google Scholar / ORCID here when ready.</p>
     </section>
 
+    <!-- AWARDS -->
+    <section id="awards" class="card">
+      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Awards & Grants</h2></div>
+      <div class="awards">
+        <div class="award">
+          <div class="chips"><span class="badge badge-year">2025</span></div>
+          <div><strong>Bhadra Fellowship</strong></div>
+        </div>
+        <div class="award">
+          <div class="chips"><span class="badge badge-year">2018–2020</span></div>
+          <div><strong>NSF Grant</strong> <span class="muted">(2018–2020)</span></div>
+        </div>
+        <div class="award">
+          <div class="chips"><span class="badge badge-year">2017</span></div>
+          <div><strong>UCSD Scholar's grant</strong></div>
+        </div>
+      </div>
+    </section>
+
     <!-- TEACHING -->
     <section id="teaching" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">Teaching</h2></div>
@@ -330,6 +352,16 @@
   <a href="#top" class="btn to-top" id="toTop" aria-label="Back to top">↑ Top</a>
 
   <script>
+    // Theme toggle with localStorage
+    const themeBtn = document.getElementById('themeBtn');
+    const stored = localStorage.getItem('theme') || 'auto';
+    if(stored !== 'auto') document.documentElement.dataset.theme = stored;
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.dataset.theme || 'dark';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next; localStorage.setItem('theme', next);
+    });
+
     // Style palettes (cycle accents)
     const palettes = [
       ['#22d3ee','#7c83ff'], // cyan / indigo (default)
@@ -348,16 +380,6 @@
     }
     applyPalette(pIndex);
     styleBtn && styleBtn.addEventListener('click', ()=>{ pIndex = (pIndex+1) % palettes.length; applyPalette(pIndex); });
-
-    // Theme toggle with localStorage
-    const themeBtn = document.getElementById('themeBtn');
-    const stored = localStorage.getItem('theme') || 'auto';
-    if(stored !== 'auto') document.documentElement.dataset.theme = stored;
-    themeBtn.addEventListener('click', () => {
-      const cur = document.documentElement.dataset.theme || 'dark';
-      const next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.dataset.theme = next; localStorage.setItem('theme', next);
-    });
 
     // Publications data
     const publications = [
@@ -434,7 +456,7 @@
             <div class="pub-actions">
               <button class="btn mono" data-bib>Copy BibTeX</button>
             </div>
-            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class=\"chip\">${t}</span>`).join('')}</div>
           `;
           el.querySelector('[data-bib]').addEventListener('click', () => {
             navigator.clipboard.writeText(p.bibtex).then(()=>{
