@@ -109,6 +109,12 @@
       .split{grid-template-columns:1fr}
       .navlinks{display:none}
     }
+      /* ===== Talks badges ===== */
+    .talks{display:grid; gap:12px}
+    .talk{padding:12px; border-radius:12px; border:1px solid var(--line); background:color-mix(in oklab, var(--panel) 94%, transparent)}
+    .badge{display:inline-block; font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel-2) 98%, transparent))}
+    .badge-year{color:#ffffff; font-weight:700; border-color:color-mix(in oklab, var(--accent-2) 40%, transparent); background:linear-gradient(90deg, var(--accent), var(--accent-2))}
+    .badge-venue{border-color:color-mix(in oklab, var(--text) 14%, transparent)}
   </style>
   <script type="application/ld+json">
   {
@@ -185,22 +191,25 @@
     <section id="about" class="card">
       <div class="section-title"><span class="bar"></span><h2 style="margin:0">About</h2></div>
       <p>
-        I study electron transport in two-dimensional systems with an emphasis on <strong>hydrodynamic flows</strong>, 
-        <strong>vorticity formation</strong> near local inhomogeneities, and <strong>Ohmic–viscous crossovers</strong>. My work blends theory, computation, and high-fidelity visualization.
+        I study <strong>quantum Hall physics in higher Landau levels</strong>,
+        <strong>magneto-transport in high magnetic fields</strong>, and
+        <strong>itinerant phases in correlated two-dimensional systems</strong>. I also pursue
+        exploratory work on <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>, drawing connections between
+        condensed-matter transport, effective field theory, and gravitational dynamics where appropriate.
+      </p>
+      <p>
+        My approach blends analytical methods (field theory, kinetic/semiclassical techniques), targeted numerical
+        modeling, and publication-grade visualization. I am currently with the Department of Physics at UC San Diego and
+        collaborate across condensed-matter and theory groups.
       </p>
     </section>
 
     <!-- RESEARCH -->
-    <section id="research" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Research</h2></div>
-      <div class="grid">
-        <div class="col-7">
-          <h3>Selected Topics</h3>
-          <ul>
-            <li>Hydrodynamic vs. Ohmic transport near local inhomogeneities</li>
-            <li>Vorticity & separatrix structures around obstacles in 2DEGs</li>
-            <li>Asymptotic/WKB methods and boundary-layer analysis</li>
-            <li>Figure generation pipelines for journal submission</li>
+    $1<ul>
+            <li>Quantum Hall physics in higher Landau levels</li>
+            <li>Magneto-transport in high magnetic fields</li>
+            <li>Itinerant phases in correlated two-dimensional systems</li>
+            <li>In-spiral black hole merger in D &gt; 5 dimensions</li>
           </ul>
         </div>
         <div class="col-5">
@@ -244,15 +253,38 @@
     </section>
 
     <!-- TALKS -->
-    $1
-        <li>Hydrodynamic & diffusive magneto-transport near local inhomogeneities — APS March Meeting 2025</li>
-        <li>Vorticity patterns around obstacles in 2D systems — UCSD Condensed Matter Seminar, 2024</li>
-        <li>Spin-split collapse in higher Landau levels — UCSD, 2023</li>
-        <li>Vorticity patterns — Columbia University, NY, 2022</li>
-        <li>Magneto-transport across local inhomogeneities — APS March Meeting, 2020</li>
-        <li>Non-associative operators inspired from string theory — APS March Meeting, 2019</li>
-        <li>Quantum double models in icosahedral structures — UC Irvine, 2018</li>
-      $2
+    <section id="talks" class="card">
+      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Talks & Presentations</h2></div>
+      <div class="talks">
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2025</span><span class="badge badge-venue">APS March Meeting</span></div>
+          <div><strong>Hydrodynamic & diffusive magneto-transport near local inhomogeneities</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2024</span><span class="badge badge-venue">UCSD Condensed Matter Seminar</span></div>
+          <div><strong>Vorticity patterns around obstacles in 2D systems</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2023</span><span class="badge badge-venue">UC San Diego</span></div>
+          <div><strong>Spin-split collapse in higher Landau levels</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2022</span><span class="badge badge-venue">Columbia University, NY</span></div>
+          <div><strong>Vorticity patterns</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2020</span><span class="badge badge-venue">APS March Meeting</span></div>
+          <div><strong>Magneto-transport across local inhomogeneities</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2019</span><span class="badge badge-venue">APS March Meeting</span></div>
+          <div><strong>Non-associative operators inspired from string theory</strong></div>
+        </div>
+        <div class="talk">
+          <div class="chips"><span class="badge badge-year">2018</span><span class="badge badge-venue">UC Irvine</span></div>
+          <div><strong>Quantum double models in icosahedral structures</strong></div>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
@@ -401,4 +433,3 @@
   </script>
 </body>
 </html>
-
