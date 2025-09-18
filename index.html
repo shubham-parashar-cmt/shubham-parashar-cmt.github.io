@@ -60,7 +60,7 @@
     nav{display:flex; align-items:center; justify-content:space-between; gap:14px; background:color-mix(in oklab, var(--panel) 86%, transparent); border:1px solid color-mix(in oklab, var(--text) 18%, transparent); padding:10px 14px; border-radius:14px}
     .brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
     .brand picture{display:flex; align-items:center;}
-    .avatar{display:block; width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center; background:#0b1220; border:2px solid #ffffff; box-shadow:0 0 0 3px rgba(124,131,255,.25)}
+    .avatar{display:block; width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center; background:#0b1220 url('resume_headshot_square.jpg?v=6') center/cover no-repeat; border:2px solid #ffffff; box-shadow:0 0 0 3px rgba(124,131,255,.25)}
     .brand .name{
       font-weight:800; letter-spacing:.2px;
       background:linear-gradient(90deg, var(--text) 0%,
@@ -123,9 +123,9 @@
     <nav aria-label="Primary">
       <a class="brand" href="#top">
         <picture>
-          <source srcset="resume_headshot_square.webp?v=5" type="image/webp">
+          <source srcset="resume_headshot_square.webp?v=6" type="image/webp">
           <img
-            src="resume_headshot_square.jpg?v=5"
+            src="resume_headshot_square.jpg?v=6"
             onerror="this.onerror=null;this.src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wgARCAA4ADgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIH/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAID/9oADAMBAAIQAxAAAAHOZlrAAAAAAAAAAAAAAAH/xAAXEAEAAwAAAAAAAAAAAAAAAAABERJQ/9oACAEBAAEFArEOh//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8BB//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8BB//EABkQAAEFAAAAAAAAAAAAAAAAAAABMTJQcf/aAAgBAQAGPwKCaNYf/8QAGhABAAEFAAAAAAAAAAAAAAAAAREAQVBRcf/aAAgBAQABPyEGMjstKbDmQ//aAAwDAQACAAMAAAAQv/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/EAf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/EAf/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQBQgaHB/9oACAEBAAE/ELDDnYTBYnL+rsP/2Q==';"
             alt="Portrait of Pathak Shubham Parashar"
             class="avatar"
