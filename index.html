@@ -1,72 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- =====================
+       Academic Profile — Single-file site for GitHub Pages
+       Replace placeholders marked with TODO below.
+       ===================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Your Name — Academic Profile</title>
-  <meta name="description" content="Academic homepage for Dr. Your Name: research, publications, teaching, and contact." />
-  <meta property="og:title" content="Dr. Your Name — Academic Profile" />
+  <title>Your Name — Academic Profile</title>
+  <meta name="description" content="Academic homepage: research, publications, teaching, talks, and contact." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f172a'/><text x='50' y='60' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='%23818cf8'>A</text></svg>">
+  <meta property="og:title" content="Your Name — Academic Profile" />
   <meta property="og:description" content="Research • Publications • Teaching • Contact" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0f172a" />
   <style>
+    /* ===== Design tokens ===== */
     :root{
-      --bg: #0b1220;          /* slate-950-ish */
+      --bg: #0b1220;          /* slate-950 */
       --panel: #0f172a;       /* slate-900 */
-      --muted: #94a3b8;       /* slate-400 */
-      --text: #e5e7eb;        /* slate-200 */
-      --accent: #22d3ee;      /* cyan-400 */
-      --accent-2: #818cf8;    /* indigo-400 */
-      --ring: rgba(34,211,238,.25);
+      --panel-2:#111827;      /* slate-900 deep */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e5e7eb;         /* slate-200 */
+      --line:#1f2937;         /* slate-800 */
+      --accent:#22d3ee;       /* cyan-400 */
+      --accent-2:#818cf8;     /* indigo-400 */
+      --ring: rgba(129,140,248,.25);
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --w: 1060px;
     }
     @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f8fafc; --panel:#ffffff; --muted:#475569; --text:#0f172a; --accent:#0891b2; --accent-2:#4f46e5; --ring:rgba(79,70,229,.15);
-      }
+      :root{ --bg:#fafafa; --panel:#ffffff; --panel-2:#ffffff; --muted:#475569; --text:#0f172a; --line:#e5e7eb; --accent:#0891b2; --accent-2:#4f46e5; --ring:rgba(79,70,229,.18); }
     }
+
+    /* ===== Base ===== */
     *{box-sizing:border-box}
     html,body{margin:0}
     body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
-    .wrap{max-width:1000px; margin:0 auto; padding:24px}
-    header{position:sticky; top:0; z-index:20; backdrop-filter:saturate(120%) blur(6px)}
-    nav{display:flex; align-items:center; justify-content:space-between; gap:16px; background:color-mix(in oklab, var(--panel) 85%, transparent); border:1px solid color-mix(in oklab, var(--text) 15%, transparent); padding:10px 16px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.15)}
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text)}
-    .brand .avatar{width:44px; height:44px; border-radius:50%; border:2px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:linear-gradient(135deg, var(--accent), var(--accent-2));}
-    .brand .title{font-weight:700; letter-spacing:.3px}
-    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
-    .navlinks a{color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:10px}
-    .navlinks a:hover, .navlinks a:focus{color:var(--text); background:color-mix(in oklab, var(--ring) 80%, transparent)}
-    .hero{margin:28px 0 8px; display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
-    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); padding:20px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.2)}
-    h1{font-size:clamp(28px, 3vw, 40px); margin:0 0 8px}
-    h2{font-size:clamp(20px, 2.2vw, 28px); margin:6px 0 14px}
+    .wrap{max-width:var(--w); margin:0 auto; padding:24px}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{filter:brightness(1.1)}
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, transparent), color-mix(in oklab, var(--panel-2) 96%, transparent)); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    h1{font-size:clamp(28px, 3.2vw, 44px); margin:0 0 8px}
+    h2{font-size:clamp(20px, 2.2vw, 28px); margin:8px 0 14px}
     h3{font-size:18px; margin:10px 0}
     p{margin:10px 0}
-    .tagline{color:var(--muted)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; text-decoration:none; font-weight:600; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 70%, transparent), color-mix(in oklab, var(--panel) 90%, transparent)); color:var(--text)}
+    .kicker{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+    .muted{color:var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+
+    /* ===== Header / Nav ===== */
+    header{position:sticky; top:0; z-index:30; backdrop-filter:saturate(120%) blur(6px)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:12px; background:color-mix(in oklab, var(--panel) 88%, transparent); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); padding:10px 14px; border-radius:14px}
+    .brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none}
+    .avatar{width:44px; height:44px; border-radius:50%; border:2px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:linear-gradient(135deg, var(--accent), var(--accent-2)); display:inline-block}
+    .brand .name{font-weight:800}
+    .navlinks{display:flex; gap:12px; flex-wrap:wrap}
+    .navlinks a{color:var(--muted); padding:6px 10px; border-radius:10px}
+    .navlinks a:hover,.navlinks a:focus{color:var(--text); background:color-mix(in oklab, var(--ring) 85%, transparent)}
+    .theme{display:inline-flex; align-items:center; gap:6px; color:var(--muted)}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); color:var(--text); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 76%, transparent), color-mix(in oklab, var(--panel) 92%, transparent))}
     .btn:hover{outline:3px solid var(--ring)}
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:18px}
+
+    /* ===== Hero ===== */
+    .hero{margin:28px 0 10px; display:grid; grid-template-columns:1.2fr .8fr; gap:22px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text) 14%, transparent); color:var(--muted)}
+
+    /* ===== Sections ===== */
+    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:18px}
     .col-7{grid-column:span 7}
     .col-5{grid-column:span 5}
-    .kicker{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted)}
-    ul{margin:8px 0 0 20px}
-    li{margin:6px 0}
-    .pub{padding:10px 12px; border-left:3px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:color-mix(in oklab, var(--panel) 92%, transparent); border-radius:10px}
-    .pub small{color:var(--muted)}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
-    .chip{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text) 14%, transparent); color:var(--muted)}
     .split{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .pub{padding:12px; border-left:3px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:color-mix(in oklab, var(--panel) 94%, transparent); border-radius:10px}
+    .pub small{color:var(--muted)}
+    .timeline{display:grid; gap:10px}
+    .news{display:flex; gap:12px; align-items:flex-start}
+    .dot{width:9px; height:9px; margin-top:9px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2))}
+
     footer{margin:40px 0 10px; color:var(--muted); text-align:center}
     .footlinks{display:flex; justify-content:center; gap:14px; flex-wrap:wrap}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
-    /* Mobile */
-    @media (max-width: 800px){
+
+    /* ===== Mobile ===== */
+    @media (max-width: 860px){
       .hero{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
-      .col-7,.col-5{grid-column:1 / -1}
+      .col-7,.col-5{grid-column:1/-1}
       .split{grid-template-columns:1fr}
+      .navlinks{display:none}
     }
+
+    /* ===== Print CV friendly (optional) ===== */
+    @media print{ .btn, .navlinks, .theme, header{display:none} body{background:white; color:black} .card{box-shadow:none; border:1px solid #ddd} a{color:black} }
   </style>
   <script type="application/ld+json">
   {
@@ -79,20 +105,20 @@
     "sameAs": [
       "https://scholar.google.com/citations?user=XXXXX",
       "https://orcid.org/0000-0000-0000-0000",
-      "https://github.com/your-username",
-      "https://www.linkedin.com/in/your-profile/"
+      "https://github.com/your-username"
     ]
   }
   </script>
 </head>
 <body>
+  <a href="#main" class="mono" style="position:absolute; left:-10000px">Skip to content</a>
   <header class="wrap" role="banner">
     <nav aria-label="Primary">
       <a class="brand" href="#top">
         <span aria-hidden class="avatar"></span>
-        <span class="title">Dr. Your Name</span>
+        <span class="name">Your Name</span>
       </a>
-      <div class="navlinks">
+      <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
@@ -100,48 +126,63 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
+      <button class="btn theme" id="themeBtn" aria-label="Toggle theme">🌗 Theme</button>
     </nav>
   </header>
 
-  <main id="top" class="wrap" role="main">
-    <section class="hero">
+  <main id="main" class="wrap" role="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
       <div class="card">
-        <h1>Dr. Your Name</h1>
-        <p class="tagline">Title @ <strong>Your Institution</strong>. Research in <em>your fields</em> — e.g., condensed matter physics, hydrodynamic transport, and computational methods.</p>
-        <div class="cta">
+        <h1><!-- TODO: Name -->Your Name</h1>
+        <p class="muted"><!-- TODO: Title/affiliation -->Title @ <strong>Your Institution</strong>. Research in <em>condensed matter physics, magneto-transport, hydrodynamic regimes,</em> and computational methods.</p>
+        <div class="chips" aria-label="Research areas">
+          <span class="chip">Magneto-transport</span>
+          <span class="chip">Hydrodynamics</span>
+          <span class="chip">2D Electron Systems</span>
+          <span class="chip">Asymptotics & WKB</span>
+        </div>
+        <div style="height:10px"></div>
+        <div class="kicker">Links</div>
+        <div class="chips">
           <a class="btn" href="mailto:you@university.edu">Email</a>
-          <a class="btn" href="#publications">Recent Publications</a>
           <a class="btn" href="cv.pdf">CV (PDF)</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=XXXXX" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">ORCID</a>
           <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <aside class="card" aria-label="At a glance">
-        <div class="kicker">Research Areas</div>
-        <div class="chips">
-          <span class="chip">Magneto-transport</span>
-          <span class="chip">Hydrodynamics</span>
-          <span class="chip">2D Electron Systems</span>
-          <span class="chip">Mathematical Physics</span>
-        </div>
+        <div class="kicker">At a Glance</div>
+        <ul>
+          <li>Postdoctoral Researcher, Department of Physics</li>
+          <li>Focus: hydrodynamic ↔ diffusive crossover</li>
+          <li>Office: Room 123, Physics Building</li>
+          <li>Contact: <a href="mailto:you@university.edu">you@university.edu</a></li>
+        </ul>
         <div style="height:10px"></div>
-        <div class="kicker">Affiliations</div>
-        <p>Department of Physics, Your Institution</p>
-        <div class="kicker">Contact</div>
-        <p><a href="mailto:you@university.edu">you@university.edu</a></p>
+        <div class="kicker">News</div>
+        <div class="timeline" id="news">
+          <div class="news"><span class="dot"></span><div>Sep 2025 — Preprint on vortex structures posted (arXiv link soon).</div></div>
+          <div class="news"><span class="dot"></span><div>Jul 2025 — Invited talk at UCSD Condensed Matter Seminar.</div></div>
+          <div class="news"><span class="dot"></span><div>Mar 2025 — Presenting at APS March Meeting.</div></div>
+        </div>
       </aside>
     </section>
 
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="card">
       <h2>About</h2>
       <p>
-        I am a <strong>Postdoctoral Researcher</strong> in the Department of Physics at Your Institution. My work focuses on
-        hydrodynamic and diffusive regimes of electron transport, vortex formation near inhomogeneities, and crossover phenomena in 2D materials.
+        I study electron transport in two-dimensional systems with an emphasis on <strong>hydrodynamic flows</strong>, 
+        <strong>vorticity formation</strong> near local inhomogeneities, and <strong>Ohmic–viscous crossovers</strong>. My work blends theory, computation, and figure-heavy visualization pipelines.
       </p>
       <p>
-        I collaborate with <a href="#">Mentor/Collaborator Names</a>. Prior to this, I completed my Ph.D. at Your Previous Institution.
+        Collaborations include colleagues across condensed matter and mathematical physics. Prior to this, I completed my Ph.D. at Your Previous Institution.
       </p>
     </section>
 
+    <!-- ===== RESEARCH ===== -->
     <section id="research" class="card">
       <h2>Research</h2>
       <div class="grid">
@@ -149,39 +190,37 @@
           <h3>Selected Topics</h3>
           <ul>
             <li>Hydrodynamic vs. Ohmic transport near local inhomogeneities</li>
-            <li>Vorticity and separatrix structure around obstacles in 2DEGs</li>
-            <li>Asymptotic/WKB methods for radial flows</li>
+            <li>Vorticity & separatrix structures around obstacles in 2DEGs</li>
+            <li>Asymptotic/WKB methods and boundary-layer analysis</li>
+            <li>High-quality, journal-ready figure generation pipelines</li>
           </ul>
         </div>
         <div class="col-5">
-          <h3>Preprints & Code</h3>
+          <h3>Resources</h3>
           <ul>
-            <li><a href="#">Preprint: Hydrodynamic–Diffusive Crossover (2025)</a></li>
-            <li><a href="#">Dataset &amp; plotting scripts</a></li>
-            <li><a href="#">Talk slides</a></li>
+            <li><a href="#publications">Preprints & papers</a></li>
+            <li><a href="#talks">Slides & talks</a></li>
+            <li><a href="#contact">Collaboration & advising</a></li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- ===== PUBLICATIONS ===== -->
     <section id="publications" class="card">
       <h2>Publications</h2>
-      <article class="pub">
-        <strong>Your Name</strong>, A. Coauthor, B. Coauthor. <em>Title of your paper</em>. Journal Name, 2025. <a href="#">doi:10.xxxx/xxxxx</a>
-        <div><small>Preprint: arXiv:2501.xxxxx • Code: <a href="#">GitHub</a> • Slides: <a href="#">PDF</a></small></div>
-      </article>
-      <article class="pub">
-        <strong>Your Name</strong>, C. Coauthor. <em>Another paper title</em>. Journal Name, 2024. <a href="#">doi:10.xxxx/yyyyy</a>
-        <div><small>Preprint: arXiv:2407.xxxxx</small></div>
-      </article>
-      <p class="mono" style="margin-top:12px">Full list: <a href="https://scholar.google.com/citations?user=XXXXX">Google Scholar</a> · <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></p>
+      <div class="kicker">Search / filter</div>
+      <input id="pubSearch" class="card" style="width:100%; padding:10px; border-radius:12px; border:1px solid var(--line); background:transparent" placeholder="Type keywords (e.g., hydrodynamic, vortex, 2025)…" aria-label="Filter publications" />
+      <div id="pubList" style="margin-top:12px; display:grid; gap:12px"></div>
+      <p class="mono muted" style="margin-top:10px">Full list: <a href="https://scholar.google.com/citations?user=XXXXX">Google Scholar</a> · <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></p>
     </section>
 
+    <!-- ===== TEACHING ===== -->
     <section id="teaching" class="card">
       <h2>Teaching</h2>
       <div class="split">
         <div>
-          <h3>Instructor/TA</h3>
+          <h3>Instructor / TA</h3>
           <ul>
             <li>PHYS 123 — Fluid Dynamics (Fall 2024)</li>
             <li>PHYS 201 — Electromagnetism (Spring 2024)</li>
@@ -197,14 +236,16 @@
       </div>
     </section>
 
+    <!-- ===== TALKS ===== -->
     <section id="talks" class="card">
       <h2>Talks & Presentations</h2>
       <ul>
-        <li>Hydrodynamic and diffusive magneto-transport near local inhomogeneities — APS March Meeting 2025</li>
+        <li>Hydrodynamic & diffusive magneto-transport near local inhomogeneities — APS March Meeting 2025</li>
         <li>Vorticity patterns around obstacles in 2D systems — UCSD Condensed Matter Seminar, 2024</li>
       </ul>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:you@university.edu">you@university.edu</a> · GitHub: <a href="https://github.com/your-username">@your-username</a> · Office: Room 123, Physics Building</p>
@@ -225,7 +266,101 @@
   </main>
 
   <script>
+    // ===== Theme toggle with localStorage =====
+    const btn = document.getElementById('themeBtn');
+    const stored = localStorage.getItem('theme') || 'auto';
+    if(stored !== 'auto') document.documentElement.dataset.theme = stored;
+    btn.addEventListener('click', () => {
+      const cur = document.documentElement.dataset.theme || 'dark';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    });
+
+    // ===== Publications data (EDIT ME) =====
+    const publications = [
+      {
+        authors: 'Your Name, A. Coauthor, B. Coauthor',
+        title: 'Hydrodynamic–Diffusive Crossover near Local Inhomogeneities',
+        venue: 'Journal Name', year: 2025,
+        links: { doi: '#', arxiv: '#', code: '#' },
+        bibtex: `@article{you2025crossover,
+  title={Hydrodynamic--Diffusive Crossover near Local Inhomogeneities},
+  author={Your, Name and Coauthor, A and Coauthor, B},
+  journal={Journal Name},
+  year={2025}
+}`,
+        tags: ['hydrodynamic','crossover','2DEG']
+      },
+      {
+        authors: 'Your Name, C. Coauthor',
+        title: 'Vorticity and Separatrix Structures around Obstacles',
+        venue: 'Journal Name', year: 2024,
+        links: { doi: '#', arxiv: '#'},
+        bibtex: `@article{you2024vorticity,
+  title={Vorticity and Separatrix Structures around Obstacles},
+  author={Your, Name and Coauthor, C},
+  journal={Journal Name},
+  year={2024}
+}`,
+        tags: ['vorticity','separatrix']
+      },
+      {
+        authors: 'Your Name',
+        title: 'Asymptotic Methods for Radial Flows',
+        venue: 'Preprint', year: 2023,
+        links: { arxiv: '#' },
+        bibtex: `@misc{you2023asymptotic,
+  title={Asymptotic Methods for Radial Flows},
+  author={Your, Name},
+  year={2023},
+  eprint={xxxx.xxxxx},
+  archivePrefix={arXiv}
+}`,
+        tags: ['WKB','asymptotics']
+      }
+    ];
+
+    const pubList = document.getElementById('pubList');
+    const pubSearch = document.getElementById('pubSearch');
+
+    function renderPubs(filter=''){
+      pubList.innerHTML = '';
+      const f = filter.toLowerCase();
+      publications
+        .filter(p => !f || p.title.toLowerCase().includes(f) || p.authors.toLowerCase().includes(f) || p.tags.join(' ').toLowerCase().includes(f) || String(p.year).includes(f))
+        .sort((a,b) => b.year - a.year)
+        .forEach(p => {
+          const el = document.createElement('article');
+          el.className = 'pub';
+          el.innerHTML = `
+            <div><strong>${p.title}</strong> <small>(${p.year})</small></div>
+            <div>${p.authors}</div>
+            <div class="muted">${p.venue}</div>
+            <div style="margin-top:6px; display:flex; gap:10px; flex-wrap:wrap">
+              ${p.links.doi ? `<a href="${p.links.doi}">DOI</a>`:''}
+              ${p.links.arxiv ? `<a href="${p.links.arxiv}">arXiv</a>`:''}
+              ${p.links.code ? `<a href="${p.links.code}">Code</a>`:''}
+              <button class="btn mono" data-bib>Copy BibTeX</button>
+            </div>
+            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+          `;
+          el.querySelector('[data-bib]').addEventListener('click', () => {
+            navigator.clipboard.writeText(p.bibtex).then(()=>{
+              const btn = el.querySelector('[data-bib]');
+              const txt = btn.textContent; btn.textContent = 'Copied!';
+              setTimeout(()=> btn.textContent = txt, 1200);
+            });
+          });
+          pubList.appendChild(el);
+        });
+    }
+    renderPubs();
+    pubSearch.addEventListener('input', (e)=> renderPubs(e.target.value));
+
+    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
