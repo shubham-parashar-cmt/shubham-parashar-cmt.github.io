@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Your Name — Academic Profile</title>
+  <meta name="description" content="Academic homepage for Dr. Your Name: research, publications, teaching, and contact." />
+  <meta property="og:title" content="Dr. Your Name — Academic Profile" />
+  <meta property="og:description" content="Research • Publications • Teaching • Contact" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{
+      --bg: #0b1220;          /* slate-950-ish */
+      --panel: #0f172a;       /* slate-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* slate-200 */
+      --accent: #22d3ee;      /* cyan-400 */
+      --accent-2: #818cf8;    /* indigo-400 */
+      --ring: rgba(34,211,238,.25);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc; --panel:#ffffff; --muted:#475569; --text:#0f172a; --accent:#0891b2; --accent-2:#4f46e5; --ring:rgba(79,70,229,.15);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    .wrap{max-width:1000px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; z-index:20; backdrop-filter:saturate(120%) blur(6px)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px; background:color-mix(in oklab, var(--panel) 85%, transparent); border:1px solid color-mix(in oklab, var(--text) 15%, transparent); padding:10px 16px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.15)}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text)}
+    .brand .avatar{width:44px; height:44px; border-radius:50%; border:2px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:linear-gradient(135deg, var(--accent), var(--accent-2));}
+    .brand .title{font-weight:700; letter-spacing:.3px}
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .navlinks a{color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:10px}
+    .navlinks a:hover, .navlinks a:focus{color:var(--text); background:color-mix(in oklab, var(--ring) 80%, transparent)}
+    .hero{margin:28px 0 8px; display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); padding:20px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    h1{font-size:clamp(28px, 3vw, 40px); margin:0 0 8px}
+    h2{font-size:clamp(20px, 2.2vw, 28px); margin:6px 0 14px}
+    h3{font-size:18px; margin:10px 0}
+    p{margin:10px 0}
+    .tagline{color:var(--muted)}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; text-decoration:none; font-weight:600; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 70%, transparent), color-mix(in oklab, var(--panel) 90%, transparent)); color:var(--text)}
+    .btn:hover{outline:3px solid var(--ring)}
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:18px}
+    .col-7{grid-column:span 7}
+    .col-5{grid-column:span 5}
+    .kicker{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted)}
+    ul{margin:8px 0 0 20px}
+    li{margin:6px 0}
+    .pub{padding:10px 12px; border-left:3px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:color-mix(in oklab, var(--panel) 92%, transparent); border-radius:10px}
+    .pub small{color:var(--muted)}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+    .chip{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text) 14%, transparent); color:var(--muted)}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    footer{margin:40px 0 10px; color:var(--muted); text-align:center}
+    .footlinks{display:flex; justify-content:center; gap:14px; flex-wrap:wrap}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    /* Mobile */
+    @media (max-width: 800px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .col-7,.col-5{grid-column:1 / -1}
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "affiliation": {"@type":"Organization","name":"Your Institution"},
+    "jobTitle": "Your Title",
+    "url": "https://your-username.github.io/",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=XXXXX",
+      "https://orcid.org/0000-0000-0000-0000",
+      "https://github.com/your-username",
+      "https://www.linkedin.com/in/your-profile/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="wrap" role="banner">
+    <nav aria-label="Primary">
+      <a class="brand" href="#top">
+        <span aria-hidden class="avatar"></span>
+        <span class="title">Dr. Your Name</span>
+      </a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap" role="main">
+    <section class="hero">
+      <div class="card">
+        <h1>Dr. Your Name</h1>
+        <p class="tagline">Title @ <strong>Your Institution</strong>. Research in <em>your fields</em> — e.g., condensed matter physics, hydrodynamic transport, and computational methods.</p>
+        <div class="cta">
+          <a class="btn" href="mailto:you@university.edu">Email</a>
+          <a class="btn" href="#publications">Recent Publications</a>
+          <a class="btn" href="cv.pdf">CV (PDF)</a>
+          <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <aside class="card" aria-label="At a glance">
+        <div class="kicker">Research Areas</div>
+        <div class="chips">
+          <span class="chip">Magneto-transport</span>
+          <span class="chip">Hydrodynamics</span>
+          <span class="chip">2D Electron Systems</span>
+          <span class="chip">Mathematical Physics</span>
+        </div>
+        <div style="height:10px"></div>
+        <div class="kicker">Affiliations</div>
+        <p>Department of Physics, Your Institution</p>
+        <div class="kicker">Contact</div>
+        <p><a href="mailto:you@university.edu">you@university.edu</a></p>
+      </aside>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        I am a <strong>Postdoctoral Researcher</strong> in the Department of Physics at Your Institution. My work focuses on
+        hydrodynamic and diffusive regimes of electron transport, vortex formation near inhomogeneities, and crossover phenomena in 2D materials.
+      </p>
+      <p>
+        I collaborate with <a href="#">Mentor/Collaborator Names</a>. Prior to this, I completed my Ph.D. at Your Previous Institution.
+      </p>
+    </section>
+
+    <section id="research" class="card">
+      <h2>Research</h2>
+      <div class="grid">
+        <div class="col-7">
+          <h3>Selected Topics</h3>
+          <ul>
+            <li>Hydrodynamic vs. Ohmic transport near local inhomogeneities</li>
+            <li>Vorticity and separatrix structure around obstacles in 2DEGs</li>
+            <li>Asymptotic/WKB methods for radial flows</li>
+          </ul>
+        </div>
+        <div class="col-5">
+          <h3>Preprints & Code</h3>
+          <ul>
+            <li><a href="#">Preprint: Hydrodynamic–Diffusive Crossover (2025)</a></li>
+            <li><a href="#">Dataset &amp; plotting scripts</a></li>
+            <li><a href="#">Talk slides</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="card">
+      <h2>Publications</h2>
+      <article class="pub">
+        <strong>Your Name</strong>, A. Coauthor, B. Coauthor. <em>Title of your paper</em>. Journal Name, 2025. <a href="#">doi:10.xxxx/xxxxx</a>
+        <div><small>Preprint: arXiv:2501.xxxxx • Code: <a href="#">GitHub</a> • Slides: <a href="#">PDF</a></small></div>
+      </article>
+      <article class="pub">
+        <strong>Your Name</strong>, C. Coauthor. <em>Another paper title</em>. Journal Name, 2024. <a href="#">doi:10.xxxx/yyyyy</a>
+        <div><small>Preprint: arXiv:2407.xxxxx</small></div>
+      </article>
+      <p class="mono" style="margin-top:12px">Full list: <a href="https://scholar.google.com/citations?user=XXXXX">Google Scholar</a> · <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></p>
+    </section>
+
+    <section id="teaching" class="card">
+      <h2>Teaching</h2>
+      <div class="split">
+        <div>
+          <h3>Instructor/TA</h3>
+          <ul>
+            <li>PHYS 123 — Fluid Dynamics (Fall 2024)</li>
+            <li>PHYS 201 — Electromagnetism (Spring 2024)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Mentoring</h3>
+          <ul>
+            <li>Undergraduate research projects (2023–2025)</li>
+            <li>Graduate reading group on hydrodynamic transport</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks" class="card">
+      <h2>Talks & Presentations</h2>
+      <ul>
+        <li>Hydrodynamic and diffusive magneto-transport near local inhomogeneities — APS March Meeting 2025</li>
+        <li>Vorticity patterns around obstacles in 2D systems — UCSD Condensed Matter Seminar, 2024</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@university.edu">you@university.edu</a> · GitHub: <a href="https://github.com/your-username">@your-username</a> · Office: Room 123, Physics Building</p>
+    </section>
+
+    <footer>
+      <div class="footlinks">
+        <a href="#top">Back to top</a>
+        <span>·</span>
+        <a href="cv.pdf">CV</a>
+        <span>·</span>
+        <a href="https://scholar.google.com/citations?user=XXXXX">Google Scholar</a>
+        <span>·</span>
+        <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+      </div>
+      <p>© <span id="year"></span> Your Name. Built with a single HTML file on GitHub Pages.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
