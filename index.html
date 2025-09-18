@@ -205,7 +205,12 @@
     </section>
 
     <!-- RESEARCH -->
-    $1<ul>
+    <section id="research" class="card">
+      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Research</h2></div>
+      <div class="grid">
+        <div class="col-7">
+          <h3>Selected Topics</h3>
+          <ul>
             <li>Quantum Hall physics in higher Landau levels</li>
             <li>Magneto-transport in high magnetic fields</li>
             <li>Itinerant phases in correlated two-dimensional systems</li>
@@ -391,7 +396,7 @@
             <div class="pub-actions">
               <button class="btn mono" data-bib>Copy BibTeX</button>
             </div>
-            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+            <div class="chips" style="margin-top:6px">${p.tags.map(t=>`<span class=\"chip\">${t}</span>`).join('')}</div>
           `;
           el.querySelector('[data-bib]').addEventListener('click', () => {
             navigator.clipboard.writeText(p.bibtex).then(()=>{
