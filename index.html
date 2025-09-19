@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="dark light">
   <!-- Preload the small avatar used in the nav -->
   <link rel="preload" as="image" href="/assets/img/nav-avatar.jpg?v=3" imagesrcset="/assets/img/nav-avatar.jpg?v=3" imagesizes="56px">
-  <!-- Uses your existing Minion Pro themed stylesheet -->
+  <!-- Uses your Minion Pro themed stylesheet -->
   <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
 </head>
 <body>
@@ -29,14 +29,16 @@
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
-        <a href="#teaching">Teaching</a>
+        <!-- Keep "Teaching" as-is; we’ll handle in Step 2 -->
+        Teaching
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
 
-      <!-- Persistent external links (right) -->
+      <!-- Persistent external links (right) — STEP 1 -->
       <div class="navlinks" id="quicklinks" aria-label="External quick links">
         <a href="/cv.pdf">CV (PDF)</a>
+        <a href="mailto:psparash@ucsd.edu">Email</a>
         <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
         <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
         <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
@@ -92,6 +94,7 @@
       <h2>Publications (in preparation)</h2>
       <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., graphene, 2025)…" />
       <div id="pubList" style="margin-top:14px; display:grid; gap:12px"></div>
+      <p class="mono muted" style="margin-top:10px">Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.</p>
     </section>
 
     <section id="awards" class="card">
@@ -101,12 +104,6 @@
         <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
         <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
       </div>
-    </section>
-
-    <section id="teaching" class="card">
-      <h2>Teaching</h2>
-      <div class="pub"><strong>PHYS 123 — Fluid Dynamics (Fall 2024)</strong></div>
-      <div class="pub"><strong>PHYS 201 — Electromagnetism (Spring 2024)</strong></div>
     </section>
 
     <section id="talks" class="card">
