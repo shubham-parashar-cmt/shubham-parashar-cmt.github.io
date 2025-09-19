@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,34 +6,63 @@
   <title>Pathak Shubham Parashar — Academic Profile</title>
   <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
   <meta name="color-scheme" content="dark light">
+  <!-- Preload the small avatar used in the nav -->
   <link rel="preload" as="image" href="/assets/img/nav-avatar.jpg?v=3" imagesrcset="/assets/img/nav-avatar.jpg?v=3" imagesizes="56px">
+  <!-- Uses your existing Minion Pro themed stylesheet -->
   <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
 </head>
 <body>
   <div class="progress" id="progress"></div>
-  <header class="wrap">
-    <nav>
+
+  <header class="wrap" role="banner">
+    <nav aria-label="Primary">
+      <!-- Brand (left) -->
       <a class="brand" href="#top">
-        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56">
+        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
+
+      <!-- Section links (center) -->
       <div class="navlinks" id="navlinks">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a>
-        <a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#teaching">Teaching</a><a href="#talks">Talks</a><a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- Persistent external links (right) -->
+      <div class="navlinks" id="quicklinks" aria-label="External quick links">
+        <a href="/cv.pdf">CV (PDF)</a>
+        <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
       </div>
     </nav>
   </header>
 
-  <main id="main" class="wrap">
+  <main id="main" class="wrap" role="main">
     <section class="hero" id="top">
       <div class="card">
         <h1>Pathak Shubham Parashar</h1>
         <p class="tagline">Researcher @ <strong>UC San Diego</strong>. Transport in 2D systems — hydrodynamic ↔ diffusive crossovers and vorticity around inhomogeneities.</p>
-        <div class="chips"><span class="badge badge-year">Magneto-transport</span><span class="badge">Hydrodynamics</span><span class="badge">2D Electron Systems</span><span class="badge">Asymptotics &amp; WKB</span></div>
+        <div class="chips" aria-label="Research areas">
+          <span class="badge badge-year">Magneto-transport</span>
+          <span class="badge">Hydrodynamics</span>
+          <span class="badge">2D Electron Systems</span>
+          <span class="badge">Asymptotics &amp; WKB</span>
+        </div>
       </div>
-      <aside class="card">
+      <aside class="card" aria-label="At a glance">
         <h2>At a Glance</h2>
-        <ul><li>Department of Physics, UC San Diego</li><li>Focus: hydrodynamic–diffusive crossovers</li><li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li></ul>
+        <ul>
+          <li>Department of Physics, UC San Diego</li>
+          <li>Focus: hydrodynamic–diffusive crossovers</li>
+          <li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li>
+        </ul>
       </aside>
     </section>
 
@@ -75,6 +103,12 @@
       </div>
     </section>
 
+    <section id="teaching" class="card">
+      <h2>Teaching</h2>
+      <div class="pub"><strong>PHYS 123 — Fluid Dynamics (Fall 2024)</strong></div>
+      <div class="pub"><strong>PHYS 201 — Electromagnetism (Spring 2024)</strong></div>
+    </section>
+
     <section id="talks" class="card">
       <h2>Talks &amp; Presentations</h2>
       <ul class="tight">
@@ -95,6 +129,7 @@
       <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
+
   <a href="#top" class="to-top" id="toTop" aria-label="Back to top">↑ Top</a>
   <script defer src="/assets/js/site.js?v=pubs-final"></script>
 </body>
