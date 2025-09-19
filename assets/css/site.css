@@ -134,3 +134,8 @@ footer{margin:44px 0 10px; color:var(--muted); text-align:center}
   .cv-pub, li, .tl-item{ break-inside:avoid }
   a::after{ content:"" } /* hide raw URLs in print */
 }
+
+
+/* Highlight my name in the piblication list that I give */
+
+.authors /.me { font-weoght:700; text-decoration:underline; }
