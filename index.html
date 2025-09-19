@@ -1,208 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pathak Shubham Parashar — Academic Profile</title>
-  <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego): research, publications, awards, projects, teaching, talks, contact." />
+  <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0f172a" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego">
-  <meta property="og:description" content="Quantum Hall, high-field magnetotransport, and correlated 2D phases.">
-  <meta property="og:image" content="/assets/img/og-card.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shubham-parashar-cmt.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
-  <link rel="alternate" type="application/rss+xml" title="News — Pathak Shubham Parashar" href="feed.xml">
-
-  <!-- Fonts: Inter (headings/UI), Source Serif 4 (web body), EB Garamond (print) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-
-  <!-- Preload small avatar for nav -->
   <link rel="preload" as="image" href="/assets/img/nav-avatar.jpg?v=3" imagesrcset="/assets/img/nav-avatar.jpg?v=3" imagesizes="56px">
-
-  <!-- Icons/manifest -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">
-  <link rel="manifest" href="/manifest.webmanifest">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=inter-ss4-ebg">
+  <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
 </head>
 <body>
   <div class="progress" id="progress"></div>
-  <a href="#main" class="mono" style="position:absolute; left:-10000px">Skip to content</a>
-
-  <header class="wrap" role="banner">
-    <nav aria-label="Primary">
+  <header class="wrap">
+    <nav>
       <a class="brand" href="#top">
-        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
+        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
       <div class="navlinks" id="navlinks">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#talks">Talks</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a>
+        <a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#teaching">Teaching</a><a href="#talks">Talks</a><a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main id="main" class="wrap" role="main">
+  <main id="main" class="wrap">
     <section class="hero" id="top">
       <div class="card">
         <h1>Pathak Shubham Parashar</h1>
-        <p class="tagline">Researcher @ <strong>UC San Diego</strong>. I study electron transport in 2D systems — hydrodynamic ↔ diffusive crossovers, vorticity near inhomogeneities, and figure-driven computational methods.</p>
-        <div class="chips" aria-label="Research areas">
-          <span class="chip">Magneto-transport</span>
-          <span class="chip">Hydrodynamics</span>
-          <span class="chip">2D Electron Systems</span>
-          <span class="chip">Asymptotics &amp; WKB</span>
-        </div>
-        <div style="height:12px"></div>
-        <div class="chips">
-          <a class="btn" href="mailto:psparash@ucsd.edu">Email</a>
-          <a class="btn" href="/cv.pdf">CV (PDF)</a>
-          <a class="btn" href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
-          <a class="btn" href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
-        </div>
+        <p class="tagline">Researcher @ <strong>UC San Diego</strong>. Transport in 2D systems — hydrodynamic ↔ diffusive crossovers and vorticity around inhomogeneities.</p>
+        <div class="chips"><span class="badge badge-year">Magneto-transport</span><span class="badge">Hydrodynamics</span><span class="badge">2D Electron Systems</span><span class="badge">Asymptotics &amp; WKB</span></div>
       </div>
-      <aside class="card" aria-label="At a glance">
-        <div class="section-title"><span class="bar"></span><h2 style="margin:0">At a Glance</h2></div>
-        <ul>
-          <li>Department of Physics, UC San Diego</li>
-          <li>Focus: hydrodynamic–diffusive crossover; magnetotransport</li>
-          <li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li>
-        </ul>
-        <div style="height:10px"></div>
-        <div class="section-title"><span class="bar"></span><h2 style="margin:0">News</h2></div>
-        <div class="timeline" id="news">
-          <div class="pub"><strong>Sep 2025</strong> — Manuscripts in preparation on hydrodynamic magnetotransport, graphene crossover imaging, and quantum Hall spin-splitting.</div>
-          <div class="pub"><strong>2025</strong> — Ongoing collaborations at UC San Diego.</div>
-        </div>
+      <aside class="card">
+        <h2>At a Glance</h2>
+        <ul><li>Department of Physics, UC San Diego</li><li>Focus: hydrodynamic–diffusive crossovers</li><li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li></ul>
       </aside>
     </section>
 
     <section id="about" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">About</h2></div>
-      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also pursue exploratory work on <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>, drawing connections between condensed-matter transport, effective field theory, and gravitational dynamics where appropriate.</p>
-      <p>My approach blends analytical methods (field theory, kinetic/semiclassical techniques), targeted numerical modeling, and publication-grade visualization. I am currently with the Department of Physics at UC San Diego and collaborate across condensed-matter and theory groups.</p>
+      <h2>About</h2>
+      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also explore <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>.</p>
     </section>
 
     <section id="research" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Research</h2></div>
-      <div class="grid">
-        <div class="col-7">
-          <h3>Selected Topics</h3>
-          <ul>
-            <li><strong>Quantum Hall physics in higher Landau levels</strong><br><span class="muted">Screening, collective modes, and phase competition in N&gt;0 levels.</span></li>
-            <li><strong>Magneto-transport in high magnetic fields</strong><br><span class="muted">Hydrodynamic ↔ diffusive regimes, vorticity and nonlocal response.</span></li>
-            <li><strong>Itinerant phases in correlated 2D systems</strong><br><span class="muted">Instabilities and symmetry breaking in multi-component fermions.</span></li>
-            <li><strong>In-spiral black hole merger in D &gt; 5 dimensions</strong><br><span class="muted">Crossovers with effective field theory and transport analogies.</span></li>
-          </ul>
-        </div>
-        <div class="col-5">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#publications">Preprints &amp; papers</a></li>
-            <li><a href="#projects">Selected projects</a></li>
-            <li><a href="#talks">Slides &amp; talks</a></li>
-          </ul>
-        </div>
-      </div>
+      <h2>Research</h2>
+      <ul>
+        <li><strong>Quantum Hall physics in higher Landau levels</strong></li>
+        <li><strong>Magneto-transport in high magnetic fields</strong></li>
+        <li><strong>Itinerant phases in correlated 2D systems</strong></li>
+        <li><strong>In-spiral black hole merger in D &gt; 5 dimensions</strong></li>
+      </ul>
     </section>
 
     <section id="projects" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Selected Projects</h2></div>
-      <div class="split">
-        <div class="pub">
-          <strong>Hydro→Diffusive Magnetotransport Simulator</strong>
-          <div class="muted">Minimal solver to visualize crossover and vorticity fields near inhomogeneities.</div>
-          <div class="pub-actions"><a class="btn" href="#" title="Add code link">Code</a><a class="btn" href="#" title="Add slides link">Slides</a></div>
-        </div>
-        <div class="pub">
-          <strong>QHE Spin-Splitting Thermodynamics Notebook</strong>
-          <div class="muted">Explores phase boundaries and specific heat across the spin-split transition.</div>
-          <div class="pub-actions"><a class="btn" href="#">Notebook</a><a class="btn" href="#">Figures</a></div>
-        </div>
-        <div class="pub">
-          <strong>Graphene Diffusive-to-Ballistic Visualizer</strong>
-          <div class="muted">Interactive plots for nonlocal response as mean-free-path varies.</div>
-          <div class="pub-actions"><a class="btn" href="#">Demo</a><a class="btn" href="#">Docs</a></div>
-        </div>
-      </div>
+      <h2>Selected Projects</h2>
+      <div class="pub"><strong>Hydro→Diffusive Magnetotransport Simulator</strong><div class="muted">Visualizes crossover and vorticity fields near inhomogeneities.</div></div>
+      <div class="pub"><strong>QHE Spin-Splitting Thermodynamics Notebook</strong><div class="muted">Phase boundaries and specific heat across the spin-split transition.</div></div>
+      <div class="pub"><strong>Graphene Diffusive-to-Ballistic Visualizer</strong><div class="muted">Nonlocal response as mean-free-path varies.</div></div>
     </section>
 
     <section id="publications" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Publications (in preparation)</h2></div>
-      <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., hydrodynamic, graphene, 2025)…" aria-label="Filter publications" />
+      <h2>Publications (in preparation)</h2>
+      <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., graphene, 2025)…" />
       <div id="pubList" style="margin-top:14px; display:grid; gap:12px"></div>
-      <p class="mono muted" style="margin-top:10px">Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.</p>
     </section>
 
     <section id="awards" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Awards &amp; Grants</h2></div>
-      <div class="awards cv-awards">
+      <h2>Awards &amp; Grants</h2>
+      <div class="cv-awards">
         <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
         <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
         <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
       </div>
     </section>
 
-    <section id="teaching" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Teaching</h2></div>
-      <div class="split">
-        <div>
-          <h3>Instructor / TA</h3>
-          <ul>
-            <li>PHYS 123 — Fluid Dynamics (Fall 2024)</li>
-            <li>PHYS 201 — Electromagnetism (Spring 2024)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Mentoring</h3>
-          <ul>
-            <li>Undergraduate research projects (2023–2025)</li>
-            <li>Graduate reading group on hydrodynamic transport</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <section id="talks" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Talks &amp; Presentations</h2></div>
-      <div class="talks">
-        <div class="talk"><div class="chips"><span class="badge badge-year">2025</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Hydrodynamic &amp; diffusive magneto-transport near local inhomogeneities</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2024</span><span class="badge badge-venue">UCSD Condensed Matter Seminar</span></div><div><strong>Vorticity patterns around obstacles in 2D systems</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2023</span><span class="badge badge-venue">UC San Diego</span></div><div><strong>Spin-split collapse in higher Landau levels</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2022</span><span class="badge badge-venue">Columbia University, NY</span></div><div><strong>Vorticity patterns</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2020</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Magneto-transport across local inhomogeneities</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2019</span><span class="badge badge-venue">APS March Meeting</span></div><div><strong>Non-associative operators inspired from string theory</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-        <div class="talk"><div class="chips"><span class="badge badge-year">2018</span><span class="badge badge-venue">UC Irvine</span></div><div><strong>Quantum double models in icosahedral structures</strong></div><div class="pub-actions"><a class="btn" href="#">Slides</a></div></div>
-      </div>
+      <h2>Talks &amp; Presentations</h2>
+      <ul class="tight">
+        <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
+        <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
+        <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
+        <li><strong>Non-associative operators inspired from string theory</strong> — APS March Meeting, 2019</li>
+        <li><strong>Quantum double models in icosahedral structures</strong> — UC Irvine, 2018</li>
+      </ul>
     </section>
 
     <section id="contact" class="card">
-      <div class="section-title"><span class="bar"></span><h2 style="margin:0">Contact</h2></div>
-      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a> <a class="btn" href="Pathak_Sh_P.vcf" download style="margin-left:8px">vCard</a></p>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
     </section>
 
     <footer>
-      <div class="footlinks"><a href="#top">Back to top</a><span>·</span><a href="/cv.pdf">CV</a></div>
       <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
-
-  <a href="#top" class="btn to-top" id="toTop" aria-label="Back to top">↑ Top</a>
-  <script defer src="/assets/js/site.js?v=1"></script>
+  <a href="#top" class="to-top" id="toTop" aria-label="Back to top">↑ Top</a>
+  <script defer src="/assets/js/site.js?v=pubs-final"></script>
 </body>
 </html>
