@@ -7,10 +7,15 @@
   <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
   <meta name="color-scheme" content="dark light">
   <link rel="preload" as="image" href="/nav-avatar.jpg" imagesrcset="/nav-avatar.jpg" imagesizes="56px">
-  <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
+  <link rel="stylesheet" href="/assets/css/site.css?v=fixes-1">
   <meta property="og:title" content="Pathak Shubham Parashar — Academic Profile">
   <meta property="og:description" content="Hydrodynamics & quantum transport; correlated electrons; non-Hermitian theory; topological order; gravitation/HEP.">
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
+  <style>
+    /* tiny helper so award years look tidy even without editing site.css */
+    .cv-awards { display:grid; row-gap:6px; }
+    .cv-awards .year { float:right; opacity:.75; }
+  </style>
 </head>
 <body>
   <div class="progress" id="progress"></div>
@@ -21,6 +26,7 @@
         <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
+
       <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -33,6 +39,8 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
+
+      <!-- FIXED: Email is now a clickable mailto link -->
       <div class="navlinks" id="quicklinks" aria-label="External quick links">
         <a href="/cv.pdf">CV (PDF)</a>
         <a href="mailto:psparash@ucsd.edu">Email</a>
@@ -97,6 +105,9 @@
         <li><strong>Black-hole inspirals in D &gt; 5:</strong> dynamics and thermodynamic aspects beyond 3+1D.</li>
         <li><strong>Quantum double models (3+1D):</strong> excitations and constraints for higher-dimensional topological order.</li>
       </ul>
+      <!-- Optional link if you upload /projects.html
+      <p class="mono muted" style="margin-top:8px">See more detail on the <a href="/projects.html">Projects page →</a></p>
+      -->
     </section>
 
     <section id="experience" class="card">
@@ -111,14 +122,33 @@
       </div>
     </section>
 
+    <!-- FIXED: Static list renders immediately (no JS needed) -->
     <section id="publications" class="card">
       <h2>Publications (in preparation)</h2>
-      <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., graphene, 2025)…" />
-      <div id="pubList" style="margin-top:14px; display:grid; gap:12px"></div>
+      <ul class="tight">
+        <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
+            P. Shubham Parashar, M. M. Fogler (2025)</li>
+        <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
+            Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
+        <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
+            Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
+        <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
+            Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
+      </ul>
       <p class="mono muted" style="margin-top:10px">
         Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and
         <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.
       </p>
+    </section>
+
+    <section id="awards" class="card">
+      <h2>Awards &amp; Grants</h2>
+      <div class="cv-awards">
+        <p><strong>MEXT Research Fellowship (Japan)</strong><span class="year">2015–2016</span></p>
+        <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
+        <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
+        <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
+      </div>
     </section>
 
     <section id="coursework" class="card">
@@ -154,16 +184,6 @@
       </ul>
     </section>
 
-    <section id="awards" class="card">
-      <h2>Awards &amp; Grants</h2>
-      <div class="cv-awards">
-        <p><strong>MEXT Research Fellowship (Japan)</strong><span class="year">2015–2016</span></p>
-        <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
-        <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
-        <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
-      </div>
-    </section>
-
     <section id="talks" class="card">
       <h2>Talks &amp; Presentations</h2>
       <ul class="tight">
@@ -177,15 +197,16 @@
 
     <section id="contact" class="card">
       <h2>Contact</h2>
+      <!-- FIXED: clickable email -->
       <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
     </section>
 
     <footer>
-      <p>© <span id="year">2025</span> Pathak Shubham Parashar.</p>
+      <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
 
   <a href="#top" class="to-top" id="toTop" aria-label="Back to top">↑ Top</a>
-  <script defer src="/assets/js/site.js?v=pubs-final"></script>
+  <script defer src="/assets/js/site.js?v=fixes-1"></script>
 </body>
 </html>
