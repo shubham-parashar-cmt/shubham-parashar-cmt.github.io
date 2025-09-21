@@ -4,24 +4,69 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pathak Shubham Parashar — Academic Profile</title>
-  <meta name="description" content="Researcher at UC San Diego focusing on quantum Hall physics, magneto-transport, and correlated 2D systems.">
+  <meta name="description" content="Researcher at UC San Diego focusing on quantum transport in 2D, correlated electrons, and topological phases.">
   <meta name="color-scheme" content="light dark">
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/MinionPro-Regular.woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/site.css?v=recruiter2">
+  <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
+
+  <!-- Existing site styles (keep yours) -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=base">
+
+  <!-- Compact overrides (you can move these into your CSS later) -->
+  <style>
+    :root{
+      --space-2:8px; --space-3:12px; --space-4:16px; --radius:10px; --border:#e5e7eb;
+    }
+    body{ line-height:1.5; margin:0 }
+    .wrap{ max-width:860px; margin:0 auto; padding:var(--space-3) }
+    .card{ border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-3); margin-bottom:var(--space-3); background:var(--card, #fff) }
+
+    h1,h2,h3{ margin:0 0 var(--space-2); font-variant-caps:small-caps; letter-spacing:.03em; line-height:1.25 }
+    h1{ font-size:1.45rem } h2{ font-size:1.1rem } h3{ font-size:1rem }
+    p{ margin:0 0 var(--space-3) }
+    .muted{ opacity:.8 }
+    .mono{ font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace }
+
+    nav{ display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center; justify-content:space-between }
+    .brand{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit }
+    .brand .avatar{ width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid var(--border) }
+    .brand .name{ font-weight:600; font-variant-caps:small-caps; letter-spacing:.04em }
+    .navlinks{ display:flex; flex-wrap:wrap; gap:8px; align-items:center }
+    .navlinks a{ padding:4px 6px; border-radius:8px; text-decoration:none }
+    .navlinks a:hover{ background:rgba(29,78,216,.07) }
+
+    .tight{ margin:.15rem 0 .3rem 1rem }
+    .tight li{ margin:1px 0 }
+
+    /* Awards: year on the right */
+    .cv-awards{ display:grid; row-gap:4px }
+    .cv-awards .year{ float:right; opacity:.75 }
+
+    /* Timeline */
+    .tl-item{ display:grid; grid-template-columns:88px 1fr; gap:12px; padding:8px 0; border-top:1px dashed var(--border) }
+    .tl-item:first-child{ border-top:none }
+    .tl-date{ font-family:ui-monospace, Menlo, Consolas, monospace; opacity:.7 }
+
+    /* Two-up grid on desktop */
+    @media (min-width: 960px){
+      .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
+    }
+  </style>
+
   <meta property="og:title" content="Pathak Shubham Parashar — Academic Profile">
-  <meta property="og:description" content="Hydrodynamics & quantum transport in 2D; correlated electrons; non-Hermitian & topological phases.">
+  <meta property="og:description" content="Quantum transport in 2D; correlated electrons; topological phases.">
   <meta property="og:image" content="/nav-avatar.jpg">
   <meta property="og:type" content="profile">
-  <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a>
+  <a href="#main" class="skip" style="position:absolute;left:-9999px;">Skip to content</a>
+
   <header class="wrap" role="banner">
     <nav aria-label="Primary">
       <a class="brand" href="#top">
-        <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56">
+        <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="40" height="40" loading="eager" decoding="async">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
+
       <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -34,8 +79,9 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
+
       <div class="navlinks" id="quicklinks" aria-label="External quick links">
-        <a href="/cv.html" class="btn btn-primary">CV</a>
+        <a href="/cv.html" class="btn">CV</a>
         <a href="mailto:psparash@ucsd.edu">Email</a>
         <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
         <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
@@ -45,50 +91,66 @@
   </header>
 
   <main id="main" class="wrap" role="main">
+    <!-- Hero -->
     <section class="hero card" id="top">
       <h1>Pathak Shubham Parashar</h1>
-        <p class="tagline">Researcher, UC San Diego — quantum transport in 2D; correlated electrons; topological phases.</p>
-        <p class="muted">Current focus: diffusive-to-ballistic crossover in graphene magnetotransport.</p>
-
+      <p class="tagline">Researcher, UC San Diego — quantum transport in 2D; correlated electrons; topological phases.</p>
+      <p class="muted">Current focus: diffusive-to-ballistic crossover in graphene magnetotransport.</p>
     </section>
 
-    <section id="about" class="card">
-      <h2>About</h2>
-      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also explore <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>.</p>
-    </section>
+    <!-- Two-up: Research + Publications -->
+    <div class="grid-2">
+      <section id="research" class="card">
+        <h2>Research</h2>
+        <ul class="tight">
+          <li><strong>Hydrodynamics &amp; Turbulence</strong> — DNS of 2+1D advection; renormalization-group scaling laws.</li>
+          <li><strong>Correlated Electrons &amp; Transport</strong> — marginal Fermi liquids; symplectic <em>Sp(2N)</em> Hertz–Millis; non-associative operators.</li>
+          <li><strong>Non-Hermitian &amp; Lattice Theory</strong> — extensions of the Nielsen–Ninomiya constraints.</li>
+          <li><strong>Topological Phases</strong> — quantum double models in 3+1D.</li>
+        </ul>
+      </section>
 
-    <section id="research" class="card">
-      <h2>Research</h2>
-      <ul class="tight">
-        <li><strong>Hydrodynamics &amp; Turbulence</strong> — DNS of 2+1D advection; renormalization-group scaling laws.</li>
-        <li><strong>Correlated Electrons &amp; Transport</strong> — marginal Fermi liquids; symplectic <em>Sp(2N)</em> Hertz–Millis; non-associative operators.</li>
-        <li><strong>Non-Hermitian &amp; Lattice Theory</strong> — extensions of the Nielsen–Ninomiya constraints.</li>
-        <li><strong>Topological Phases</strong> — quantum double models in 3+1D.</li>
-      </ul>
-    </section>
+      <section id="publications" class="card">
+        <h2>Publications — Published</h2>
+        <ul class="tight">
+          <li><strong>Towards an exact factorization of the molecular wave function</strong><br>
+            S. Parashar, Y. Sajeev, S. K. Ghosh. <em>Molecular Physics</em> 113(19–20): 3067–3072 (2015).
+            <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">link</a>
+          </li>
+        </ul>
+        <h3>In preparation</h3>
+        <ul class="tight">
+          <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
+              P. Shubham Parashar, M. M. Fogler (2025)</li>
+          <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
+              Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
+          <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
+              Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
+          <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
+              Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
+        </ul>
+      </section>
+    </div>
 
+    <!-- Selected Work (collapsible to save space) -->
     <section id="projects" class="card">
       <h2>Selected Work</h2>
-      <ul class="tight">
-        <li><strong>DNS of turbulent advection (2+1D):</strong> direct numerical simulation & scaling diagnostics.</li>
-        <li><strong>RG for turbulence:</strong> renormalization-group derivations and tests of scaling laws.</li>
-        <li><strong>QMC for adiabatic processes:</strong> quantum Monte Carlo codes & benchmarks — <em>MEXT Fellow, JAIST</em>.</li>
-        <li><strong>Marginal Fermi liquids in 2D:</strong> transport signatures & phenomenology.</li>
-        <li><strong>Non-associative operators in condensed matter:</strong> algebraic structures & observables.</li>
-        <li><strong>Non-Hermitian lattice fermions:</strong> reshaping Nielsen–Ninomiya constraints.</li>
-      </ul>
+      <details>
+        <summary>Show 6 highlights</summary>
+        <ul class="tight">
+          <li><strong>DNS of turbulent advection (2+1D)</strong> — direct numerical simulation & scaling diagnostics.</li>
+          <li><strong>RG for turbulence</strong> — derivations and tests of scaling laws.</li>
+          <li><strong>QMC for adiabatic processes</strong> — quantum Monte Carlo codes & benchmarks — <em>MEXT Fellow, JAIST</em>.</li>
+          <li><strong>Marginal Fermi liquids in 2D</strong> — transport signatures & phenomenology.</li>
+          <li><strong>Non-associative operators in condensed matter</strong> — algebraic structures & observables.</li>
+          <li><strong>Non-Hermitian lattice fermions</strong> — reshaping Nielsen–Ninomiya constraints.</li>
+        </ul>
+      </details>
     </section>
 
+    <!-- Experience -->
     <section id="experience" class="card">
       <h2>Experience</h2>
-      <div class="tl-item">
-        <div class="tl-date">2015–2016</div>
-        <div>
-          <strong>Research Intern</strong>, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan<br>
-          <em>Supervisor:</em> Prof. Ryo Maezono &nbsp;·&nbsp; <em>Fellowship:</em> MEXT Research Fellowship<br>
-          <span class="muted">Work:</span> Quantum Monte Carlo (QMC) methods for correlated electron systems.
-        </div>
-      </div>
       <div class="tl-item">
         <div class="tl-date">2012–2013</div>
         <div>
@@ -96,29 +158,17 @@
           <em>Mentor:</em> Prof. Swapan Kumar Ghosh
         </div>
       </div>
+      <div class="tl-item">
+        <div class="tl-date">2015–2016</div>
+        <div>
+          <strong>Research Intern</strong>, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan<br>
+          <em>Supervisor:</em> Prof. Ryo Maezono &nbsp;·&nbsp; <em>Fellowship:</em> MEXT Research Fellowship<br>
+          <span class="muted">Focus:</span> Quantum Monte Carlo (QMC) methods for correlated electron systems.
+        </div>
+      </div>
     </section>
 
-    <section id="publications" class="card">
-      <h2>Publications — published</h2>
-      <ul class="tight">
-        <li><strong>Towards an exact factorization of the molecular wave function</strong><br>
-          S. Parashar, Y. Sajeev, S. K. Ghosh. <em>Molecular Physics</em> 113(19–20): 3067–3072 (2015).
-          <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">link</a>
-        </li>
-      </ul>
-      <h2>Publications — in preparation</h2>
-      <ul class="tight">
-        <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
-            P. Shubham Parashar, M. M. Fogler (2025)</li>
-        <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
-            Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
-        <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
-            Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
-        <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
-            Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
-      </ul>
-    </section>
-
+    <!-- Awards -->
     <section id="awards" class="card">
       <h2>Awards &amp; Grants</h2>
       <div class="cv-awards">
@@ -130,27 +180,37 @@
       </div>
     </section>
 
+    <!-- Coursework (collapsed) -->
     <section id="coursework" class="card">
       <h2>Selected Graduate Coursework</h2>
-      <ul class="tight">
-        <li><strong>PHYS 230 — Advanced Solid-State Physics</strong> (A+)</li>
-        <li><strong>PHYS 211B — Solid-State Physics II</strong> (A)</li>
-        <li><strong>PHYS 239 — Phases of Quantum Matter</strong> (A)</li>
-        <li><strong>PHYS 239 — Optics of Quantum Materials</strong> (A)</li>
-        <li><strong>PHYS 215A/215B — Particles &amp; Fields (Quantum Field Theory I &amp; II)</strong> (A, A+)</li>
-        <li><strong>PHYS 217 — Field Theory / Renormalization Group</strong> (A)</li>
-        <li><strong>PHYS 220 — Group Theoretical Methods in Physics</strong> (A)</li>
-        <li><strong>PHYS 201 — Mathematical Physics</strong> (A+)</li>
-      </ul>
+      <details>
+        <summary>Show courses</summary>
+        <ul class="tight">
+          <li><strong>PHYS 230 — Advanced Solid-State Physics</strong> (A+)</li>
+          <li><strong>PHYS 211B — Solid-State Physics II</strong> (A)</li>
+          <li><strong>PHYS 239 — Phases of Quantum Matter</strong> (A)</li>
+          <li><strong>PHYS 239 — Optics of Quantum Materials</strong> (A)</li>
+          <li><strong>PHYS 215A/215B — Particles &amp; Fields (Quantum Field Theory I &amp; II)</strong> (A, A+)</li>
+          <li><strong>PHYS 217 — Field Theory / Renormalization Group</strong> (A)</li>
+          <li><strong>PHYS 220 — Group Theoretical Methods in Physics</strong> (A)</li>
+          <li><strong>PHYS 201 — Mathematical Physics</strong> (A+)</li>
+        </ul>
+      </details>
     </section>
 
+    <!-- Teaching (collapsed) -->
     <section id="teaching" class="card">
       <h2>Teaching &amp; Instruction</h2>
-      <ul class="tight">
-        <li><strong>PHYS 500 — Introduction to Physics Teaching</strong>, UC San Diego — Grade: S (Fall 2017)</li>
-      </ul>
+      <details>
+        <summary>Show details</summary>
+        <ul class="tight">
+          <li><strong>PHYS 500 — Introduction to Physics Teaching</strong>, UC San Diego — Grade: S (Fall 2017)</li>
+          <li>Subject areas: condensed matter &amp; transport; quantum mechanics; quantum field theory; field theory/RG; group theory; mathematical physics.</li>
+        </ul>
+      </details>
     </section>
 
+    <!-- Talks (short list) -->
     <section id="talks" class="card">
       <h2>Talks &amp; Presentations</h2>
       <ul class="tight">
@@ -160,6 +220,7 @@
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
@@ -169,5 +230,10 @@
       <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
     </footer>
   </main>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
