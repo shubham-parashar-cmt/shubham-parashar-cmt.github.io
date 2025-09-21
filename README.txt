@@ -1,6 +1,12 @@
-Upload these two files to your repo root (shubham-parashar-cmt.github.io/):
+Upload bundle — refreshed CV with headshot + light-first colors
+---------------------------------------------------------------
+Included:
+  - cv.pdf        (refreshed; headshot in header; clean layout)
+  - index.html    (your latest homepage; already pointing to /cv.html + /cv.pdf in new tab from earlier step)
+  - cv.html       (web CV page with embedded PDF preview)
+  - assets/css/colors.css  (light-first color scheme; dark override)
 
-1) index.html  — navbar now links to /cv.html (web CV) and to /cv.pdf in a new tab.
-2) cv.html     — web CV page with embedded PDF preview and a 'Open PDF in new tab' button.
-
-Make sure cv.pdf is in the repo root so /cv.pdf works. Then hard refresh (Safari: ⌘⌥R).
+How to deploy:
+  1) Drop all files/folders into your repo root (shubham-parashar-cmt.github.io/).
+  2) Ensure /cv.pdf is at the root and /assets/css/colors.css is in place.
+  3) Commit, then hard refresh (Safari: ⌘⌥R).
