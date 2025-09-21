@@ -1,0 +1,18 @@
+/* Color Safety Net: Light-first with Dark override */
+:root{
+  --bg:#ffffff; --text:#121417; --muted:#5b6470; --card:#ffffff; --border:#e5e7eb;
+  --nav:#ffffffcc; --link:#0b5fff; --badge-bg:#eef2ff; --badge-text:#1f3a8a; --chip-bg:#f6f8fa;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0f14; --text:#e6e8eb; --muted:#9aa4b2; --card:#0f141a; --border:#1f2a37;
+    --nav:#0b0f14cc; --link:#7aa2ff; --badge-bg:#172554; --badge-text:#c7d2fe; --chip-bg:#0b1220;
+  }
+}
+html, body{background:var(--bg); color:var(--text);}
+a{color:var(--link);} .muted{color:var(--muted);}
+.card{background:var(--card); border:1px solid var(--border); border-radius:12px;}
+header nav{background:var(--nav); backdrop-filter:saturate(120%) blur(8px);}
+.badge{background:var(--badge-bg); color:var(--badge-text); padding:.18rem .5rem; border-radius:999px; font-size:.85em;}
+.chips{background:var(--chip-bg); padding:.35rem .5rem; border-radius:10px; display:inline-flex; gap:.35rem;}
+body, .card, header, footer{color:var(--text) !important; background:var(--bg);}

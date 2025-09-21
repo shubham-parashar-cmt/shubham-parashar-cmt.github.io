@@ -1,0 +1,11 @@
+@media print{
+  @page{size:Letter;margin:.6in}
+  :root{color-scheme:light}
+  body{color:#000;background:#fff;font-family:Times,serif;font-size:11pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header,nav,footer,.to-top,.progress{display:none!important}
+  .cv-page{box-shadow:none;background:transparent;padding:0;margin:0}
+  h1,h2,h3{break-after:avoid;color:#000}
+  .tl-item,.cv-pub{break-inside:avoid}
+  .cv-awards p{margin:0 0 4pt}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt}
+}
