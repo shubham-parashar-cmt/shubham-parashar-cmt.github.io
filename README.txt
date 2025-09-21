@@ -1,12 +1,10 @@
-Upload bundle — refreshed CV with headshot + light-first colors
----------------------------------------------------------------
-Included:
-  - cv.pdf        (refreshed; headshot in header; clean layout)
-  - index.html    (your latest homepage; already pointing to /cv.html + /cv.pdf in new tab from earlier step)
-  - cv.html       (web CV page with embedded PDF preview)
-  - assets/css/colors.css  (light-first color scheme; dark override)
+Changes in this bundle
+----------------------
+• Removed the redundant “At a Glance” card on the homepage.
+• Added “KVPY Scholarship (2012–2017)” to Awards on both homepage and CV.
+• Regenerated cv.pdf with the headshot and the new KVPY item.
 
-How to deploy:
-  1) Drop all files/folders into your repo root (shubham-parashar-cmt.github.io/).
-  2) Ensure /cv.pdf is at the root and /assets/css/colors.css is in place.
-  3) Commit, then hard refresh (Safari: ⌘⌥R).
+Upload steps
+1) Replace your /index.html and /cv.html with the ones in this zip.
+2) Replace /cv.pdf at the repo root with the new one.
+3) Commit and hard refresh (Safari: ⌘⌥R).
