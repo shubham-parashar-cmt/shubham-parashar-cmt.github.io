@@ -1,90 +1,63 @@
 
-/* === Self-hosted Minion Pro (WOFF2) === */
-@font-face{
-  font-family:"Minion Pro Web";
-  src:url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
-  font-weight:400; font-style:normal; font-display:swap;
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
 }
-@font-face{
-  font-family:"Minion Pro Web";
-  src:url("/assets/fonts/MinionPro-It.woff2") format("woff2");
-  font-weight:400; font-style:italic; font-display:swap;
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionPro-It.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
 }
-@font-face{
-  font-family:"Minion Pro Web";
-  src:url("/assets/fonts/MinionPro-Semibold.woff2") format("woff2");
-  font-weight:600; font-style:normal; font-display:swap;
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionPro-Semibold.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
 }
-@font-face{
-  font-family:"Minion Pro Web";
-  src:url("/assets/fonts/MinionPro-SemiboldIt.woff2") format("woff2");
-  font-weight:600; font-style:italic; font-display:swap;
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/assets/fonts/MinionPro-SemiboldIt.woff2") format("woff2");
+  font-weight: 600; font-style: italic; font-display: swap;
 }
-@font-face{
-  font-family:"Minion Pro Web";
-  src:url("/assets/fonts/MinionPro-Bold.woff2") format("woff2");
-  font-weight:700; font-style:normal; font-display:swap;
-}
-
 :root{
-  --bg:#070b14; --panel:#0c1220; --panel-2:#0e162a;
-  --muted:#9fb0c8; --text:#e8edf4; --line:#1c2742;
-  --accent:#10b981; --accent-2:#a78bfa; --ring:rgba(124,131,255,.28);
-  --w:1100px; --shadow:0 10px 36px rgba(0,0,0,.35);
-  --grad:radial-gradient(60% 90% at 20% 10%, rgba(124,131,255,.18), transparent 60%),
-         radial-gradient(40% 70% at 90% 20%, rgba(34,211,238,.18), transparent 60%),
-         radial-gradient(50% 80% at 60% 120%, rgba(34,211,238,.1), transparent 60%);
+  --space-1: 6px; --space-2: 10px; --space-3: 16px; --space-4: 24px; --space-5: 36px;
+  --radius: 12px; --border: #e5e7eb;
+  --text: #0b0b0c; --muted: #475569; --brand: #1d4ed8;
+  --card: #ffffff; --bg: #fafafa;
 }
-@media (prefers-color-scheme: light){
-  :root{ --bg:#f7fafc; --panel:#ffffff; --panel-2:#ffffff; --muted:#475569; --text:#0f172a; --line:#e5e7eb; --accent:#0891b2; --accent-2:#4f46e5; --ring:rgba(79,70,229,.18);
-         --grad: radial-gradient(60% 90% at 20% 10%, rgba(79,70,229,.10), transparent 60%), radial-gradient(40% 70% at 90% 20%, rgba(8,145,178,.10), transparent 60%); }
+@media (prefers-color-scheme: dark){
+  :root{ --border:#2a2f3a; --text:#e8eaed; --muted:#94a3b8; --card:#0f172a; --bg:#0b1020; }
 }
-*{box-sizing:border-box} html,body{margin:0}
-body{
-  font:17px/1.65 "Minion Pro Web","Minion Pro", ui-serif, Georgia, serif;
-  font-synthesis:none; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  background:var(--bg); color:var(--text);
-  background-image:var(--grad),
-                   radial-gradient(1200px 800px at 10% -10%, rgba(255,255,255,.04), transparent 42%),
-                   radial-gradient(900px 700px at 110% 10%, rgba(255,255,255,.03), transparent 46%),
-                   radial-gradient(800px 600px at 50% 120%, rgba(255,255,255,.035), transparent 50%);
-}
-.wrap{max-width:var(--w); margin:0 auto; padding:24px}
-a{color:var(--accent); text-decoration:none} a:hover{filter:brightness(1.08)}
-.card{background:linear-gradient(180deg, rgba(12,18,32,.96), rgba(14,22,42,.98)) padding-box,
-      linear-gradient(120deg, color-mix(in oklab, var(--accent) 55%, transparent), color-mix(in oklab, var(--accent-2) 55%, transparent)) border-box;
-      border:1px solid transparent; border-radius:18px; padding:22px; box-shadow:var(--shadow); backdrop-filter: blur(8px) saturate(120%)}
-h1,h2,h3,.name,.navlinks a,.btn{ font-family:"Minion Pro Web","Minion Pro", ui-serif, Georgia, serif; }
-h1,h2,h3,.name{ font-variant-caps:small-caps; font-feature-settings:"smcp" 1; letter-spacing:.06em; font-weight:600; }
-h1{ font-size:clamp(32px,4vw,52px); margin:0 0 10px; background:linear-gradient(90deg,var(--text),#cfe6ff); -webkit-background-clip:text; color:transparent }
-h2{ font-size:clamp(22px,2.6vw,32px); margin:8px 0 12px; }
-.muted{color:#9fb0c8}
-header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px)}
-nav{display:flex; align-items:center; justify-content:space-between; gap:14px; background:rgba(12,18,32,.86); border:1px solid rgba(232,237,244,.12); padding:10px 14px; border-radius:14px}
-.brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
-.avatar{width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center; border:2px solid #fff}
-.navlinks{display:flex; gap:10px; flex-wrap:wrap}
-.navlinks a{color:#9fb0c8; padding:6px 10px; border-radius:10px; font-weight:600}
-.navlinks a:hover{color:#fff; background:rgba(124,131,255,.18)}
-.badge{display:inline-block; font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid #1c2742; color:#9fb0c8}
-.badge-year{color:#fff; font-weight:700; background:linear-gradient(90deg, var(--accent), var(--accent-2)); border-color:transparent}
-.input{width:100%; padding:12px 14px; border-radius:12px; border:1px solid #1c2742; background:rgba(255,255,255,.03); color:#e8edf4}
-.pub{padding:14px; border-left:3px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%); background:rgba(255,255,255,.03); border-radius:12px}
-.pub-actions{margin-top:6px; display:flex; gap:10px; flex-wrap:wrap}
-footer{margin:44px 0 10px; color:#9fb0c8; text-align:center}
-.to-top{position:fixed; right:18px; bottom:18px; opacity:0; pointer-events:none; transition:opacity .25s}
-.to-top.show{opacity:1; pointer-events:auto}
-/* CV */
-.cv-page{max-width:900px; margin:0 auto; padding:28px}
-.cv-pub{ margin:0 0 6px; text-indent:-1.2em; padding-left:1.2em; }
-.cv-venue{ font-style:italic; color:#9fb0c8; }
-.tl-item{ display:grid; grid-template-columns:120px 1fr; gap:12px; margin:8px 0; }
-.tl-date{ font-weight:700; white-space:nowrap; }
-.cv-awards .year{ display:inline-block; padding:1px 7px; border:1px solid #e2e8f0; border-radius:999px; font-size:12px; margin-left:6px; color:#334155; }
-@media print{
-  @page{ size:A4; margin:12mm 14mm }
-  body{ font-family:"Minion Pro Web","Minion Pro", ui-serif, Georgia, serif; font-size:11pt; line-height:1.45; background:#fff; color:#000 }
-  h1,h2,h3,.name{ font-variant-caps: small-caps; letter-spacing:.04em; }
-  .cv-pub, li, .tl-item{ break-inside:avoid }
-  a::after{ content:"" }
-}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0; background:var(--bg); color:var(--text); font-family:"Minion Pro","Source Serif 4","Iowan Old Style","Constantia","Georgia",serif; line-height:1.6}
+.wrap{max-width:880px; margin:0 auto; padding:var(--space-4) var(--space-3)}
+.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-4); margin-bottom:var(--space-4)}
+h1,h2,h3{font-variant-caps: small-caps; letter-spacing:.04em; line-height:1.25; margin:0 0 var(--space-3)}
+h1{font-size:1.9rem} h2{font-size:1.35rem} h3{font-size:1.1rem}
+p{margin:0 0 var(--space-3)}
+nav{display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center; justify-content:space-between}
+.brand{display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit}
+.brand .avatar{width:48px; height:48px; border-radius:50%; object-fit:cover; border:1px solid var(--border)}
+.brand .name{font-weight:600; font-variant-caps:small-caps; letter-spacing:.04em}
+.navlinks{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.navlinks a{text-decoration:none; padding:6px 8px; border-radius:10px}
+.navlinks a:hover{background:rgba(29,78,216,.07)}
+.hero .tagline{font-size:1.05rem}
+.muted{color:var(--muted)}
+.mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+.tight{margin:.25rem 0 .5rem 1.25rem}
+.tight li{margin:2px 0}
+.btn{display:inline-block; padding:.45rem .7rem; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:inherit; background:transparent}
+.btn:hover{background:rgba(29,78,216,.05)}
+.btn-primary{border-color:var(--brand); color:var(--brand)}
+.btn-primary:hover{background:rgba(29,78,216,.08)}
+.cv-awards{display:grid; row-gap:6px}
+.cv-awards .year{float:right; opacity:.75}
+.tl-item{display:grid; grid-template-columns:90px 1fr; gap:12px; padding:10px 0; border-top:1px dashed var(--border)}
+.tl-item:first-child{border-top:none}
+.tl-date{font-family:ui-monospace,Menlo,Consolas,monospace; color:var(--muted)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:12px; top:12px; background:var(--card); padding:8px 10px; border:1px solid var(--border); border-radius:8px; z-index:999}
+a:focus{outline:2px solid var(--brand); outline-offset:2px}
+a:visited{opacity:.92}
