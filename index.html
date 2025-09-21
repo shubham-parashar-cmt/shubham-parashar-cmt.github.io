@@ -4,15 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pathak Shubham Parashar — Academic Profile</title>
+  <meta name="description" content="Researcher at UC San Diego focusing on quantum Hall physics, magneto-transport, and correlated 2D systems.">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="/assets/css/site.css?v=fixes-3">
-  <link rel="stylesheet" href="/assets/css/colors.css?v=1">
-  <style>
-    .cv-awards { display:grid; row-gap:6px; }
-    .cv-awards .year { float:right; opacity:.75; }
-  </style>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/MinionPro-Regular.woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css?v=recruiter2">
+  <meta property="og:title" content="Pathak Shubham Parashar — Academic Profile">
+  <meta property="og:description" content="Hydrodynamics & quantum transport in 2D; correlated electrons; non-Hermitian & topological phases.">
+  <meta property="og:image" content="/nav-avatar.jpg">
+  <meta property="og:type" content="profile">
+  <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
 </head>
 <body>
+  <a href="#main" class="skip">Skip to content</a>
   <header class="wrap" role="banner">
     <nav aria-label="Primary">
       <a class="brand" href="#top">
@@ -31,9 +34,8 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="navlinks" id="quicklinks">
-        <a href="/cv.html">CV</a>
-        <a href="/cv.pdf" target="_blank" rel="noopener">PDF</a>
+      <div class="navlinks" id="quicklinks" aria-label="External quick links">
+        <a href="/cv.html" class="btn btn-primary">CV</a>
         <a href="mailto:psparash@ucsd.edu">Email</a>
         <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
         <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
@@ -43,11 +45,10 @@
   </header>
 
   <main id="main" class="wrap" role="main">
-    <section class="hero" id="top">
-      <div class="card">
-        <h1>Pathak Shubham Parashar</h1>
-        <p class="tagline">Researcher @ <strong>UC San Diego</strong> — hydrodynamics &amp; quantum transport in 2D; correlated electrons; non-Hermitian &amp; topological phases.</p>
-      </div>
+    <section class="hero card" id="top">
+      <h1>Pathak Shubham Parashar</h1>
+      <p class="tagline">Researcher @ <strong>UC San Diego</strong> — hydrodynamics &amp; quantum transport in 2D; correlated electrons; non-Hermitian &amp; topological phases.</p>
+      <p class="muted mono">Now: diffusive→ballistic crossover in graphene magnetotransport.</p>
     </section>
 
     <section id="about" class="card">
@@ -62,7 +63,18 @@
         <li><strong>Correlated Electrons &amp; Transport</strong> — marginal Fermi liquids; symplectic <em>Sp(2N)</em> Hertz–Millis; non-associative operators.</li>
         <li><strong>Non-Hermitian &amp; Lattice Theory</strong> — extensions of the Nielsen–Ninomiya constraints.</li>
         <li><strong>Topological Phases</strong> — quantum double models in 3+1D.</li>
-        <li><strong>Gravitation &amp; HEP</strong> — black-hole inspirals (D &gt; 5); CPV in SUSY Pati–Salam / SO(10).</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Selected Work</h2>
+      <ul class="tight">
+        <li><strong>DNS of turbulent advection (2+1D):</strong> direct numerical simulation & scaling diagnostics.</li>
+        <li><strong>RG for turbulence:</strong> renormalization-group derivations and tests of scaling laws.</li>
+        <li><strong>QMC for adiabatic processes:</strong> quantum Monte Carlo codes & benchmarks — <em>MEXT Fellow, JAIST</em>.</li>
+        <li><strong>Marginal Fermi liquids in 2D:</strong> transport signatures & phenomenology.</li>
+        <li><strong>Non-associative operators in condensed matter:</strong> algebraic structures & observables.</li>
+        <li><strong>Non-Hermitian lattice fermions:</strong> reshaping Nielsen–Ninomiya constraints.</li>
       </ul>
     </section>
 
@@ -144,8 +156,6 @@
         <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
         <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
         <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
-        <li><strong>Non-associative operators inspired from string theory</strong> — APS March Meeting, 2019</li>
-        <li><strong>Quantum double models in icosahedral structures</strong> — UC Irvine, 2018</li>
       </ul>
     </section>
 
@@ -153,6 +163,10 @@
       <h2>Contact</h2>
       <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
     </section>
+
+    <footer class="wrap" role="contentinfo">
+      <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
+    </footer>
   </main>
 </body>
 </html>
