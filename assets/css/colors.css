@@ -1,4 +1,4 @@
-/* Color Safety Net: Light-first with Dark override */
+/* Light-first color scheme with dark override */
 :root{
   --bg:#ffffff; --text:#121417; --muted:#5b6470; --card:#ffffff; --border:#e5e7eb;
   --nav:#ffffffcc; --link:#0b5fff; --badge-bg:#eef2ff; --badge-text:#1f3a8a; --chip-bg:#f6f8fa;
