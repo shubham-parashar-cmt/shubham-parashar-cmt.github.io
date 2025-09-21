@@ -8,23 +8,19 @@
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
 
-  <!-- Existing site styles (keep yours) -->
+  <!-- Your existing stylesheet -->
   <link rel="stylesheet" href="/assets/css/site.css?v=base">
 
-  <!-- Compact overrides (you can move these into your CSS later) -->
+  <!-- Minimal compact overrides + Projects layout (safe to inline) -->
   <style>
-    :root{
-      --space-2:8px; --space-3:12px; --space-4:16px; --radius:10px; --border:#e5e7eb;
-    }
+    :root{ --space-2:8px; --space-3:12px; --space-4:16px; --radius:10px; --border:#e5e7eb; }
     body{ line-height:1.5; margin:0 }
     .wrap{ max-width:860px; margin:0 auto; padding:var(--space-3) }
     .card{ border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-3); margin-bottom:var(--space-3); background:var(--card, #fff) }
-
     h1,h2,h3{ margin:0 0 var(--space-2); font-variant-caps:small-caps; letter-spacing:.03em; line-height:1.25 }
     h1{ font-size:1.45rem } h2{ font-size:1.1rem } h3{ font-size:1rem }
     p{ margin:0 0 var(--space-3) }
     .muted{ opacity:.8 }
-    .mono{ font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace }
 
     nav{ display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center; justify-content:space-between }
     .brand{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit }
@@ -49,6 +45,18 @@
     /* Two-up grid on desktop */
     @media (min-width: 960px){
       .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
+    }
+
+    /* Selected Work grid */
+    .projects{display:grid;gap:14px}
+    .projects li{list-style:none;margin:0;padding:0}
+    .projects figure{display:grid;grid-template-columns:180px 1fr;gap:14px;align-items:start;margin:0}
+    .projects img{width:180px;height:120px;object-fit:cover;border:1px solid var(--border);border-radius:10px}
+    .projects figcaption{margin:0}
+    .projects .muted{display:block;opacity:.75;margin-top:2px;font-size:.95em}
+    @media (max-width:640px){
+      .projects figure{grid-template-columns:1fr}
+      .projects img{width:100%;height:auto}
     }
   </style>
 
@@ -132,20 +140,59 @@
       </section>
     </div>
 
-    <!-- Selected Work (collapsible to save space) -->
+    <!-- Selected Work (PREVIOUS version + your edits) -->
     <section id="projects" class="card">
       <h2>Selected Work</h2>
-      <details>
-        <summary>Show 6 highlights</summary>
-        <ul class="tight">
-          <li><strong>DNS of turbulent advection (2+1D)</strong> — direct numerical simulation & scaling diagnostics.</li>
-          <li><strong>RG for turbulence</strong> — derivations and tests of scaling laws.</li>
-          <li><strong>QMC for adiabatic processes</strong> — quantum Monte Carlo codes & benchmarks — <em>MEXT Fellow, JAIST</em>.</li>
-          <li><strong>Marginal Fermi liquids in 2D</strong> — transport signatures & phenomenology.</li>
-          <li><strong>Non-associative operators in condensed matter</strong> — algebraic structures & observables.</li>
-          <li><strong>Non-Hermitian lattice fermions</strong> — reshaping Nielsen–Ninomiya constraints.</li>
-        </ul>
-      </details>
+      <ul class="tight projects">
+        <li>
+          <figure>
+            <img src="/assets/projects/dns-turbulence-thumb.webp" alt="DNS of turbulent advection (3D)">
+            <figcaption>
+              <strong>DNS of turbulent advection (3D)</strong> — Direct numerical simulations of light-inertial particle trajectories and time-irreversibility diagnostics in homogeneous, isotropic turbulence.
+              <span class="muted">Undergraduate thesis project (IISc).</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/assets/projects/ms-closures-particles-thumb.webp" alt="Turbulence closure schemes survey">
+            <figcaption>
+              <strong>Light inertial particles &amp; closures</strong> — Survey of Eulerian, Lagrangian, and quasi-Lagrangian closure schemes for 3D turbulence.
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/assets/projects/kitaev-nonabelian-thumb.webp" alt="Non-Abelian Kitaev models (ribbon operators)">
+            <figcaption>
+              <strong>Non-Abelian Kitaev models</strong> — Notes on ribbon-operator algebras, condensation and confinement when single-qudit terms reduce gauge symmetry.
+              <span class="muted">Reading notes (arXiv:0712.0190).</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/assets/projects/kac-moody-notes-thumb.webp" alt="Affine Kac–Moody & Virasoro notes">
+            <figcaption>
+              <strong>Affine Kac–Moody &amp; Virasoro</strong> — Personal notes on unitary highest-weight representations, central extensions, and <em>Sugawara structures</em>.
+              <span class="muted">Course/reading notes.</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="/assets/projects/bh-inspiral-eft-thumb.webp" alt="Binary inspiral EFT notes">
+            <figcaption>
+              <strong>Binary inspiral EFT</strong> — Worldline effective field theory for compact binaries, finite-size effects, Love numbers, and matching.
+              <span class="muted">Research notes.</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
     </section>
 
     <!-- Experience -->
