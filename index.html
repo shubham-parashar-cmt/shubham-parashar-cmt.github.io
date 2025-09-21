@@ -6,8 +6,8 @@
   <title>Pathak Shubham Parashar — Academic Profile</title>
   <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
   <meta name="color-scheme" content="dark light">
-  <!-- Preload the small avatar used in the nav -->
-  <link rel="preload" as="image" href="/assets/img/nav-avatar.jpg?v=3" imagesrcset="/assets/img/nav-avatar.jpg?v=3" imagesizes="56px">
+  <!-- Preload the small avatar used in the nav (path matches your repo root) -->
+  <link rel="preload" as="image" href="/nav-avatar.jpg" imagesrcset="/nav-avatar.jpg" imagesizes="56px">
   <!-- Uses your Minion Pro themed stylesheet -->
   <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
 </head>
@@ -18,7 +18,7 @@
     <nav aria-label="Primary">
       <!-- Brand (left) -->
       <a class="brand" href="#top">
-        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
+        <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
 
@@ -29,7 +29,7 @@
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#awards">Awards</a>
-        <!-- Keep "Teaching" as-is; we’ll handle in Step 2 -->
+        <!-- Keep "Teaching" as plain text for now (we'll convert it in Step 2) -->
         Teaching
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
@@ -94,7 +94,10 @@
       <h2>Publications (in preparation)</h2>
       <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., graphene, 2025)…" />
       <div id="pubList" style="margin-top:14px; display:grid; gap:12px"></div>
-      <p class="mono muted" style="margin-top:10px">Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.</p>
+      <p class="mono muted" style="margin-top:10px">
+        Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.
+      </p>
     </section>
 
     <section id="awards" class="card">
