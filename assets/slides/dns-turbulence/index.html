@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DNS of Turbulent Advection (3D)</title><meta name="color-scheme" content="light dark">
+<style>
+:root { --bg:#0b1020; --fg:#e8eaed; }
+@media (prefers-color-scheme: light){ :root{ --bg:#fafafa; --fg:#0b0b0c; } }
+*{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif}
+.header{position:fixed;inset:0 0 auto 0;padding:12px 16px;display:flex;gap:10px;align-items:center;z-index:5;
+background:linear-gradient(180deg,rgba(0,0,0,.35),transparent)} .title{font-weight:600}
+.viewer{position:fixed;inset:0;display:grid;place-items:center;padding:56px 10px 68px}
+.slide{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.45);
+border:1px solid rgba(255,255,255,.12);background:#000;object-fit:contain}
+.controls{position:fixed;inset:auto 0 0 0;display:flex;justify-content:center;gap:10px;padding:10px;z-index:5;
+background:linear-gradient(0deg,rgba(0,0,0,.35),transparent)}
+.btn{appearance:none;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--fg);
+padding:8px 10px;border-radius:10px;cursor:pointer;text-decoration:none}
+.btn:hover{background:rgba(255,255,255,.06)} .kbd{font:12px/1.2 ui-monospace,Menlo,Consolas,monospace;opacity:.8;
+padding:2px 6px;border:1px solid rgba(255,255,255,.2);border-radius:6px}
+</style></head>
+<body>
+<div class="header"><div class="title">DNS of Turbulent Advection (3D)</div></div>
+<div class="viewer"><img id="slide" class="slide" alt="DNS of Turbulent Advection (3D) slide" src=""></div>
+<div class="controls">
+  <button class="btn" id="prev">← Prev <span class="kbd">←</span></button>
+  <button class="btn" id="next">Next → <span class="kbd">→</span></button>
+  <a class="btn" href="../../.." title="Back to site">Back</a>
+</div>
+<script>
+const slides = ["slide-01.webp", "slide-02.webp", "slide-03.webp", "slide-04.webp", "slide-05.webp", "slide-06.webp", "slide-07.webp", "slide-08.webp"]; let i = 0; const el = document.getElementById('slide');
+function show(k){ i = (k+slides.length)%slides.length; el.src = slides[i]; }
+document.getElementById('prev').onclick = ()=>show(i-1);
+document.getElementById('next').onclick = ()=>show(i+1);
+document.addEventListener('keydown', (e)=>{ if(e.key==='ArrowRight') show(i+1); if(e.key==='ArrowLeft') show(i-1); });
+document.addEventListener('click', (e)=>{ if(e.target===el) show(i+1); }); show(0);
+</script>
+</body></html>
