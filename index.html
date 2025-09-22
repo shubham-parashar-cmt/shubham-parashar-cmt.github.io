@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pathak Shubham Parashar — Academic Profile</title>
-  <meta name="description" content="Researcher at UC San Diego focusing on quantum transport in 2D, correlated electrons, and topological phases.">
+  <title>Pathak Shubham Parashar — UC San Diego</title>
+  <meta name="description" content="Quantum transport in 2D; correlated electrons; topological phases.">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/">
-
-  <!-- Your existing stylesheet -->
   <link rel="stylesheet" href="/assets/css/site.css?v=base">
-
-  <!-- Minimal compact overrides + Projects layout (safe to inline) -->
   <style>
     :root{ --space-2:8px; --space-3:12px; --space-4:16px; --radius:10px; --border:#e5e7eb; }
-    body{ line-height:1.5; margin:0 }
-    .wrap{ max-width:860px; margin:0 auto; padding:var(--space-3) }
-    .card{ border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-3); margin-bottom:var(--space-3); background:var(--card, #fff) }
+    body{ line-height:1.5; margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif }
+    .wrap{ max-width:960px; margin:0 auto; padding:var(--space-3) }
+    .card{ border:1px solid transparent; border-radius:var(--radius); padding:var(--space-3); margin-bottom:var(--space-3); background:transparent; box-shadow:none }
+    @media (prefers-color-scheme: light){ .card{ background:#fff; border-color:#eee; box-shadow:0 1px 10px rgba(0,0,0,.03) } }
     h1,h2,h3{ margin:0 0 var(--space-2); font-variant-caps:small-caps; letter-spacing:.03em; line-height:1.25 }
     h1{ font-size:1.45rem } h2{ font-size:1.1rem } h3{ font-size:1rem }
     p{ margin:0 0 var(--space-3) }
     .muted{ opacity:.8 }
-
+    .btn{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:10px;text-decoration:none}
+    .btn:hover{background:rgba(29,78,216,.07)}
+    .skip:focus{ position:static; display:inline-block; padding:6px 10px; background:#fffa; border-radius:8px }
     nav{ display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center; justify-content:space-between }
     .brand{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit }
     .brand .avatar{ width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid var(--border) }
@@ -29,52 +28,34 @@
     .navlinks{ display:flex; flex-wrap:wrap; gap:8px; align-items:center }
     .navlinks a{ padding:4px 6px; border-radius:8px; text-decoration:none }
     .navlinks a:hover{ background:rgba(29,78,216,.07) }
-
-    .tight{ margin:.15rem 0 .3rem 1rem }
-    .tight li{ margin:1px 0 }
-
-    /* Awards: year on the right */
-    .cv-awards{ display:grid; row-gap:4px }
-    .cv-awards .year{ float:right; opacity:.75 }
-
-    /* Timeline */
+    .navlinks a[aria-current="true"]{ font-weight:600; text-decoration:underline }
+    .tight{ margin:.15rem 0 .3rem 1rem } .tight li{ margin:1px 0 }
+    .cv-awards{ display:grid; row-gap:4px } .cv-awards .year{ float:right; opacity:.75 }
     .tl-item{ display:grid; grid-template-columns:88px 1fr; gap:12px; padding:8px 0; border-top:1px dashed var(--border) }
-    .tl-item:first-child{ border-top:none }
-    .tl-date{ font-family:ui-monospace, Menlo, Consolas, monospace; opacity:.7 }
-
-    /* Two-up grid on desktop */
-    @media (min-width: 960px){
-      .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
-    }
-
-    /* Selected Work grid */
+    .tl-item:first-child{ border-top:none } .tl-date{ font-family:ui-monospace, Menlo, Consolas, monospace; opacity:.7 }
+    @media (min-width: 960px){ .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px } }
     .projects{display:grid;gap:14px}
     .projects li{list-style:none;margin:0;padding:0}
     .projects figure{display:grid;grid-template-columns:180px 1fr;gap:14px;align-items:start;margin:0}
     .projects img{width:180px;height:120px;object-fit:cover;border:1px solid var(--border);border-radius:10px}
-    .projects figcaption{margin:0}
-    .projects .muted{display:block;opacity:.75;margin-top:2px;font-size:.95em}
-    @media (max-width:640px){
-      .projects figure{grid-template-columns:1fr}
-      .projects img{width:100%;height:auto}
-    }
+    .projects figcaption{display:grid; gap:6px; margin:0}
+    .actions{display:flex; gap:8px; margin-top:2px; flex-wrap:wrap}
+    @media (max-width:640px){ .projects figure{grid-template-columns:1fr} .projects img{width:100%;height:auto} }
+    details > summary { cursor: pointer; }
   </style>
-
-  <meta property="og:title" content="Pathak Shubham Parashar — Academic Profile">
+  <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego">
   <meta property="og:description" content="Quantum transport in 2D; correlated electrons; topological phases.">
-  <meta property="og:image" content="/nav-avatar.jpg">
-  <meta property="og:type" content="profile">
+  <meta property="og:image" content="/assets/og_card.png">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-  <a href="#main" class="skip" style="position:absolute;left:-9999px;">Skip to content</a>
-
+  <a href="#main" class="skip">Skip to content</a>
   <header class="wrap" role="banner">
     <nav aria-label="Primary">
       <a class="brand" href="#top">
         <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="40" height="40" loading="eager" decoding="async">
         <span class="name">Pathak Shubham Parashar</span>
       </a>
-
       <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -87,26 +68,29 @@
         <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </div>
-
       <div class="navlinks" id="quicklinks" aria-label="External quick links">
         <a href="/cv.html" class="btn">CV</a>
-        <a href="mailto:psparash@ucsd.edu">Email</a>
-        <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
-        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:psparash@ucsd.edu" class="btn">Email</a>
+        <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener" class="btn">Scholar</a>
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener" class="btn">ORCID</a>
+        <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener" class="btn">GitHub</a>
       </div>
     </nav>
   </header>
 
   <main id="main" class="wrap" role="main">
-    <!-- Hero -->
     <section class="hero card" id="top">
       <h1>Pathak Shubham Parashar</h1>
       <p class="tagline">Researcher, UC San Diego — quantum transport in 2D; correlated electrons; topological phases.</p>
-      <p class="muted">Current focus: diffusive-to-ballistic crossover in graphene magnetotransport.</p>
+      <p class="muted">Current focus: diffusive→ballistic crossover in graphene magnetotransport.</p>
     </section>
 
-    <!-- Two-up: Research + Publications -->
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>I’m a researcher at UC San Diego focusing on quantum transport in 2D, correlated electrons, and topological phases. Current work: diffusive→ballistic crossover in graphene magnetotransport.</p>
+      <p>Previously: JAIST (MEXT Fellow), BARC (Trombay, Mumbai). I enjoy building compact theory notes, clean visualizations, and reproducible code.</p>
+    </section>
+
     <div class="grid-2">
       <section id="research" class="card">
         <h2>Research</h2>
@@ -121,77 +105,103 @@
       <section id="publications" class="card">
         <h2>Publications — Published</h2>
         <ul class="tight">
-          <li><strong>Towards an exact factorization of the molecular wave function</strong><br>
-            S. Parashar, Y. Sajeev, S. K. Ghosh. <em>Molecular Physics</em> 113(19–20): 3067–3072 (2015).
-            <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">link</a>
+          <li><strong>Towards an exact factorization of the molecular wave function</strong>. 
+            S. Parashar, Y. Sajeev, S. K. Ghosh. <em>Molecular Physics</em> 113(19–20), 3067–3072 (2015). 
+            <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">View</a>
           </li>
         </ul>
         <h3>In preparation</h3>
         <ul class="tight">
-          <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
-              P. Shubham Parashar, M. M. Fogler (2025)</li>
-          <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
-              Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
-          <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
-              Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
-          <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
-              Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
+          <li><strong>Hydrodynamic and diffusive current flow near obstacles in a 2DEG under strong magnetic field</strong> — P. S. Parashar, M. M. Fogler (2025). <a href="/assets/papers/Hydrodynamic_and_diffusive_current_flow_near_obstacles_in_a_two_dimensional_electron_system_subject_to_a_strong_magnetic_field.pdf" target="_blank" rel="noopener">PDF</a> · <a href="/assets/slides/hydro-diffusive-obstacle/" target="_blank" rel="noopener">Slides</a></li>
+          <li><strong>Thermodynamics of the spin‑splitting transition in the quantum Hall effect</strong> — P. S. Parashar, D. P. Arovas, M. M. Fogler (2025). <a href="/assets/papers/Spin_split_beyond_mean_field.pdf" target="_blank" rel="noopener">PDF</a> · <a href="/assets/slides/spin-split-qhe/" target="_blank" rel="noopener">Slides</a></li>
+          <li><strong>Imaging diffusive‑to‑ballistic crossover of magnetotransport in graphene</strong> — Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, P. S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
+          <li><strong>Symplectic ferromagnetism and phase transitions in multi‑component fermionic systems</strong> — Z. Cai, P. S. Parashar, C. Wu (2025)</li>
         </ul>
       </section>
     </div>
 
-    <!-- Selected Work (PREVIOUS version + your edits) -->
     <section id="projects" class="card">
       <h2>Selected Work</h2>
       <ul class="tight projects">
         <li>
           <figure>
-            <img src="/assets/projects/dns-turbulence-thumb.webp" alt="DNS of turbulent advection (3D)">
+            <img src="/assets/projects/hydro-diffusive-obstacle-thumb.webp" alt="Hydrodynamic & diffusive current near obstacles (2DEG, high B)"
+                 width="180" height="120" loading="lazy" decoding="async">
+            <figcaption>
+              <strong>Hydrodynamic &amp; diffusive current near obstacles</strong> — 2DEG under strong magnetic fields with density perturbations; current streamlines & crossovers.
+              <div class="actions">
+                <a class="btn" href="/assets/slides/hydro-diffusive-obstacle/" target="_blank" rel="noopener">Slides</a>
+                <a class="btn" href="/assets/papers/Hydrodynamic_and_diffusive_current_flow_near_obstacles_in_a_two_dimensional_electron_system_subject_to_a_strong_magnetic_field.pdf" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="/assets/projects/spin-split-qhe-thumb.webp" alt="Spin-splitting beyond mean field (QHE)"
+                 width="180" height="120" loading="lazy" decoding="async">
+            <figcaption>
+              <strong>Spin‑splitting beyond mean field (QHE)</strong> — Thermodynamics of the spin‑splitting transition; higher Landau levels.
+              <div class="actions">
+                <a class="btn" href="/assets/slides/spin-split-qhe/" target="_blank" rel="noopener">Slides</a>
+                <a class="btn" href="/assets/papers/Spin_split_beyond_mean_field.pdf" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="/assets/projects/dns-turbulence-thumb.webp" alt="DNS of turbulent advection (3D)"
+                 width="180" height="120" loading="lazy" decoding="async">
             <figcaption>
               <strong>DNS of turbulent advection (3D)</strong> — Direct numerical simulations of light-inertial particle trajectories and time-irreversibility diagnostics in homogeneous, isotropic turbulence.
+              <div class="actions"><a class="btn" href="/assets/slides/dns-turbulence/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
-
         <li>
           <figure>
-            <img src="/assets/projects/ms-closures-particles-thumb.webp" alt="Turbulence closure schemes survey">
+            <img src="/assets/projects/ms-closures-particles-thumb.webp" alt="Turbulence closure schemes survey"
+                 width="180" height="120" loading="lazy" decoding="async">
             <figcaption>
               <strong>Light inertial particles &amp; closures</strong> — Survey of Eulerian, Lagrangian, and quasi-Lagrangian closure schemes for 3D turbulence.
+              <div class="actions"><a class="btn" href="/assets/slides/ms-closures-particles/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
-
         <li>
           <figure>
-            <img src="/assets/projects/kitaev-nonabelian-thumb.webp" alt="Non-Abelian Kitaev models (ribbon operators)">
+            <img src="/assets/projects/kitaev-nonabelian-thumb.webp" alt="Non-Abelian Kitaev models (ribbon operators)"
+                 width="180" height="120" loading="lazy" decoding="async">
             <figcaption>
               <strong>Non-Abelian Kitaev models</strong> — Notes on ribbon-operator algebras, condensation and confinement when single-qudit terms reduce gauge symmetry.
+              <div class="actions"><a class="btn" href="/assets/slides/kitaev-nonabelian/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
-
         <li>
           <figure>
-            <img src="/assets/projects/kac-moody-notes-thumb.webp" alt="Affine Kac–Moody & Virasoro notes">
+            <img src="/assets/projects/kac-moody-notes-thumb.webp" alt="Affine Kac–Moody & Virasoro notes"
+                 width="180" height="120" loading="lazy" decoding="async">
             <figcaption>
               <strong>Affine Kac–Moody &amp; Virasoro</strong> — Personal notes on unitary highest-weight representations, central extensions, and <em>Sugawara structures</em>.
+              <div class="actions"><a class="btn" href="/assets/slides/kac-moody-notes/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
-
         <li>
           <figure>
-            <img src="/assets/projects/bh-inspiral-eft-thumb.webp" alt="Binary inspiral EFT notes">
+            <img src="/assets/projects/bh-inspiral-eft-thumb.webp" alt="Binary inspiral EFT notes"
+                 width="180" height="120" loading="lazy" decoding="async">
             <figcaption>
               <strong>Binary inspiral EFT</strong> — Worldline effective field theory for compact binaries, finite-size effects, Love numbers, and matching.
+              <div class="actions"><a class="btn" href="/assets/slides/bh-inspiral-eft/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
       </ul>
     </section>
 
-    <!-- Experience -->
     <section id="experience" class="card">
       <h2>Experience</h2>
       <div class="tl-item">
@@ -205,12 +215,12 @@
         <div class="tl-date">2015–2016</div>
         <div>
           <strong>Research Intern</strong>, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan<br>
-          <em>Supervisor:</em> Prof. Ryo Maezono &nbsp;·&nbsp; <em>Fellowship:</em> MEXT Research Fellowship<br> Quantum Monte Carlo (QMC) methods for correlated electron systems.
+          <em>Supervisor:</em> Prof. Ryo Maezono &nbsp;·&nbsp; <em>Fellowship:</em> MEXT Research Fellowship<br>
+          <span class="muted">Focus:</span> Quantum Monte Carlo (QMC) methods for correlated electron systems.
         </div>
       </div>
     </section>
 
-    <!-- Awards -->
     <section id="awards" class="card">
       <h2>Awards &amp; Grants</h2>
       <div class="cv-awards">
@@ -222,7 +232,6 @@
       </div>
     </section>
 
-    <!-- Coursework (collapsed) -->
     <section id="coursework" class="card">
       <h2>Selected Graduate Coursework</h2>
       <details>
@@ -240,7 +249,6 @@
       </details>
     </section>
 
-    <!-- Teaching (collapsed) -->
     <section id="teaching" class="card">
       <h2>Teaching &amp; Instruction</h2>
       <details>
@@ -252,17 +260,16 @@
       </details>
     </section>
 
-    <!-- Talks (short list) -->
     <section id="talks" class="card">
       <h2>Talks &amp; Presentations</h2>
       <ul class="tight">
-        <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
+        <li><strong>Interacting Majorana fermions → Fibonacci &amp; anti‑Fibonacci phases</strong> — APS March Meeting.</li>
+        <li><strong>Spin‑split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
         <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
-        <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
+        <li><strong>Magneto‑transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
       </ul>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
@@ -274,7 +281,21 @@
   </main>
 
   <script>
-    // Year stamp
+    (function(){
+      const links = Array.from(document.querySelectorAll('.navlinks a')).filter(a => a.hash);
+      const byId = new Map(links.map(a => [a.hash.slice(1), a]));
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            links.forEach(a=>a.removeAttribute('aria-current'));
+            const id = e.target.id;
+            if(byId.has(id)) byId.get(id).setAttribute('aria-current','true');
+          }
+        });
+      },{rootMargin:"-45% 0px -45% 0px"});
+      sections.forEach(s=>io.observe(s));
+    })();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
