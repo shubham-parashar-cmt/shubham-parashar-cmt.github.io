@@ -1,63 +1,60 @@
+/* Minimal base styles used by index.html.
+   Safe to customize. Inline CSS in index.html will override this if duplicated. */
 
-@font-face {
-  font-family: "Minion Pro";
-  src: url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Minion Pro";
-  src: url("/assets/fonts/MinionPro-It.woff2") format("woff2");
-  font-weight: 400; font-style: italic; font-display: swap;
-}
-@font-face {
-  font-family: "Minion Pro";
-  src: url("/assets/fonts/MinionPro-Semibold.woff2") format("woff2");
-  font-weight: 600; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Minion Pro";
-  src: url("/assets/fonts/MinionPro-SemiboldIt.woff2") format("woff2");
-  font-weight: 600; font-style: italic; font-display: swap;
-}
 :root{
-  --space-1: 6px; --space-2: 10px; --space-3: 16px; --space-4: 24px; --space-5: 36px;
-  --radius: 12px; --border: #e5e7eb;
-  --text: #0b0b0c; --muted: #475569; --brand: #1d4ed8;
-  --card: #ffffff; --bg: #fafafa;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --radius:10px; --border:#e5e7eb;
 }
-@media (prefers-color-scheme: dark){
-  :root{ --border:#2a2f3a; --text:#e8eaed; --muted:#94a3b8; --card:#0f172a; --bg:#0b1020; }
+
+*{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.5;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-*{box-sizing:border-box}
-html{font-size:16px}
-body{margin:0; background:var(--bg); color:var(--text); font-family:"Minion Pro","Source Serif 4","Iowan Old Style","Constantia","Georgia",serif; line-height:1.6}
-.wrap{max-width:880px; margin:0 auto; padding:var(--space-4) var(--space-3)}
-.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-4); margin-bottom:var(--space-4)}
-h1,h2,h3{font-variant-caps: small-caps; letter-spacing:.04em; line-height:1.25; margin:0 0 var(--space-3)}
-h1{font-size:1.9rem} h2{font-size:1.35rem} h3{font-size:1.1rem}
-p{margin:0 0 var(--space-3)}
-nav{display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center; justify-content:space-between}
-.brand{display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit}
-.brand .avatar{width:48px; height:48px; border-radius:50%; object-fit:cover; border:1px solid var(--border)}
-.brand .name{font-weight:600; font-variant-caps:small-caps; letter-spacing:.04em}
-.navlinks{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
-.navlinks a{text-decoration:none; padding:6px 8px; border-radius:10px}
-.navlinks a:hover{background:rgba(29,78,216,.07)}
-.hero .tagline{font-size:1.05rem}
-.muted{color:var(--muted)}
-.mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
-.tight{margin:.25rem 0 .5rem 1.25rem}
-.tight li{margin:2px 0}
-.btn{display:inline-block; padding:.45rem .7rem; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:inherit; background:transparent}
-.btn:hover{background:rgba(29,78,216,.05)}
-.btn-primary{border-color:var(--brand); color:var(--brand)}
-.btn-primary:hover{background:rgba(29,78,216,.08)}
-.cv-awards{display:grid; row-gap:6px}
-.cv-awards .year{float:right; opacity:.75}
-.tl-item{display:grid; grid-template-columns:90px 1fr; gap:12px; padding:10px 0; border-top:1px dashed var(--border)}
-.tl-item:first-child{border-top:none}
-.tl-date{font-family:ui-monospace,Menlo,Consolas,monospace; color:var(--muted)}
-.skip{position:absolute; left:-9999px}
-.skip:focus{left:12px; top:12px; background:var(--card); padding:8px 10px; border:1px solid var(--border); border-radius:8px; z-index:999}
-a:focus{outline:2px solid var(--brand); outline-offset:2px}
-a:visited{opacity:.92}
+
+a{ color:inherit }
+a:hover{ text-decoration:underline }
+
+img{ max-width:100%; height:auto; display:block }
+
+.wrap{ max-width:960px; margin:0 auto; padding:var(--space-3) }
+
+.card{
+  border:1px solid transparent;
+  border-radius:var(--radius);
+  padding:var(--space-3);
+  margin-bottom:var(--space-3);
+  background:transparent;
+  box-shadow:none;
+}
+
+/* Light theme subtle surface */
+@media (prefers-color-scheme: light){
+  .card{ background:#fff; border-color:#eee; box-shadow:0 1px 10px rgba(0,0,0,.03) }
+}
+
+.btn{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  text-decoration:none;
+  transition:background-color .15s ease,border-color .15s ease;
+}
+.btn:hover{ background:rgba(29,78,216,.07) }
+
+.navlinks a{
+  padding:4px 6px;
+  border-radius:8px;
+  text-decoration:none;
+}
+.navlinks a:hover{ background:rgba(29,78,216,.07) }
+.navlinks a[aria-current="true"]{ font-weight:600; text-decoration:underline }
+
+/* Accessibility: visible skip link on focus */
+.skip:focus{ position:static; display:inline-block; padding:6px 10px; background:#fffa; border-radius:8px }

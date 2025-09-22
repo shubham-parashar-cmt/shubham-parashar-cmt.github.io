@@ -13,7 +13,9 @@
     body{ line-height:1.5; margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif }
     .wrap{ max-width:960px; margin:0 auto; padding:var(--space-3) }
     .card{ border:1px solid transparent; border-radius:var(--radius); padding:var(--space-3); margin-bottom:var(--space-3); background:transparent; box-shadow:none }
-    @media (prefers-color-scheme: light){ .card{ background:#fff; border-color:#eee; box-shadow:0 1px 10px rgba(0,0,0,.03) } }
+    @media (prefers-color-scheme: light){
+      .card{ background:#fff; border-color:#eee; box-shadow:0 1px 10px rgba(0,0,0,.03) }
+    }
     h1,h2,h3{ margin:0 0 var(--space-2); font-variant-caps:small-caps; letter-spacing:.03em; line-height:1.25 }
     h1{ font-size:1.45rem } h2{ font-size:1.1rem } h3{ font-size:1rem }
     p{ margin:0 0 var(--space-3) }
@@ -40,8 +42,10 @@
     .projects img{width:180px;height:120px;object-fit:cover;border:1px solid var(--border);border-radius:10px}
     .projects figcaption{display:grid; gap:6px; margin:0}
     .actions{display:flex; gap:8px; margin-top:2px; flex-wrap:wrap}
-    @media (max-width:640px){ .projects figure{grid-template-columns:1fr} .projects img{width:100%;height:auto} }
-    details > summary { cursor: pointer; }
+    @media (max-width:640px){
+      .projects figure{grid-template-columns:1fr}
+      .projects img{width:100%;height:auto}
+    }
   </style>
   <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego">
   <meta property="og:description" content="Quantum transport in 2D; correlated electrons; topological phases.">
@@ -110,10 +114,11 @@
             <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">View</a>
           </li>
         </ul>
-        <h3>In preparation</h3>
+        <h3>In preparation &amp; submissions</h3>
         <ul class="tight">
           <li><strong>Hydrodynamic and diffusive current flow near obstacles in a 2DEG under strong magnetic field</strong> — P. S. Parashar, M. M. Fogler (2025). <a href="/assets/papers/Hydrodynamic_and_diffusive_current_flow_near_obstacles_in_a_two_dimensional_electron_system_subject_to_a_strong_magnetic_field.pdf" target="_blank" rel="noopener">PDF</a> · <a href="/assets/slides/hydro-diffusive-obstacle/" target="_blank" rel="noopener">Slides</a></li>
           <li><strong>Thermodynamics of the spin‑splitting transition in the quantum Hall effect</strong> — P. S. Parashar, D. P. Arovas, M. M. Fogler (2025). <a href="/assets/papers/Spin_split_beyond_mean_field.pdf" target="_blank" rel="noopener">PDF</a> · <a href="/assets/slides/spin-split-qhe/" target="_blank" rel="noopener">Slides</a></li>
+          <li><strong>Submitted manuscript (Nature)</strong> — 2025. <a href="https://www.overleaf.com/project/640f6725b54d475c84a5a097" target="_blank" rel="noopener">Draft (Overleaf)</a> <span class="muted">· access may require login</span></li>
           <li><strong>Imaging diffusive‑to‑ballistic crossover of magnetotransport in graphene</strong> — Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, P. S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
           <li><strong>Symplectic ferromagnetism and phase transitions in multi‑component fermionic systems</strong> — Z. Cai, P. S. Parashar, C. Wu (2025)</li>
         </ul>
@@ -166,26 +171,6 @@
             <figcaption>
               <strong>Light inertial particles &amp; closures</strong> — Survey of Eulerian, Lagrangian, and quasi-Lagrangian closure schemes for 3D turbulence.
               <div class="actions"><a class="btn" href="/assets/slides/ms-closures-particles/" target="_blank" rel="noopener">Slides</a></div>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="/assets/projects/kitaev-nonabelian-thumb.webp" alt="Non-Abelian Kitaev models (ribbon operators)"
-                 width="180" height="120" loading="lazy" decoding="async">
-            <figcaption>
-              <strong>Non-Abelian Kitaev models</strong> — Notes on ribbon-operator algebras, condensation and confinement when single-qudit terms reduce gauge symmetry.
-              <div class="actions"><a class="btn" href="/assets/slides/kitaev-nonabelian/" target="_blank" rel="noopener">Slides</a></div>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="/assets/projects/kac-moody-notes-thumb.webp" alt="Affine Kac–Moody & Virasoro notes"
-                 width="180" height="120" loading="lazy" decoding="async">
-            <figcaption>
-              <strong>Affine Kac–Moody &amp; Virasoro</strong> — Personal notes on unitary highest-weight representations, central extensions, and <em>Sugawara structures</em>.
-              <div class="actions"><a class="btn" href="/assets/slides/kac-moody-notes/" target="_blank" rel="noopener">Slides</a></div>
             </figcaption>
           </figure>
         </li>
