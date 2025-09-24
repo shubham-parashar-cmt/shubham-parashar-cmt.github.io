@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV — Pathak Shubham Parashar</title>
-  <link rel="stylesheet" href="/assets/css/site.css">
-</head><body>
-  <main class="wrap">
-    <h1>Curriculum Vitae</h1>
-    <p><a href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></p>
-    <p>This is a placeholder CV page. Replace <code>/assets/cv.pdf</code> with your actual file.</p>
+  <meta name="color-scheme" content="light dark">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/MinionPro-Regular.woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css?v=recruiter2">
+  <style>
+    body{background:var(--bg); color:var(--text)}
+    .cv-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+    .cv-head img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+    .pdf-frame{width:100%;height:900px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+  </style>
+</head>
+<body>
+  <main class="wrap" id="main">
+    <section class="card">
+      <div class="cv-head">
+        <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar">
+        <div>
+          <h1>Pathak Shubham Parashar</h1>
+          <p class="muted">Department of Physics, University of California San Diego</p>
+          <p><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · <a href="/">shubham-parashar-cmt.github.io</a> · <a href="https://github.com/shubham-parashar-cmt">github.com/shubham-parashar-cmt</a></p>
+          <p><a class="btn btn-primary" href="/cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Publications — published</h2>
+      <ul class="tight">
+        <li><strong>Towards an exact factorization of the molecular wave function</strong><br>
+          S. Parashar, Y. Sajeev, S. K. Ghosh. <em>Molecular Physics</em> 113(19–20): 3067–3072 (2015).
+          <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">link</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Publications — in preparation</h2>
+      <ul class="tight">
+        <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br> P. Shubham Parashar, M. M. Fogler (2025)</li>
+        <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br> Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
+        <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br> Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
+        <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br> Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Experience</h2>
+      <ul class="tight">
+        <li><strong>Research Intern</strong> — Bhabha Atomic Research Centre (Trombay, Mumbai, India); Mentor: Prof. Swapan Kumar Ghosh (2012–2013)</li>
+        <li><strong>Research Intern</strong> — JAIST, Ishikawa, Japan; Supervisor: Ryo Maezono; MEXT Research Fellowship (2015–2016)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Awards &amp; Grants</h2>
+      <div class="cv-awards">
+        <p><strong>KVPY Scholarship</strong><span class="year">2012–2017</span></p>
+        <p><strong>MEXT Research Fellowship (Japan)</strong><span class="year">2015–2016</span></p>
+        <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
+        <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
+        <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">PDF Preview</h2>
+      <object class="pdf-frame" data="/cv.pdf" type="application/pdf">
+        <p class="muted">Your browser couldn't display the PDF inline. <a href="/cv.pdf" target="_blank" rel="noopener">Open the CV in a new tab</a> or download it.</p>
+      </object>
+    </section>
   </main>
-</body></html>
+</body>
+</html>
