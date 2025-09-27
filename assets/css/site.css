@@ -1,60 +1,95 @@
-/* Minimal base styles used by index.html.
-   Safe to customize. Inline CSS in index.html will override this if duplicated. */
 
-:root{
-  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
-  --radius:10px; --border:#e5e7eb;
+/* === Site Typography & Minion Pro wiring (v20250926) === */
+
+/* 1) Free fallback: Source Serif 4 (loaded via @import from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap');
+
+/* 2) Minion Pro / Minion 3 as self-hosted webfonts
+   - We reference several common filenames. Only the ones that exist will load.
+   - Put your actual font files in /assets/fonts/ (woff2 preferred).
+*/
+
+/* Regular */
+@font-face {
+  font-family: "MinionPro";
+  src:
+    local("Minion Pro"),
+    local("MinionPro-Regular"),
+    local("Minion 3"),
+    url("/assets/fonts/MinionPro-Regular.woff2") format("woff2"),
+    url("/assets/fonts/MinionPro-Regular.woff") format("woff"),
+    url("/assets/fonts/MinionPro-Regular.ttf") format("truetype"),
+    url("/assets/fonts/Minion3-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Minion3-Regular.woff") format("woff"),
+    url("/assets/fonts/Minion3-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
 }
 
-*{ box-sizing:border-box }
-html{ -webkit-text-size-adjust:100% }
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.5;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* Italic */
+@font-face {
+  font-family: "MinionPro";
+  src:
+    local("Minion Pro Italic"),
+    local("MinionPro-It"),
+    local("MinionPro-Italic"),
+    local("Minion 3 Italic"),
+    url("/assets/fonts/MinionPro-Italic.woff2") format("woff2"),
+    url("/assets/fonts/MinionPro-Italic.woff") format("woff"),
+    url("/assets/fonts/MinionPro-Italic.ttf") format("truetype"),
+    url("/assets/fonts/MinionPro-It.woff2") format("woff2"),
+    url("/assets/fonts/MinionPro-It.woff") format("woff"),
+    url("/assets/fonts/MinionPro-It.ttf") format("truetype"),
+    url("/assets/fonts/Minion3-Italic.woff2") format("woff2"),
+    url("/assets/fonts/Minion3-Italic.woff") format("woff"),
+    url("/assets/fonts/Minion3-Italic.ttf") format("truetype");
+  font-weight: 400; font-style: italic; font-display: swap;
 }
 
-a{ color:inherit }
-a:hover{ text-decoration:underline }
-
-img{ max-width:100%; height:auto; display:block }
-
-.wrap{ max-width:960px; margin:0 auto; padding:var(--space-3) }
-
-.card{
-  border:1px solid transparent;
-  border-radius:var(--radius);
-  padding:var(--space-3);
-  margin-bottom:var(--space-3);
-  background:transparent;
-  box-shadow:none;
+/* Bold */
+@font-face {
+  font-family: "MinionPro";
+  src:
+    local("Minion Pro Bold"),
+    local("MinionPro-Bold"),
+    local("Minion 3 Bold"),
+    url("/assets/fonts/MinionPro-Bold.woff2") format("woff2"),
+    url("/assets/fonts/MinionPro-Bold.woff") format("woff"),
+    url("/assets/fonts/MinionPro-Bold.ttf") format("truetype"),
+    url("/assets/fonts/Minion3-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Minion3-Bold.woff") format("woff"),
+    url("/assets/fonts/Minion3-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
 }
 
-/* Light theme subtle surface */
-@media (prefers-color-scheme: light){
-  .card{ background:#fff; border-color:#eee; box-shadow:0 1px 10px rgba(0,0,0,.03) }
+/* Bold Italic (optional) */
+@font-face {
+  font-family: "MinionPro";
+  src:
+    local("Minion Pro Bold Italic"),
+    local("MinionPro-BoldIt"),
+    local("MinionPro-BoldItalic"),
+    local("Minion 3 Bold Italic"),
+    url("/assets/fonts/MinionPro-BoldItalic.woff2") format("woff2"),
+    url("/assets/fonts/MinionPro-BoldItalic.woff") format("woff"),
+    url("/assets/fonts/MinionPro-BoldItalic.ttf") format("truetype");
+  font-weight: 700; font-style: italic; font-display: swap;
 }
 
-.btn{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  text-decoration:none;
-  transition:background-color .15s ease,border-color .15s ease;
-}
-.btn:hover{ background:rgba(29,78,216,.07) }
+/* 3) Apply font stack site-wide */
+:root { color-scheme: light dark; }
+html { font-family: "MinionPro","Source Serif 4", ui-serif, Georgia, serif; font-size: 17px; }
+body { margin: 0; line-height: 1.65; }
 
-.navlinks a{
-  padding:4px 6px;
-  border-radius:8px;
-  text-decoration:none;
-}
-.navlinks a:hover{ background:rgba(29,78,216,.07) }
-.navlinks a[aria-current="true"]{ font-weight:600; text-decoration:underline }
+.wrap { max-width: 960px; margin: 0 auto; padding: 1.25rem; }
+h1,h2,h3 { line-height: 1.25; margin: 0 0 .5rem 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+p { margin: .5rem 0 1rem; }
 
-/* Accessibility: visible skip link on focus */
-.skip:focus{ position:static; display:inline-block; padding:6px 10px; background:#fffa; border-radius:8px }
+a { color: inherit; }
+a:hover { text-decoration: underline; }
+
+header { border-bottom: 1px solid rgba(0,0,0,.1); }
+footer { border-top: 1px solid rgba(0,0,0,.1); color:#666; padding:1rem 0; font-size:.95rem; }
+.card { border:1px solid rgba(0,0,0,.1); padding:1rem; border-radius:.75rem; }

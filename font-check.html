@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Font Check — MinionPro</title>
+  <link rel="stylesheet" href="/assets/css/site.css?v=20250926">
+  <style>
+    .sample { font-size: 28px; }
+    .meta { color:#666; font-size:14px }
+    .box { border:1px dashed #aaa; padding:1rem; border-radius:.5rem; }
+  </style>
+</head>
+<body class="wrap">
+  <h1>MinionPro Font Check</h1>
+  <p class="meta">This page uses <code>html{font-family:"MinionPro","Source Serif 4", serif}</code>. If Minion files resolve, the computed font family will begin with "MinionPro".</p>
+
+  <div class="box">
+    <div class="sample"><em>The quick brown fox</em> jumps over the lazy dog — 1234567890</div>
+    <p>Computed font-family on &lt;html&gt;: <span id="ff"></span></p>
+  </div>
+
+  <script>
+    const fam = window.getComputedStyle(document.documentElement).getPropertyValue('font-family');
+    document.getElementById('ff').textContent = fam;
+  </script>
+</body>
+</html>
