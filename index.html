@@ -4,111 +4,148 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pathak Shubham Parashar — UC San Diego</title>
-  <meta name="description" content="Quantum transport in 2D; correlated electrons; topological phases." />
+  <meta name="description" content="Quantum transport in 2D • correlated electrons • topological phases." />
   <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://shubham-parashar-cmt.github.io/" />
 
-  <!-- Your site stylesheet (optional but recommended) -->
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <!-- Base stylesheet (optional if you already have one) -->
+  <!-- <link rel="stylesheet" href="/assets/css/site.css"> -->
 
-  <!-- Preload your primary Minion font (adjust filename if needed) -->
-  <link rel="preload" href="/assets/fonts/MinionPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Free fallback font (guaranteed to load) -->
+  <!-- Free fallback serif so the page looks good even if Minion files don’t match yet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
 
+  <!-- Preload your primary Minion file (adjust names below if yours differ) -->
+  <link rel="preload" href="/assets/fonts/MinionPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
   <style>
-    /* ===== Base, layout, and typography (minimal so page looks good even without /assets/css/site.css) ===== */
-    :root { --wrap: 980px; --muted: #666; }
-    * { box-sizing: border-box; }
-    html { font-family: "MinionPro","Source Serif 4",ui-serif,Georgia,serif; line-height: 1.6; }
-    body { margin: 0; }
-    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 1.25rem; }
-    header { border-bottom: 1px solid rgba(0,0,0,.08); }
-    footer { border-top: 1px solid rgba(0,0,0,.08); color: var(--muted); }
-    h1 { font-size: 1.9rem; margin: 0 0 .25rem 0; }
-    h2 { font-size: 1.35rem; margin: 0 0 .5rem 0; }
-    nav ul { list-style: none; display: flex; gap: 1rem; margin: .5rem 0 0; padding: 0; flex-wrap: wrap; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .muted { color: var(--muted); }
-    .card { border: 1px solid rgba(0,0,0,.08); padding: 1rem; border-radius: .75rem; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media (min-width: 780px) { .grid { grid-template-columns: 1fr 1fr; } }
-    .list-clean { list-style: none; padding: 0; margin: 0; }
-    .badge { display: inline-block; padding: .15rem .5rem; border: 1px solid rgba(0,0,0,.2); border-radius: .5rem; font-size: .85rem; }
-
-    /* ===== Webfont: Minion Pro from /assets/fonts/ (edit names to match your actual files) ===== */
-    @font-face{
-      font-family: "MinionPro";
-      src:
-        local("Minion Pro"), local("MinionPro-Regular"),
-        url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
-      font-weight: 400; font-style: normal; font-display: swap;
+    :root{
+      --wrap: 1040px;
+      --muted: #666;
+      --card: rgba(255,255,255,.7);
+      --border: rgba(0,0,0,.08);
+      --bg: #faf9f7;
     }
-    @font-face{
-      font-family: "MinionPro";
-      src:
-        local("Minion Pro Italic"), local("MinionPro-It"),
-        url("/assets/fonts/MinionPro-Italic.woff2") format("woff2");
-      font-weight: 400; font-style: italic; font-display: swap;
-    }
-    @font-face{
-      font-family: "MinionPro";
-      src:
-        local("Minion Pro Bold"), local("MinionPro-Bold"),
-        url("/assets/fonts/MinionPro-Bold.woff2") format("woff2");
-      font-weight: 700; font-style: normal; font-display: swap;
+    @media (prefers-color-scheme: dark){
+      :root{ --card: rgba(0,0,0,.4); --border: rgba(255,255,255,.12); --bg:#0b0b0c; }
     }
 
-    /* Small helpers */
-    .skip { position: absolute; left: -9999px; }
-    footer .wrap { padding: 1rem 1.25rem; }
+    /* Minion Pro from /assets/fonts (edit file names if needed) */
+    @font-face{
+      font-family:"MinionPro";
+      src: local("Minion Pro"), local("MinionPro-Regular"),
+           url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
+      font-weight:400; font-style:normal; font-display:swap;
+    }
+    @font-face{
+      font-family:"MinionPro";
+      src: local("Minion Pro Italic"), local("MinionPro-It"),
+           url("/assets/fonts/MinionPro-Italic.woff2") format("woff2");
+      font-weight:400; font-style:italic; font-display:swap;
+    }
+    @font-face{
+      font-family:"MinionPro";
+      src: local("Minion Pro Bold"), local("MinionPro-Bold"),
+           url("/assets/fonts/MinionPro-Bold.woff2") format("woff2");
+      font-weight:700; font-style:normal; font-display:swap;
+    }
+
+    *{ box-sizing:border-box }
+    html{ font-family:"MinionPro","Source Serif 4",ui-serif,Georgia,serif; line-height:1.6; }
+    body{ margin:0; background:var(--bg); }
+    a{ color:inherit; text-decoration:none }
+    a:hover{ text-decoration:underline }
+    .wrap{ max-width:var(--wrap); margin:0 auto; padding:1.25rem }
+    .muted{ color:var(--muted) }
+    .card{ border:1px solid var(--border); border-radius:1rem; padding:1rem; backdrop-filter:saturate(140%) blur(4px); background:var(--card) }
+
+    /* Header / nav */
+    header{ position:sticky; top:0; z-index:3; background:rgba(255,255,255,.6); backdrop-filter: blur(8px); border-bottom:1px solid var(--border) }
+    @media (prefers-color-scheme: dark){ header{ background:rgba(0,0,0,.4) } }
+    h1{ font-size:clamp(1.6rem, 2.2vw + 1rem, 2.2rem); margin:.25rem 0 }
+    nav ul{ list-style:none; display:flex; gap:1rem; margin:.5rem 0 0; padding:0; flex-wrap:wrap }
+    nav a{ padding:.25rem .4rem; border-radius:.5rem }
+    nav a:hover{ background:rgba(0,0,0,.06) }
+    @media (prefers-color-scheme: dark){ nav a:hover{ background:rgba(255,255,255,.1) } }
+
+    /* HERO with image + gradient overlay */
+    .hero{
+      position:relative;
+      min-height:clamp(320px, 48vh, 560px);
+      display:grid; place-items:end start;
+      color:#fff;
+      border-bottom:1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.0) 10%, rgba(0,0,0,.45) 70%),
+        url("/headshot-hero.jpg") center/cover no-repeat fixed;
+    }
+    .hero .inner{ width:100%; max-width:var(--wrap); padding:2.5rem 1.25rem }
+    .hero h2{ font-size:clamp(1.8rem, 3vw + 1rem, 2.8rem); margin:0 0 .25rem 0 }
+    .hero p{ margin:.1rem 0; opacity:.95 }
+
+    /* Sections */
+    section{ margin:1.5rem 0 }
+    .grid{ display:grid; gap:1rem }
+    @media (min-width: 860px){ .grid.cols-2{ grid-template-columns:1fr 1fr } }
+
+    .badge{ display:inline-block; padding:.15rem .5rem; border:1px solid var(--border); border-radius:.45rem; font-size:.85rem; background:rgba(255,255,255,.6) }
+    @media (prefers-color-scheme: dark){ .badge{ background:rgba(0,0,0,.2) } }
+
+    footer{ border-top:1px solid var(--border); color:var(--muted) }
   </style>
 
   <!-- Social cards (optional) -->
   <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego" />
   <meta property="og:description" content="Quantum transport in 2D; correlated electrons; topological phases." />
-  <meta property="og:image" content="/assets/og_card.png" />
+  <meta property="og:image" content="/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a>
-
-  <header class="wrap" role="banner">
-    <h1>Pathak Shubham Parashar</h1>
-    <div class="muted">Condensed-matter theory • UC San Diego</div>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="/cv.pdf" target="_blank" rel="noopener">CV</a></li>
-      </ul>
-    </nav>
+  <!-- Sticky header -->
+  <header>
+    <div class="wrap">
+      <h1>Pathak Shubham Parashar</h1>
+      <div class="muted">Condensed-matter theory • UC San Diego</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#selected">Selected Work</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="main" class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner">
+      <h2>Quantum transport in 2D · correlated electrons · topological phases</h2>
+      <p>Current focus: diffusive → ballistic crossover in graphene magnetotransport.</p>
+    </div>
+  </section>
+
+  <main class="wrap" id="main">
     <section id="about" class="card">
-      <h2>About</h2>
+      <h3>About</h3>
       <p>
-        I work on hydrodynamic &amp; diffusive magnetotransport in two-dimensional electron systems and graphene,
-        with an emphasis on rigorous asymptotics, exact checks, and journal-quality visualization.
+        I study charge and heat transport in two-dimensional systems—hydrodynamics in strong magnetic fields,
+        correlated-electron phases, and topology-inspired models. I like asymptotics, exact checks, and journal-quality visuals.
       </p>
     </section>
 
     <section id="research" class="card">
-      <h2>Selected Research</h2>
-      <div class="grid">
+      <h3>Research</h3>
+      <div class="grid cols-2">
         <article class="card">
-          <h3>Hydrodynamic ↔ diffusive crossover near obstacles</h3>
+          <h4>Hydrodynamic ↔ diffusive crossover near obstacles</h4>
           <p><span class="badge">preprint</span></p>
           <p>Separatrices and vortex behavior near density perturbations; crossover regimes under strong B.</p>
           <p>
-            <!-- Update/keep only the links that exist in your repo to avoid 404s -->
+            <!-- Update or remove any link that 404s -->
             <a href="/assets/papers/hydro-diffusive-obstacle.pdf" target="_blank" rel="noopener">PDF</a> ·
             <a href="/assets/slides/hydro-diffusive-obstacle/" rel="noopener">Slides</a> ·
             <a href="/assets/notes/hydro-diffusive-obstacle.pdf" target="_blank" rel="noopener">Notes</a>
@@ -116,7 +153,7 @@
         </article>
 
         <article class="card">
-          <h3>Spin splitting beyond mean field</h3>
+          <h4>Spin splitting beyond mean field</h4>
           <p><span class="badge">slides</span></p>
           <p>
             <a href="/assets/papers/spin-splitting.pdf" target="_blank" rel="noopener">PDF</a> ·
@@ -126,16 +163,24 @@
       </div>
     </section>
 
+    <section id="selected" class="card">
+      <h3>Selected Work</h3>
+      <ul>
+        <li>Hydrodynamic/diffusive currents near obstacles (2DEG)</li>
+        <li>Spin-splitting beyond mean-field (slides)</li>
+      </ul>
+    </section>
+
     <section id="teaching" class="card">
-      <h2>Teaching</h2>
-      <ul class="list-clean">
+      <h3>Teaching</h3>
+      <ul>
         <li>
-          <strong>PHYS 2A — Mechanics</strong> <span class="muted">(UC San Diego)</span><br />
+          <strong>PHYS 2A — Mechanics</strong> (UC San Diego) —
           <a href="/assets/teaching/phys-2a-syllabus.pdf" target="_blank" rel="noopener">Syllabus</a> ·
           <a href="/assets/teaching/phys-2a-slides.pdf" target="_blank" rel="noopener">Slides</a>
         </li>
         <li>
-          <strong>PHYS 2B — Electricity &amp; Magnetism</strong> <span class="muted">(UC San Diego)</span><br />
+          <strong>PHYS 2B — Electricity &amp; Magnetism</strong> (UC San Diego) —
           <a href="/assets/teaching/phys-2b-syllabus.pdf" target="_blank" rel="noopener">Syllabus</a> ·
           <a href="/assets/teaching/phys-2b-slides.pdf" target="_blank" rel="noopener">Slides</a>
         </li>
@@ -143,8 +188,8 @@
     </section>
 
     <section id="education" class="card">
-      <h2>Education</h2>
-      <ul class="list-clean">
+      <h3>Education</h3>
+      <ul>
         <li>
           <strong>Ph.D. Physics — UC San Diego</strong><br />
           <span class="muted">Condensed-matter theory, magnetotransport</span>
@@ -158,13 +203,12 @@
     </section>
   </main>
 
-  <footer class="wrap">
-    &copy; <span id="year"></span> Pathak Shubham Parashar
+  <footer>
+    <div class="wrap">
+      &copy; <span id="year"></span> Pathak Shubham Parashar · <a href="/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </div>
   </footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
