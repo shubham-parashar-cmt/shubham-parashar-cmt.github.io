@@ -2,213 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pathak Shubham Parashar — UC San Diego</title>
-  <meta name="description" content="Quantum transport in 2D • correlated electrons • topological phases." />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="canonical" href="https://shubham-parashar-cmt.github.io/" />
-
-  <!-- Base stylesheet (optional if you already have one) -->
-  <!-- <link rel="stylesheet" href="/assets/css/site.css"> -->
-
-  <!-- Free fallback serif so the page looks good even if Minion files don’t match yet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
-
-  <!-- Preload your primary Minion file (adjust names below if yours differ) -->
-  <link rel="preload" href="/assets/fonts/MinionPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-  <style>
-    :root{
-      --wrap: 1040px;
-      --muted: #666;
-      --card: rgba(255,255,255,.7);
-      --border: rgba(0,0,0,.08);
-      --bg: #faf9f7;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --card: rgba(0,0,0,.4); --border: rgba(255,255,255,.12); --bg:#0b0b0c; }
-    }
-
-    /* Minion Pro from /assets/fonts (edit file names if needed) */
-    @font-face{
-      font-family:"MinionPro";
-      src: local("Minion Pro"), local("MinionPro-Regular"),
-           url("/assets/fonts/MinionPro-Regular.woff2") format("woff2");
-      font-weight:400; font-style:normal; font-display:swap;
-    }
-    @font-face{
-      font-family:"MinionPro";
-      src: local("Minion Pro Italic"), local("MinionPro-It"),
-           url("/assets/fonts/MinionPro-Italic.woff2") format("woff2");
-      font-weight:400; font-style:italic; font-display:swap;
-    }
-    @font-face{
-      font-family:"MinionPro";
-      src: local("Minion Pro Bold"), local("MinionPro-Bold"),
-           url("/assets/fonts/MinionPro-Bold.woff2") format("woff2");
-      font-weight:700; font-style:normal; font-display:swap;
-    }
-
-    *{ box-sizing:border-box }
-    html{ font-family:"MinionPro","Source Serif 4",ui-serif,Georgia,serif; line-height:1.6; }
-    body{ margin:0; background:var(--bg); }
-    a{ color:inherit; text-decoration:none }
-    a:hover{ text-decoration:underline }
-    .wrap{ max-width:var(--wrap); margin:0 auto; padding:1.25rem }
-    .muted{ color:var(--muted) }
-    .card{ border:1px solid var(--border); border-radius:1rem; padding:1rem; backdrop-filter:saturate(140%) blur(4px); background:var(--card) }
-
-    /* Header / nav */
-    header{ position:sticky; top:0; z-index:3; background:rgba(255,255,255,.6); backdrop-filter: blur(8px); border-bottom:1px solid var(--border) }
-    @media (prefers-color-scheme: dark){ header{ background:rgba(0,0,0,.4) } }
-    h1{ font-size:clamp(1.6rem, 2.2vw + 1rem, 2.2rem); margin:.25rem 0 }
-    nav ul{ list-style:none; display:flex; gap:1rem; margin:.5rem 0 0; padding:0; flex-wrap:wrap }
-    nav a{ padding:.25rem .4rem; border-radius:.5rem }
-    nav a:hover{ background:rgba(0,0,0,.06) }
-    @media (prefers-color-scheme: dark){ nav a:hover{ background:rgba(255,255,255,.1) } }
-
-    /* HERO with image + gradient overlay */
-    .hero{
-      position:relative;
-      min-height:clamp(320px, 48vh, 560px);
-      display:grid; place-items:end start;
-      color:#fff;
-      border-bottom:1px solid var(--border);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.0) 10%, rgba(0,0,0,.45) 70%),
-        url("/headshot-hero.jpg") center/cover no-repeat fixed;
-    }
-    .hero .inner{ width:100%; max-width:var(--wrap); padding:2.5rem 1.25rem }
-    .hero h2{ font-size:clamp(1.8rem, 3vw + 1rem, 2.8rem); margin:0 0 .25rem 0 }
-    .hero p{ margin:.1rem 0; opacity:.95 }
-
-    /* Sections */
-    section{ margin:1.5rem 0 }
-    .grid{ display:grid; gap:1rem }
-    @media (min-width: 860px){ .grid.cols-2{ grid-template-columns:1fr 1fr } }
-
-    .badge{ display:inline-block; padding:.15rem .5rem; border:1px solid var(--border); border-radius:.45rem; font-size:.85rem; background:rgba(255,255,255,.6) }
-    @media (prefers-color-scheme: dark){ .badge{ background:rgba(0,0,0,.2) } }
-
-    footer{ border-top:1px solid var(--border); color:var(--muted) }
-  </style>
-
-  <!-- Social cards (optional) -->
-  <meta property="og:title" content="Pathak Shubham Parashar — UC San Diego" />
-  <meta property="og:description" content="Quantum transport in 2D; correlated electrons; topological phases." />
-  <meta property="og:image" content="/og-card.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pathak Shubham Parashar — Academic Profile</title>
+  <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
+  <meta name="color-scheme" content="dark light">
+  <!-- Preload the small avatar used in the nav -->
+  <link rel="preload" as="image" href="/assets/img/nav-avatar.jpg?v=3" imagesrcset="/assets/img/nav-avatar.jpg?v=3" imagesizes="56px">
+  <!-- Uses your Minion Pro themed stylesheet -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=minionpro-final">
 </head>
 <body>
-  <!-- Sticky header -->
-  <header>
-    <div class="wrap">
-      <h1>Pathak Shubham Parashar</h1>
-      <div class="muted">Condensed-matter theory • UC San Diego</div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#selected">Selected Work</a></li>
-          <li><a href="#teaching">Teaching</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="/cv.pdf" target="_blank" rel="noopener">CV</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div class="progress" id="progress"></div>
+
+  <header class="wrap" role="banner">
+    <nav aria-label="Primary">
+      <!-- Brand (left) -->
+      <a class="brand" href="#top">
+        <img src="/assets/img/nav-avatar.jpg?v=3" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
+        <span class="name">Pathak Shubham Parashar</span>
+      </a>
+
+      <!-- Section links (center) -->
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <!-- Keep "Teaching" as-is; we’ll handle in Step 2 -->
+        Teaching
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- Persistent external links (right) — STEP 1 -->
+      <div class="navlinks" id="quicklinks" aria-label="External quick links">
+        <a href="/cv.pdf">CV (PDF)</a>
+        <a href="mailto:psparash@ucsd.edu">Email</a>
+        <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="inner">
-      <h2>Quantum transport in 2D · correlated electrons · topological phases</h2>
-      <p>Current focus: diffusive → ballistic crossover in graphene magnetotransport.</p>
-    </div>
-  </section>
+  <main id="main" class="wrap" role="main">
+    <section class="hero" id="top">
+      <div class="card">
+        <h1>Pathak Shubham Parashar</h1>
+        <p class="tagline">Researcher @ <strong>UC San Diego</strong>. Transport in 2D systems — hydrodynamic ↔ diffusive crossovers and vorticity around inhomogeneities.</p>
+        <div class="chips" aria-label="Research areas">
+          <span class="badge badge-year">Magneto-transport</span>
+          <span class="badge">Hydrodynamics</span>
+          <span class="badge">2D Electron Systems</span>
+          <span class="badge">Asymptotics &amp; WKB</span>
+        </div>
+      </div>
+      <aside class="card" aria-label="At a glance">
+        <h2>At a Glance</h2>
+        <ul>
+          <li>Department of Physics, UC San Diego</li>
+          <li>Focus: hydrodynamic–diffusive crossovers</li>
+          <li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li>
+        </ul>
+      </aside>
+    </section>
 
-  <main class="wrap" id="main">
     <section id="about" class="card">
-      <h3>About</h3>
-      <p>
-        I study charge and heat transport in two-dimensional systems—hydrodynamics in strong magnetic fields,
-        correlated-electron phases, and topology-inspired models. I like asymptotics, exact checks, and journal-quality visuals.
-      </p>
+      <h2>About</h2>
+      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also explore <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>.</p>
     </section>
 
     <section id="research" class="card">
-      <h3>Research</h3>
-      <div class="grid cols-2">
-        <article class="card">
-          <h4>Hydrodynamic ↔ diffusive crossover near obstacles</h4>
-          <p><span class="badge">preprint</span></p>
-          <p>Separatrices and vortex behavior near density perturbations; crossover regimes under strong B.</p>
-          <p>
-            <!-- Update or remove any link that 404s -->
-            <a href="/assets/papers/hydro-diffusive-obstacle.pdf" target="_blank" rel="noopener">PDF</a> ·
-            <a href="/assets/slides/hydro-diffusive-obstacle/" rel="noopener">Slides</a> ·
-            <a href="/assets/notes/hydro-diffusive-obstacle.pdf" target="_blank" rel="noopener">Notes</a>
-          </p>
-        </article>
+      <h2>Research</h2>
+      <ul>
+        <li><strong>Quantum Hall physics in higher Landau levels</strong></li>
+        <li><strong>Magneto-transport in high magnetic fields</strong></li>
+        <li><strong>Itinerant phases in correlated 2D systems</strong></li>
+        <li><strong>In-spiral black hole merger in D &gt; 5 dimensions</strong></li>
+      </ul>
+    </section>
 
-        <article class="card">
-          <h4>Spin splitting beyond mean field</h4>
-          <p><span class="badge">slides</span></p>
-          <p>
-            <a href="/assets/papers/spin-splitting.pdf" target="_blank" rel="noopener">PDF</a> ·
-            <a href="/assets/slides/spin-splitting/" rel="noopener">Slides</a>
-          </p>
-        </article>
+    <section id="projects" class="card">
+      <h2>Selected Projects</h2>
+      <div class="pub"><strong>Hydro→Diffusive Magnetotransport Simulator</strong><div class="muted">Visualizes crossover and vorticity fields near inhomogeneities.</div></div>
+      <div class="pub"><strong>QHE Spin-Splitting Thermodynamics Notebook</strong><div class="muted">Phase boundaries and specific heat across the spin-split transition.</div></div>
+      <div class="pub"><strong>Graphene Diffusive-to-Ballistic Visualizer</strong><div class="muted">Nonlocal response as mean-free-path varies.</div></div>
+    </section>
+
+    <section id="publications" class="card">
+      <h2>Publications (in preparation)</h2>
+      <input id="pubSearch" class="input" placeholder="Filter by keyword (e.g., graphene, 2025)…" />
+      <div id="pubList" style="margin-top:14px; display:grid; gap:12px"></div>
+      <p class="mono muted" style="margin-top:10px">Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.</p>
+    </section>
+
+    <section id="awards" class="card">
+      <h2>Awards &amp; Grants</h2>
+      <div class="cv-awards">
+        <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
+        <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
+        <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
       </div>
     </section>
 
-    <section id="selected" class="card">
-      <h3>Selected Work</h3>
-      <ul>
-        <li>Hydrodynamic/diffusive currents near obstacles (2DEG)</li>
-        <li>Spin-splitting beyond mean-field (slides)</li>
+    <section id="talks" class="card">
+      <h2>Talks &amp; Presentations</h2>
+      <ul class="tight">
+        <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
+        <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
+        <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
+        <li><strong>Non-associative operators inspired from string theory</strong> — APS March Meeting, 2019</li>
+        <li><strong>Quantum double models in icosahedral structures</strong> — UC Irvine, 2018</li>
       </ul>
     </section>
 
-    <section id="teaching" class="card">
-      <h3>Teaching</h3>
-      <ul>
-        <li>
-          <strong>PHYS 2A — Mechanics</strong> (UC San Diego) —
-          <a href="/assets/teaching/phys-2a-syllabus.pdf" target="_blank" rel="noopener">Syllabus</a> ·
-          <a href="/assets/teaching/phys-2a-slides.pdf" target="_blank" rel="noopener">Slides</a>
-        </li>
-        <li>
-          <strong>PHYS 2B — Electricity &amp; Magnetism</strong> (UC San Diego) —
-          <a href="/assets/teaching/phys-2b-syllabus.pdf" target="_blank" rel="noopener">Syllabus</a> ·
-          <a href="/assets/teaching/phys-2b-slides.pdf" target="_blank" rel="noopener">Slides</a>
-        </li>
-      </ul>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
     </section>
 
-    <section id="education" class="card">
-      <h3>Education</h3>
-      <ul>
-        <li>
-          <strong>Ph.D. Physics — UC San Diego</strong><br />
-          <span class="muted">Condensed-matter theory, magnetotransport</span>
-        </li>
-        <li>
-          <strong>B.S. Physics — Indian Institute of Science (IISc)</strong><br />
-          <a href="/assets/notes/bs-physics-iisc.pdf" target="_blank" rel="noopener">Notes (B.S., IISc)</a> ·
-          <a href="/assets/slides/bs-physics-iisc/" rel="noopener">Slides (B.S., IISc)</a>
-        </li>
-      </ul>
-    </section>
+    <footer>
+      <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
+    </footer>
   </main>
 
-  <footer>
-    <div class="wrap">
-      &copy; <span id="year"></span> Pathak Shubham Parashar · <a href="/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <a href="#top" class="to-top" id="toTop" aria-label="Back to top">↑ Top</a>
+  <script defer src="/assets/js/site.js?v=pubs-final"></script>
 </body>
 </html>
