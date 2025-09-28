@@ -1,0 +1,25 @@
+/* === Hero + two-column patch BEGIN === */
+
+/* Ensure hero isn't covered by a white card fill */
+.hero.card { background: transparent; box-shadow: none; }
+
+/* Gradient hero background (image-free, stable on GH Pages) */
+.hero{
+  position:relative; min-height:clamp(360px,52vh,580px);
+  display:grid; place-items:end start; color:#fff;
+  border-bottom:1px solid var(--border, #e5e7eb);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(20,115,230,.35), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%, rgba(255,120,200,.28), transparent 60%),
+    radial-gradient(700px 500px at 80% 90%, rgba(120,255,220,.18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.05) 15%, rgba(0,0,0,.55) 70%),
+    linear-gradient(135deg, #1b396a, #0d1524);
+  background-attachment: fixed,fixed,fixed,scroll,scroll;
+}
+.hero .inner{ width:100%; max-width:1080px; padding:2.8rem 1.1rem }
+
+/* Two-column helper */
+.grid-2{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:960px){.grid-2{grid-template-columns:1fr 1fr}}
+
+/* === Hero + two-column patch END === */

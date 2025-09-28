@@ -1,0 +1,5 @@
+--- a/index.html
++++ b/index.html
+@@
+- <section class="hero card" id="top">
++ <section class="hero" id="top">
