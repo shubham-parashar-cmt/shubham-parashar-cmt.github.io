@@ -1,45 +1,33 @@
-# Tiny Patch: Hero Background + Two‑Column Grid (and optional link hider)
+# Fonts Patch (Minion Pro)
 
-This patch keeps your content intact and only adds what's needed.
+This patch **does not replace** your existing files. It adds the `@font-face` rules and (optionally) a small CSS to actually use Minion on the page.
 
-## 1) Change one class in `index.html`
-Find your hero section and remove `card`:
-```diff
-- <section class="hero card" id="top">
-+ <section class="hero" id="top">
-```
-(See `index.html.example.diff` in this zip.)
+## Step 1 — Pick the correct path variant
+- If your fonts are under `/assets/fonts/MinionPro-*.woff2`, use:  
+  `<link rel="stylesheet" href="/assets/css/fonts.css?v=1">`
+- If your fonts are under `/fonts/MinionPro-*.woff2`, use:  
+  `<link rel="stylesheet" href="/assets/css/fonts-root.css?v=1">`
 
-## 2) Append CSS (do not replace your file)
-Open `assets/css/site.css` and paste the contents of:
-`assets/css/append-this-to-site.css`
-**at the very end** of your existing CSS.
-
-## 3) (Optional) Enable two columns in the markup
-Wrap middle sections in a grid:
+## Step 2 — (Optional) Enable Minion globally
+Add this **after** the link above:
 ```html
-<div class="grid-2">
-  <section id="research">…</section>
-  <section id="publications">…</section>
-</div>
+<link rel="stylesheet" href="/assets/css/fonts-use.css?v=1">
 ```
+If your existing CSS already sets `font-family: "Minion Pro"`, you can skip this.
 
-## 4) (Optional) Hide links if the target files aren’t uploaded yet
-Upload `assets/js/hide-missing.js` and add this in your `<head>`:
+## Step 3 — Insert links into <head>
+Open your `index.html` and add the chosen link(s) just **before** your main site CSS. Example:
 ```html
-<script src="/assets/js/hide-missing.js" defer></script>
+<link rel="stylesheet" href="/assets/css/fonts.css?v=1">
+<link rel="stylesheet" href="/assets/css/fonts-use.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
 ```
-Then add `data-check` to any links that might be missing:
-```html
-<div class="actions">
-  <a class="btn" href="/assets/notes/hydro-diffusive-obstacle.pdf" data-check>Notes</a>
-  <a class="btn" href="/assets/slides/hydro-diffusive-obstacle/" data-check>Slides</a>
-</div>
-```
-If the HEAD request returns 404, the button (or its group) will be hidden.
 
-## 5) Commit and cache-bust
-Commit your changes, then open:
-`https://shubham-parashar-cmt.github.io/?bust=hero-20250928004048`
+## Step 4 — Verify
+Open your site with a cache buster, e.g.: `/?bust=fonts-20250928020434`
 
-That’s it — you’ll get a proper gradient hero and a tidy two‑column layout on desktop.
+## Notes
+- Filenames must match: `MinionPro-Regular.(woff2|woff)`, `...-Italic`, `...-Bold`, `...-BoldItalic`.
+- If your filenames differ, either rename them or edit the URLs inside the CSS files in this patch.
+
+Generated 2025-09-28 02:04:34

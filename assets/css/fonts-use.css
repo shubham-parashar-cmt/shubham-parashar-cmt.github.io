@@ -1,0 +1,7 @@
+
+/* Optional: force the site to use Minion Pro */
+body{
+  font-family: "Minion Pro", "Source Serif 4", Georgia, Cambria, "Times New Roman", serif;
+}
+h1,h2,h3{ font-family: "Minion Pro", Georgia, serif; font-weight: 700; }
+em,i{ font-style: italic; }
