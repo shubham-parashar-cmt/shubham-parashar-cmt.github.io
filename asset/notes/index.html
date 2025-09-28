@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Notes — Pathak Shubham Parashar</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root{--fg:CanvasText; --muted:color-mix(in oklab, var(--fg), transparent 40%)}
+  body{font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:32px;color:var(--fg)}
+  .wrap{max-width:880px;margin:0 auto}
+  h1{margin:.2rem 0 1rem}
+  p.muted{color:var(--muted);margin-top:0}
+  ul{list-style:none;padding:0;margin:1rem 0}
+  li{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem .2rem;border-bottom:1px solid color-mix(in oklab,var(--fg),transparent 92%)}
+  a{color:inherit;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .size{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.95rem}
+</style>
+<div class="wrap">
+  <h1>Notes</h1>
+  <p class="muted">Files listed from <code>/asset/notes/</code> in this repository.</p>
+  <ul id="list"><li>Loading…</li></ul>
+</div>
+<script>
+(async function () { 
+  const owner = "shubham-parashar-cmt";
+  const repo  = "shubham-parashar-cmt.github.io";
+  const path  = "asset/notes";
+  const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const list  = document.getElementById("list");
+  try {
+    const res = await fetch(api, {headers: {"Accept":"application/vnd.github+json"}});
+    if (!res.ok) throw new Error("GitHub API error");
+    let files = (await res.json())
+      .filter(x => x.type === "file" && /\.pdf$/i.test(x.name))
+      .sort((a,b) => a.name.localeCompare(b.name));
+    if (!files.length) { list.innerHTML = "<li>No PDFs found yet.</li>"; return; }
+    list.innerHTML = "";
+    for (const f of files) {
+      const url = `/${path}/${encodeURIComponent(f.name)}`;
+      const li  = document.createElement("li");
+      const a   = Object.assign(document.createElement("a"), {href:url, textContent:f.name});
+      const sz  = document.createElement("span");
+      sz.className = "size";
+      sz.textContent = f.size ? (f.size/1024).toFixed(1) + " KB" : "";
+      li.append(a, sz);
+      list.append(li);
+    }
+  } catch (e) {
+    list.innerHTML = "<li>Couldn’t load directory listing.</li>";
+    console.error(e);
+  }
+})();
+</script>
