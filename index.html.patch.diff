@@ -1,0 +1,14 @@
+--- a/index.html
++++ b/index.html
+@@
+-   <link rel="stylesheet" href="/assets/css/site.css">
++   <link rel="stylesheet" href="/assets/css/fonts.css?v=2">
++   <!-- Optional: use Minion everywhere -->
++   <link rel="stylesheet" href="/assets/css/fonts-use.css?v=2">
++   <!-- Gradient hero + grid -->
++   <link rel="stylesheet" href="/assets/css/hero-grid-patch.css?v=2">
++   <!-- Your existing CSS -->
++   <link rel="stylesheet" href="/assets/css/site.css?v=2">
+@@
+- <section class="hero card" id="top">
++ <section class="hero" id="top">

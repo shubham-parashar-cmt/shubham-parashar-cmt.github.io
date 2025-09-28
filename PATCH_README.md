@@ -1,33 +1,29 @@
-# Fonts Patch (Minion Pro)
+# Tiny Patch: Fonts (/assets/fonts) + Hero Gradient + Grid
 
-This patch **does not replace** your existing files. It adds the `@font-face` rules and (optionally) a small CSS to actually use Minion on the page.
+This patch **does not replace** your existing files. It adds small CSS files and shows exactly what to insert in `index.html`.
 
-## Step 1 — Pick the correct path variant
-- If your fonts are under `/assets/fonts/MinionPro-*.woff2`, use:  
-  `<link rel="stylesheet" href="/assets/css/fonts.css?v=1">`
-- If your fonts are under `/fonts/MinionPro-*.woff2`, use:  
-  `<link rel="stylesheet" href="/assets/css/fonts-root.css?v=1">`
+## 1) Upload these files (keep paths)
+- `assets/css/fonts.css`        ← loads Minion from `/assets/fonts/`
+- `assets/css/fonts-use.css`    ← (optional) sets body/headings to use Minion
+- `assets/css/hero-grid-patch.css` ← gradient hero + grid-2
 
-## Step 2 — (Optional) Enable Minion globally
-Add this **after** the link above:
+## 2) Edit your `<head>` in `index.html` (add before your main CSS)
 ```html
-<link rel="stylesheet" href="/assets/css/fonts-use.css?v=1">
-```
-If your existing CSS already sets `font-family: "Minion Pro"`, you can skip this.
-
-## Step 3 — Insert links into <head>
-Open your `index.html` and add the chosen link(s) just **before** your main site CSS. Example:
-```html
-<link rel="stylesheet" href="/assets/css/fonts.css?v=1">
-<link rel="stylesheet" href="/assets/css/fonts-use.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=2">
+<link rel="stylesheet" href="/assets/css/fonts-use.css?v=2">   <!-- optional -->
+<link rel="stylesheet" href="/assets/css/hero-grid-patch.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">        <!-- your existing CSS -->
 ```
 
-## Step 4 — Verify
-Open your site with a cache buster, e.g.: `/?bust=fonts-20250928020434`
+## 3) (Optional) If your hero tag is still `class="hero card"`
+Change it to:
+```diff
+- <section class="hero card" id="top">
++ <section class="hero" id="top">
+```
+(If you keep `card`, the patch also includes a `.hero.card { background: transparent !important }` override.)
 
-## Notes
-- Filenames must match: `MinionPro-Regular.(woff2|woff)`, `...-Italic`, `...-Bold`, `...-BoldItalic`.
-- If your filenames differ, either rename them or edit the URLs inside the CSS files in this patch.
+## 4) Verify
+Open your site with a cache-buster: `/?bust=patch-20250928022622`
 
-Generated 2025-09-28 02:04:34
+That’s it — fonts load from `/assets/fonts/`, the hero shows the gradient, and the grid is ready.
