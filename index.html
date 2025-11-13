@@ -3,138 +3,204 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pathak Shubham Parashar — UC San Diego</title>
-  <meta name="color-scheme" content="light dark" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=20250927">
+  <title>Pathak Shubham Parashar — Academic Profile</title>
+  <meta name="description" content="Academic homepage for Pathak Shubham Parashar (UC San Diego).">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preload" as="image" href="/nav-avatar.jpg" imagesrcset="/nav-avatar.jpg" imagesizes="56px">
+  <link rel="icon" href="/assets/img/icon.png" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/img/icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css?v=cv-link-fix">
+  <link rel="stylesheet" href="/assets/css/colors.css?v=1">
   <style>
-    .hero.card{ background:transparent !important; box-shadow:none !important; }
-    .hero{
-      position:relative; min-height:clamp(360px,52vh,580px);
-      display:grid; place-items:end start; color:#fff;
-      border-bottom:1px solid var(--border, rgba(0,0,0,.08));
-      background:
-        radial-gradient(1200px 600px at 80% -10%, rgba(20,115,230,.35), transparent 60%),
-        radial-gradient(900px 500px at 10% 10%, rgba(255,120,200,.28), transparent 60%),
-        radial-gradient(700px 500px at 80% 90%, rgba(120,255,220,.18), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.05) 15%, rgba(0,0,0,.55) 70%),
-        linear-gradient(135deg, #1b396a, #0d1524);
-      background-attachment: fixed,fixed,fixed,scroll,scroll;
-    }
-    .hero .inner{ width:100%; max-width:1080px; padding:2.8rem 1.1rem }
-    .kicker{ letter-spacing:.08em; text-transform:uppercase; opacity:.92; font-size:.92rem }
-    .grid-2{ display:grid; grid-template-columns:1fr; gap:16px }
-    @media (min-width:960px){ .grid-2{ grid-template-columns:1fr 1fr } }
-    .muted{ opacity:.75 }
-    .tight{ margin:0; padding-left:1.2rem }
-    .card{ background:var(--card, rgba(255,255,255,.06)); border:1px solid rgba(0,0,0,.08); border-radius:12px; padding:1.1rem }
-    .wrap{ max-width:1080px; margin:0 auto; padding:0 1.1rem }
-    header{ backdrop-filter:saturate(1.2) blur(6px); position:sticky; top:0; z-index:10; background:color-mix(in oklab, canvas, transparent 25%); border-bottom:1px solid rgba(0,0,0,.08) }
-    header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:.9rem 1.1rem }
-    header nav ul{ display:flex; gap:1rem; list-style:none; margin:0; padding:0 }
-    header a{ text-decoration:none }
-    footer{ border-top:1px solid rgba(0,0,0,.08); padding:1.2rem 0; margin-top:2rem }
-    .inst{ vertical-align:middle; margin-right:.45rem; border-radius:2px; background:rgba(255,255,255,.95); padding:1px; box-shadow:0 0 0 1px rgba(0,0,0,.06) }
-    li.edu{ display:flex; align-items:center; gap:.5rem; }
+    .cv-awards { display:grid; row-gap:6px; }
+    .cv-awards .year { float:right; opacity:.75; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <h1>Pathak Shubham Parashar</h1>
-        <span class="muted">Condensed-matter theory · UC San Diego</span>
+  <div class="progress" id="progress"></div>
+  <header class="wrap" role="banner">
+    <nav aria-label="Primary">
+      <a class="brand" href="#top">
+        <img src="/nav-avatar.jpg" alt="Portrait of Pathak Shubham Parashar" class="avatar" width="56" height="56" loading="eager" decoding="async" fetchpriority="high">
+        <span class="name">Pathak Shubham Parashar</span>
+      </a>
+
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Selected Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
       </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Selected Work</a></li>
-          <li><a href="#teaching">Teaching</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="/cv.pdf" target="_blank" rel="noopener">CV</a></li>
-        </ul>
-      </nav>
-    </div>
+
+      <!-- Updated quicklinks: web CV and PDF in new tab -->
+      <div class="navlinks" id="quicklinks" aria-label="External quick links">
+        <a href="/cv.html">CV</a>
+        <a href="/cv.pdf" target="_blank" rel="noopener">PDF</a>
+        <a href="mailto:psparash@ucsd.edu">Email</a>
+        <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://github.com/shubham-parashar-cmt" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
   </header>
 
-  <section class="hero" id="top">
-    <div class="inner">
-      <div class="kicker">Quantum transport · correlated electrons · topological phases</div>
-      <h2>Hydrodynamic ↔ diffusive transport in 2D systems</h2>
-      <p>Current focus: diffusive → ballistic crossover in graphene magnetotransport.</p>
-    </div>
-  </section>
-
-  <main class="wrap" id="main">
-    <div class="grid-2">
-      <!-- Left -->
-      <section id="about" class="card">
-        <h3>About</h3>
-        <p>I study charge and heat transport in two-dimensional systems—hydrodynamics in strong magnetic fields, correlated-electron phases, and topology-inspired models.</p>
-      </section>
-
-      <section id="research" class="card">
-        <h3>Selected Research</h3>
-        <ul class="tight">
-          <li><strong>Hydrodynamic ↔ diffusive crossover near obstacles</strong> — separatrices &amp; vortex behavior under strong B.</li>
-          <li><strong>Spin splitting beyond mean field</strong> — thermodynamics of the transition in higher Landau levels.</li>
-          <li><strong>Non-Abelian topological models</strong> — ribbon operators, condensation &amp; confinement.</li>
+  <main id="main" class="wrap" role="main">
+    <section class="hero" id="top">
+      <div class="card">
+        <h1>Pathak Shubham Parashar</h1>
+        <p class="tagline">Researcher @ <strong>UC San Diego</strong>. Hydrodynamics &amp; quantum transport in 2D; correlated electrons; non-Hermitian &amp; topological phases.</p>
+        <div class="chips" aria-label="Research areas">
+          <span class="badge badge-year">Magneto-transport</span>
+          <span class="badge">Hydrodynamics</span>
+          <span class="badge">2D Electron Systems</span>
+          <span class="badge">Non-Hermitian Theory</span>
+          <span class="badge">Topological Order</span>
+        </div>
+      </div>
+      <aside class="card" aria-label="At a glance">
+        <h2>At a Glance</h2>
+        <ul>
+          <li>Department of Physics, UC San Diego</li>
+          <li>Focus: hydrodynamic–diffusive crossovers; vorticity near inhomogeneities</li>
+          <li>Contact: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></li>
         </ul>
-      </section>
+      </aside>
+    </section>
 
-      <!-- Right -->
-      <section id="projects" class="card">
-        <h3>Selected Work</h3>
-        <ul class="tight">
-          <li>Hydrodynamic/diffusive currents near obstacles (2DEG) — 
-            <a data-must-exist href="/assets/papers/hydro-diffusive-obstacle.pdf">PDF</a> · 
-            <a data-must-exist href="/asset/notes/hydro-diffusive-obstacle.pdf">Notes</a> · 
-            <a href="/assets/slides/hydro-diffusive-obstacle/">Slides</a></li>
-          <li>Spin-splitting beyond mean-field (QHE) — 
-            <a data-must-exist href="/assets/papers/spin-splitting.pdf">PDF</a> · 
-            <a data-must-exist href="/asset/notes/spin-splitting.pdf">Notes</a> · 
-            <a href="/assets/slides/spin-splitting/">Slides</a></li>
-          <li>B.S. (IISc) — 
-            <a data-must-exist href="/asset/notes/bs-physics-iisc.pdf">Notes</a> · 
-            <a href="/assets/slides/bs-physics-iisc/">Slides</a></li>
-        </ul>
-      </section>
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>I study <strong>quantum Hall physics in higher Landau levels</strong>, <strong>magneto-transport in high magnetic fields</strong>, and <strong>itinerant phases in correlated two-dimensional systems</strong>. I also explore <strong>in-spiral black hole mergers in D &gt; 5 dimensions</strong>.</p>
+    </section>
 
-      <section id="education" class="card">
-        <h3>Education</h3>
-        <ul class="tight">
-          <li class="edu">
-            <img class="inst" src="/assets/img/ucsd-logo.svg" alt="UC San Diego wordmark" width="110" height="20" loading="lazy">
-            <strong>Ph.D. Physics — UC San Diego</strong> — Condensed-matter theory, magnetotransport
-          </li>
-          <li class="edu">
-            <img class="inst" src="/assets/img/iisc-seal.png" alt="IISc seal" width="22" height="22" loading="lazy">
-            <strong>B.S. Physics — <a href="https://iisc.ac.in/" target="_blank" rel="noopener">Indian Institute of Science (IISc)</a></strong>
-          </li>
-        </ul>
-        <p class="muted" style="margin:.6rem 0 0">Marks shown for identification only; replace with official brand files when available.</p>
-      </section>
+    <section id="research" class="card">
+      <h2>Research</h2>
+      <h3 style="margin:0 0 6px">Research Themes</h3>
+      <ul class="tight">
+        <li><strong>Hydrodynamics &amp; Turbulence</strong> — DNS of 2+1D advection; renormalization-group scaling laws for turbulent flows.</li>
+        <li><strong>Correlated Electrons &amp; Transport</strong> — Marginal Fermi liquids in 2D; symplectic <em>Sp(2N)</em> Hertz–Millis theory; non-associative operator structures.</li>
+        <li><strong>Non-Hermitian &amp; Lattice Theory</strong> — Extensions of the Nielsen–Ninomiya no-go constraints to non-Hermitian settings.</li>
+        <li><strong>Topological Phases</strong> — Quantum double models in 3+1D.</li>
+        <li><strong>Gravitation &amp; HEP</strong> — Higher-dimensional (D &gt; 5) black-hole inspirals; CP violation in SUSY Pati–Salam / SO(10) frameworks.</li>
+      </ul>
+    </section>
 
-      <section id="publications" class="card">
-        <h3>Publications</h3>
-        <ul class="tight">
-          <li><em>Molecular Physics</em> (2015): Towards an exact factorization of the molecular wave function.
-              <a href="https://www.tandfonline.com/doi/full/10.1080/00268976.2015.1074745" target="_blank" rel="noopener">View</a></li>
-        </ul>
-      </section>
-    </div>
+    <section id="projects" class="card">
+      <h2>Selected Work</h2>
+      <ul class="tight">
+        <li><strong>DNS of turbulent advection (2+1D):</strong> direct numerical simulation and scaling diagnostics for advective transport.</li>
+        <li><strong>RG for turbulence:</strong> renormalization-group derivations and tests of scaling laws.</li>
+        <li><strong>QMC for adiabatic processes:</strong> quantum Monte Carlo codes and benchmarks — <em>MEXT Fellow, JAIST (Ryo Maezono), 2015–2016</em>.</li>
+        <li><strong>Marginal Fermi liquids in 2D:</strong> transport signatures and phenomenology.</li>
+        <li><strong>Non-associative operators in condensed matter:</strong> algebraic structures and observables.</li>
+        <li><strong>Symplectic <em>Sp(2N)</em> Hertz–Millis:</strong> correlated itinerant phases in multi-component fermion systems.</li>
+        <li><strong>Non-Hermitian lattice fermions:</strong> reshaping Nielsen–Ninomiya constraints.</li>
+        <li><strong>SUSY Pati–Salam / SO(10) CP violation:</strong> model building and CP-violating sectors.</li>
+        <li><strong>Black-hole inspirals in D &gt; 5:</strong> dynamics and thermodynamic aspects beyond 3+1D.</li>
+        <li><strong>Quantum double models (3+1D):</strong> excitations and constraints for higher-dimensional topological order.</li>
+      </ul>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>Experience</h2>
+      <div class="tl-item">
+        <div class="tl-date">2015–2016</div>
+        <div>
+          <strong>Research Intern</strong>, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan<br>
+          <em>Supervisor:</em> Prof. Ryo Maezono &nbsp;·&nbsp; <em>Fellowship:</em> MEXT Research Fellowship<br>
+          <span class="muted">Work:</span> Quantum Monte Carlo (QMC) methods for correlated electron systems
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="card">
+      <h2>Publications (in preparation)</h2>
+      <ul class="tight">
+        <li><strong>Hydrodynamic and diffusive magneto-transport near a density perturbation in a two-dimensional electron gas</strong><br>
+            P. Shubham Parashar, M. M. Fogler (2025)</li>
+        <li><strong>Imaging diffusive-to-ballistic crossover of magnetotransport in graphene</strong><br>
+            Z. J. Krebs, W. A. Behn, K. J. Smith, M. A. Fortman, K. Watanabe, T. Taniguchi, Pathak S. Parashar, M. M. Fogler, V. W. Brar (2025)</li>
+        <li><strong>Thermodynamics of the spin-splitting transition in quantum Hall effect</strong><br>
+            Pathak S. Parashar, D. P. Arovas, M. M. Fogler (2025)</li>
+        <li><strong>Symplectic ferromagnetism and phase transitions in multi-component fermionic systems</strong><br>
+            Zi Cai, Pathak S. Parashar, Congjun Wu (2025)</li>
+      </ul>
+      <p class="mono muted" style="margin-top:10px">
+        Also see <a href="https://scholar.google.com/citations?user=XXOQp8wAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a> and
+        <a href="https://orcid.org/0009-0007-8741-9101" target="_blank" rel="noopener">ORCID</a>.
+      </p>
+    </section>
+
+    <section id="awards" class="card">
+      <h2>Awards &amp; Grants</h2>
+      <div class="cv-awards">
+        <p><strong>MEXT Research Fellowship (Japan)</strong><span class="year">2015–2016</span></p>
+        <p><strong>Bhadra Fellowship</strong><span class="year">2025</span></p>
+        <p><strong>NSF Grant</strong><span class="year">2018–2020</span></p>
+        <p><strong>UCSD Scholar's grant</strong><span class="year">2017</span></p>
+      </div>
+    </section>
+
+    <section id="coursework" class="card">
+      <h2>Selected Graduate Coursework</h2>
+      <ul class="tight">
+        <li><strong>PHYS 230 — Advanced Solid-State Physics</strong> (A+)</li>
+        <li><strong>PHYS 211B — Solid-State Physics II</strong> (A)</li>
+        <li><strong>PHYS 239 — Phases of Quantum Matter</strong> (A)</li>
+        <li><strong>PHYS 239 — Optics of Quantum Materials</strong> (A)</li>
+        <li><strong>PHYS 215A/215B — Particles &amp; Fields (Quantum Field Theory I &amp; II)</strong> (A, A+)</li>
+        <li><strong>PHYS 217 — Field Theory / Renormalization Group</strong> (A)</li>
+        <li><strong>PHYS 220 — Group Theoretical Methods in Physics</strong> (A)</li>
+        <li><strong>PHYS 201 — Mathematical Physics</strong> (A+)</li>
+      </ul>
+      <p class="muted" style="margin-top:6px">
+        Note: Many UCSD Physics graduate courses use <em>S/U</em> grading; term GPAs can appear as 0.00 when all units are Satisfactory.
+      </p>
+    </section>
+
+    <section id="teaching" class="card">
+      <h2>Teaching &amp; Instruction</h2>
+      <h3 style="margin:6px 0 4px">Pedagogy training</h3>
+      <ul class="tight">
+        <li><strong>PHYS 500 — Introduction to Physics Teaching</strong>, UC San Diego — Grade: S (Fall 2017)</li>
+      </ul>
+      <h3 style="margin:12px 0 4px">Subject areas qualified to teach / TA</h3>
+      <ul class="tight">
+        <li>Condensed matter / solid-state physics (advanced + special topics)</li>
+        <li>Quantum mechanics (upper-division &amp; graduate)</li>
+        <li>Quantum field theory (introductory graduate sequence)</li>
+        <li>Field theory / renormalization group (graduate topics)</li>
+        <li>Group theory for physicists; Mathematical physics</li>
+      </ul>
+    </section>
+
+    <section id="talks" class="card">
+      <h2>Talks &amp; Presentations</h2>
+      <ul class="tight">
+        <li><strong>Spin-split collapse in higher Landau levels</strong> — UC San Diego, 2023</li>
+        <li><strong>Vorticity patterns</strong> — Columbia University (NY), 2022</li>
+        <li><strong>Magneto-transport across local inhomogeneities</strong> — APS March Meeting, 2020</li>
+        <li><strong>Non-associative operators inspired from string theory</strong> — APS March Meeting, 2019</li>
+        <li><strong>Quantum double models in icosahedral structures</strong> — UC Irvine, 2018</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a> · GitHub: <a href="https://github.com/shubham-parashar-cmt">@shubham-parashar-cmt</a></p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Pathak Shubham Parashar.</p>
+    </footer>
   </main>
 
-  <footer>
-    <div class="wrap">
-      &copy; <span id="year"></span> Pathak Shubham Parashar · <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
-    </div>
-  </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<script src="/assets/js/link-guard.js" defer></script>
+  <a href="#top" class="to-top" id="toTop" aria-label="Back to top">↑ Top</a>
+  <script defer src="/assets/js/site.js?v=cv-link-fix"></script>
 </body>
 </html>
