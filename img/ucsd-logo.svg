@@ -1,0 +1,5 @@
+<!-- Placeholder UCSD wordmark (replace with official brand SVG when available) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 60">
+  <rect width="330" height="60" rx="6" fill="#00356b"/>
+  <text x="16" y="40" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="28" fill="#ffd200">UC San Diego</text>
+</svg>

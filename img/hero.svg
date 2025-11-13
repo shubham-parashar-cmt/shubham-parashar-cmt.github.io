@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1b396a"/>
+      <stop offset="1" stop-color="#0d1524"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="rgba(255,255,255,0.12)">
+    <circle cx="1300" cy="180" r="120"/>
+    <circle cx="260" cy="720" r="90"/>
+  </g>
+  <text x="60" y="140" font-size="56" font-family="Georgia,serif" fill="rgba(255,255,255,.9)">Academic Profile</text>
+</svg>
