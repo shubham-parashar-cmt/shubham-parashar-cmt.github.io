@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nonassociative geometry and Berry curvature · P. Shubham Parashar</title>
+  <meta name="description" content="Public-safe working note on monopole Berry curvature, fuzzy sphere projection, and the careful interpretation of nonassociative geometry.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Public-safe working note</p>
+      <h1>Nonassociative geometry, Berry curvature, and fuzzy \(S^2\)</h1>
+      <p class="lead">
+        A conservative note on what is mathematically solid in the monopole/fuzzy-sphere analogy, and what should be treated only as exploratory structure.
+      </p>
+      <p class="meta">
+        Status: abbreviated public version. Detailed model-building extensions and unpublished speculative mechanisms are intentionally omitted.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Purpose</h2>
+      <p>
+        This note records the safe part of a longer private calculation. The useful lesson is a bookkeeping one:
+        the classical monopole problem on \(S^2\), its lowest-Landau-level projection, and the language of twisted Poisson geometry are related, but they are not the same mathematical object.
+      </p>
+      <div class="callout">
+        The classical reduced phase space is symplectic and therefore associative at the level of its Poisson algebra. Any nonassociative-looking structure in this setting should be read as an effective or truncated-symbol statement, not as a failure of the underlying operator algebra.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The reduced space versus the ambient space</h2>
+      <p>
+        The reduced configuration space of the monopole problem is
+      </p>
+      \[
+        M_{\rm red}=S^2.
+      \]
+      <p>
+        On this sphere the monopole Berry curvature is the two-form
+      </p>
+      \[
+        \omega = eg\,\sin\theta\,d\theta\wedge d\phi .
+      \]
+      <p>
+        Since \(\omega\) is nondegenerate on \(S^2\), it defines an ordinary symplectic structure. The associated Poisson bracket is
+      </p>
+      \[
+        \{f,g\}_{\rm PB}
+        =
+        \frac{1}{eg\sin\theta}
+        \left(\partial_\theta f\,\partial_\phi g
+        -\partial_\phi f\,\partial_\theta g\right),
+      \]
+      <p>
+        and it obeys the Jacobi identity exactly. Thus the classical theory on \(S^2\) is not intrinsically nonassociative.
+      </p>
+      <p>
+        The ambient-space language is different. If the monopole curvature is represented as a two-form on \(\mathbb R^3\setminus\{0\}\), it is closed away from the origin. If extended distributionally to all of \(\mathbb R^3\), its exterior derivative is supported at the monopole defect. This distinction is essential.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Projection and fuzzy sphere symbols</h2>
+      <p>
+        Lowest-Landau-level projection replaces the commutative algebra of functions on \(S^2\) by a finite-dimensional matrix algebra. Equivalently, one may use a symbol map and an induced star product,
+      </p>
+      \[
+        \hat O[f]\,\hat O[g] = \hat O[f\star g].
+      \]
+      <p>
+        The matrix algebra is associative, so the full star product is associative as well:
+      </p>
+      \[
+        (f\star g)\star h = f\star(g\star h).
+      \]
+      <p>
+        However, in a semiclassical expansion in the inverse monopole charge or inverse spin, one often truncates the star product. Such truncations can generate an effective Jacobiator in the symbol algebra. This is a controlled artifact of the approximation scheme, not a contradiction of associativity of the underlying projected Hilbert-space operators.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Twisted Poisson interpretation</h2>
+      <p>
+        A twisted Poisson bracket has a Jacobiator controlled by a three-form \(H\):
+      </p>
+      \[
+        \{\{f,g\},h\}+\text{cyclic}
+        \sim
+        \Pi^{ia}\Pi^{jb}\Pi^{kc}H_{abc}
+        \partial_i f\,\partial_j g\,\partial_k h .
+      \]
+      <p>
+        In the monopole setting, the only defensible public statement is structural: an effective truncated-symbol Jacobiator may be organized in a form reminiscent of a twisted Poisson bracket, with the relevant flux supported at a defect in the ambient description. On the smooth reduced space itself, the classical bracket remains ordinary Poisson.
+      </p>
+      <div class="callout">
+        The safe conclusion is not “the monopole sphere is nonassociative.” The safe conclusion is: projection plus truncation can produce an effective Nambu/twisted-Poisson tensor structure, while the exact classical and exact operator descriptions remain associative in the appropriate sense.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What is omitted from this public version</h2>
+      <p>
+        The longer private note contains additional model-building directions and possible extensions. Those details are not posted here. This public version is limited to the background geometry and the conceptual guardrails needed to avoid overclaiming.
+      </p>
+      <p>
+        Future public versions may add more material after the calculations have been checked, converted into a manuscript-level argument, or made clearly non-proprietary.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Reading pointers</h2>
+      <ul class="compact-list">
+        <li>Fuzzy sphere quantization and coherent-state star products.</li>
+        <li>Monopole harmonics and lowest-Landau-level projection on \(S^2\).</li>
+        <li>Twisted Poisson geometry and three-form backgrounds.</li>
+        <li>Berry-curvature monopoles in momentum-space band geometry.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
