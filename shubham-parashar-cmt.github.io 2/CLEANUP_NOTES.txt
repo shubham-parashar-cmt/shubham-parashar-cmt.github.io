@@ -1,0 +1,14 @@
+Clean-site rebuild notes
+
+Omitted from the uploaded repo:
+- duplicated CSS/JS/font directories
+- proprietary/user-uploaded font files
+- stale CV copies and duplicate headshots
+- temporary files: nn, test, patch/diff files
+- broad speculative project PDFs and note PDFs, pending cleanup
+- paper PDF copies; site uses official arXiv/DOI links instead
+
+Included:
+- static pages: home, research, publications, projects, talks, CV, notes placeholder
+- current uploaded CV PDF
+- processed headshot derived from the uploaded screenshot, with mild sharpening/upscaling only
