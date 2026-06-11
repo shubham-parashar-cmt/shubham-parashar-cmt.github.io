@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Floquet Nielsen-Ninomiya · P. Shubham Parashar</title>
+  <meta name="description" content="Cleaned exploratory note on a Floquet/spacetime Nielsen-Ninomiya toy model and loop winding on an extended torus.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Exploratory working note</p>
+      <h1>Floquet Nielsen-Ninomiya on an extended torus</h1>
+      <p class="lead">
+        A cleaned, conservative note on a \(1+1\)d Floquet/spacetime-lattice toy kernel and its loop winding on \(S^1_\omega\times S^1_k\).
+      </p>
+      <p class="meta">
+        Status: cleaned working note. This is not a publication claim and should not be treated as a theorem-level counterexample to Nielsen-Ninomiya.
+      </p>
+      <div class="pub-links">
+        <a href="/source/notes/nielsen-ninomiya-floquet-clean.pdf">PDF</a>
+        <a href="/source/notes/nielsen-ninomiya-floquet-clean.tex">TeX source</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Purpose and cleanup verdict</h2>
+      <p>
+        The original note mixed three related but logically distinct ideas: Friedan's formulation of the Nielsen-Ninomiya theorem for a static Hermitian lattice Hamiltonian; a scalar Floquet/spacetime kernel; and the claim that a nonzero winding of this kernel should be read directly as a chiral index.
+      </p>
+      <div class="callout">
+        The robust statement is narrower: the scalar kernel
+        \[
+          D(\omega,k)=\mu-e^{i(\omega-k)}
+        \]
+        defines a map to \(\mathbb C^\times\) for \(|\mu|\ne1\). Along a one-cycle on which \(\theta=\omega-k\) winds once, the phase of \(D\) has winding number \(+1\) for \(|\mu|<1\) and \(0\) for \(|\mu|>1\).
+      </div>
+      <p>
+        The cleaned note therefore treats the example as a compact calculation of a loop winding, not as a standalone violation of the static Hermitian Nielsen-Ninomiya theorem.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Static Nielsen-Ninomiya: what is being constrained?</h2>
+      <p>
+        A standard Nielsen-Ninomiya statement constrains a static, translationally invariant, local, Hermitian lattice Hamiltonian
+      </p>
+      \[
+        H=\int_{\mathrm{BZ}} d^d p\;\psi_a^\dagger(\mathbf p)K^a{}_b(\mathbf p)\psi^b(\mathbf p),
+      \]
+      <p>
+        where \(K(\mathbf p)=K^\dagger(\mathbf p)\) is a smooth matrix on the spatial Brillouin torus. Near isolated Fermi points, the low-energy blocks look Dirac-like, and the theorem states that the total chirality in each charge sector must vanish.
+      </p>
+      <p>
+        The crucial point for this note is object-level bookkeeping: the theorem is about a static Hermitian \(K(\mathbf p)\) on the spatial Brillouin zone, not an arbitrary frequency-momentum kernel on an extended torus.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>The Floquet/spacetime toy kernel</h2>
+      <p>
+        The toy object is the scalar kernel
+      </p>
+      \[
+        D(\omega,k)=\mu-e^{i(\omega-k)}.
+      \]
+      <p>
+        Here \(\omega\) is a dimensionless frequency or quasienergy angle and \(k\) is crystal momentum, so the natural domain is \(S^1_\omega\times S^1_k\). This is not a Hermitian Hamiltonian kernel. It is better thought of as a frequency-momentum Dirac operator or inverse propagator.
+      </p>
+      <p>
+        Since the kernel depends only on \(\theta=\omega-k\), the useful invariant is a one-cycle winding, even though the kernel is written on a two-torus.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Correct winding computation</h2>
+      <p>
+        Restrict to a loop \(C\subset S^1_\omega\times S^1_k\) on which \(\theta=\omega-k\) winds once. Define
+      </p>
+      \[
+        f(\theta)=\mu-e^{i\theta}.
+      \]
+      <p>
+        For \(|\mu|\ne1\), the loop avoids the origin in the complex plane. The winding number is
+      </p>
+      \[
+        \nu(C)=\frac{1}{2\pi i}\int_C d\log D
+        =\frac{1}{2\pi i}\int_0^{2\pi} d\theta\,\frac{f'(\theta)}{f(\theta)}.
+      \]
+      <p>
+        With \(z=e^{i\theta}\), this becomes
+      </p>
+      \[
+        \nu(C)=\frac{1}{2\pi i}\oint_{|z|=1}\frac{dz}{z-\mu}
+        =
+        \begin{cases}
+          1, & |\mu|<1,\\
+          0, & |\mu|>1.
+        \end{cases}
+      \]
+      <p>
+        Reversing the loop orientation reverses the sign. In particular, winding \(\omega\) at fixed \(k\) and winding \(k\) at fixed \(\omega\) give opposite signs in the \(|\mu|<1\) phase.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What this does and does not show</h2>
+      <p>
+        The one-form
+      </p>
+      \[
+        a=\frac{1}{2\pi i}d\log D
+      \]
+      <p>
+        is closed wherever \(D\ne0\), and its periods over one-cycles are integers. This is the clean mathematical content of the example.
+      </p>
+      <p>
+        It should not be oversold as a two-dimensional topological charge on \(S^1_\omega\times S^1_k\). Since \(\mathbb C^\times\simeq S^1\), one has \(\pi_1(\mathbb C^\times)=\mathbb Z\), supporting loop windings, but \(\pi_2(\mathbb C^\times)=0\), so there is no scalar two-dimensional winding number analogous to a Chern number.
+      </p>
+      <div class="callout">
+        The toy model lies outside the assumptions of static Hermitian Nielsen-Ninomiya. Its nontrivial integer is a loop winding of a frequency-momentum kernel on an extended torus, not the net chirality of a static Hamiltonian on the spatial Brillouin zone.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Relation to chiral propagation</h2>
+      <p>
+        The kernel also has a useful Fourier-series interpretation. For \(|\mu|<1\),
+      </p>
+      \[
+        \frac{1}{\mu-e^{i\theta}}
+        =-e^{-i\theta}\sum_{n\ge0}\mu^n e^{-in\theta}.
+      \]
+      <p>
+        For \(|\mu|>1\),
+      </p>
+      \[
+        \frac{1}{\mu-e^{i\theta}}
+        =\frac{1}{\mu}\sum_{n\ge0}\mu^{-n}e^{in\theta}.
+      \]
+      <p>
+        Thus the two regimes correspond to opposite choices of Fourier support along the discrete diagonal direction associated with \(\theta=\omega-k\). With fixed Fourier-transform conventions, this produces propagation along one directed lattice ray. The continuum statement \(G(x,t)\propto\theta(t)\delta(x-vt)\) should be treated as a heuristic limit, not as an exact result without specifying the regulator and conventions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Hypotheses comparison</h2>
+      <div class="two-col">
+        <article class="card">
+          <h3>Static Nielsen-Ninomiya</h3>
+          <ul class="compact-list">
+            <li>Hermitian \(K(k)\) on spatial \(S^1_k\)</li>
+            <li>Local static Hamiltonian</li>
+            <li>Chirality from Dirac-cone orientation</li>
+            <li>No-go theorem constrains net static chirality on the spatial Brillouin zone</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Floquet/spacetime toy object</h3>
+          <ul class="compact-list">
+            <li>Non-Hermitian inverse-propagator-like \(D(\omega,k)\)</li>
+            <li>Extended \(S^1_\omega\times S^1_k\) domain</li>
+            <li>Loop winding of \(D\) around \(\mathbb C^\times\)</li>
+            <li>Outside the static Hermitian hypotheses</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Possible upgrades</h2>
+      <p>
+        To turn this into a stronger project, one would need a fully specified unitary Floquet operator \(U(k)\) whose inverse propagator reduces to this kernel, a Ginsparg-Wilson or overlap-fermion dictionary, a higher-dimensional analogue with a genuine Chern/Green's-function index, or an anomaly calculation showing quantized charge pumping or spectral flow.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>References</h2>
+      <ol class="compact-list">
+        <li>H. B. Nielsen and M. Ninomiya, <em>Absence of Neutrinos on a Lattice. II. Intuitive Topological Proof</em>, Nucl. Phys. B <strong>193</strong>, 173-194 (1981).</li>
+        <li>D. Friedan, <em>A Proof of the Nielsen-Ninomiya Theorem</em>, Commun. Math. Phys. <strong>85</strong>, 481-490 (1982).</li>
+        <li>M. DeMarco and X.-G. Wen, <em>A Single Right-Moving Free Fermion Mode on an Ultra-Local 1+1D Spacetime Lattice with Exactly Lorentz Invariant Dynamics</em>, arXiv:1805.03663.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>

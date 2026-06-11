@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\BZ}{\mathrm{BZ}}
+
+\title{Floquet Nielsen--Ninomiya on an Extended Torus:\\A Cleaned Working Note}
+\author{P. Shubham Parashar}
+\date{Cleaned note, June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note is a cleaned, conservative version of an exploratory note on Nielsen--Ninomiya-type constraints for Floquet or spacetime-lattice fermions.  The central example is the scalar kernel
+\[
+  D(\omega,k)=\mu-e^{\ii(\omega-k)}
+\]
+on the extended torus \(\TT^2=S^1_\omega\times S^1_k\).  The useful calculation is an elementary loop winding of \(D\) along the non-contractible cycle \(\theta=\omega-k\).  The note also states carefully what this calculation does and does not prove: it is not a counterexample to the static Hermitian Nielsen--Ninomiya theorem, but a compact way of seeing how the relevant object changes when one works with a frequency-momentum/Floquet kernel rather than a static Hermitian Hamiltonian \(K(k)\) on the spatial Brillouin zone.
+\end{abstract}
+
+\section{Purpose and cleanup verdict}
+
+The original note mixed three related but logically distinct ideas:
+\begin{enumerate}[label=(\roman*)]
+  \item Friedan's formulation of the Nielsen--Ninomiya theorem for a static Hermitian lattice Hamiltonian;
+  \item a scalar Floquet/spacetime kernel \(D(\omega,k)=\mu-e^{\ii(\omega-k)}\);
+  \item the claim that a nonzero winding of \(D\) should be read as a chiral index.
+\end{enumerate}
+
+The cleaned version keeps the explicit calculation but weakens the interpretation.  The robust statement is:
+
+\begin{quote}
+The scalar kernel \(D(\omega,k)=\mu-e^{\ii(\omega-k)}\) defines a map from \(\TT^2\) to \(\CC^\times\) for \(|\mu|\neq1\).  Along a one-cycle on which \(\theta=\omega-k\) winds once, the phase of \(D\) has winding number \(+1\) for \(|\mu|<1\) and \(0\) for \(|\mu|>1\).
+\end{quote}
+
+This is best treated as a technical working note, not as a publication claim.  In particular, the invariant here is a \emph{one-cycle winding}; it is not a two-dimensional Chern number on \(\TT^2\), and by itself it does not constitute a theorem-level evasion of Nielsen--Ninomiya.
+
+\section{Static Nielsen--Ninomiya: the object being constrained}
+
+A standard version of the Nielsen--Ninomiya theorem concerns a static, translationally invariant, local, Hermitian lattice Hamiltonian
+\begin{equation}
+  H=\int_{\BZ}\dd^d p\; \psi_a^\dagger(\bm p)K^a{}_b(\bm p)\psi^b(\bm p),
+\end{equation}
+where \(K(\bm p)=K^\dagger(\bm p)\) is a smooth matrix-valued function on the spatial Brillouin torus \(\TT^d\).  Near an isolated Fermi point \(\bm p_\alpha\), one assumes a relativistic block
+\begin{equation}
+  K(\bm p)\simeq (p-p_\alpha)^i\Gamma_i^\alpha
+\end{equation}
+up to gapped spectator bands.  The chirality of the low-energy fermion is determined by the orientation of this Dirac cone, or equivalently by the sign of the appropriate product of gamma matrices.
+
+Friedan's formulation packages the statement in terms of a Green's-function current in \((p^0,\bm p)\)-space.  The important structural assumptions are:
+\begin{enumerate}[label=(\alph*)]
+  \item locality and smoothness of \(K(\bm p)\) on the compact spatial torus;
+  \item Hermiticity of the static Hamiltonian kernel;
+  \item charge conservation and block decomposition into irreducible charge sectors;
+  \item relativistic low-energy behavior near isolated zeros.
+\end{enumerate}
+Under these assumptions the total chirality in each charge sector vanishes.  Slogan: a static local Hermitian lattice Hamiltonian on the spatial Brillouin zone cannot produce an unpaired chiral fermion.
+
+\section{The Floquet/spacetime toy kernel}
+
+Now change the object.  Instead of a static Hamiltonian \(K(k)\) on a spatial circle \(S^1_k\), consider a scalar kernel on the extended torus \(S^1_\omega\times S^1_k\),
+\begin{equation}
+  D(\omega,k)=\mu-e^{\ii(\omega-k)},
+  \label{eq:D}
+\end{equation}
+where \(\omega\) is a dimensionless frequency or quasienergy angle and \(k\) is crystal momentum.  This is not a Hermitian Hamiltonian kernel.  It is better thought of as a frequency-momentum Dirac operator or inverse propagator.
+
+Equation \eqref{eq:D} depends only on
+\begin{equation}
+  \theta=\omega-k \mod 2\pi.
+\end{equation}
+Therefore the topology of the example is the topology of a map from a one-cycle into \(\CC^\times\), even though the kernel is written on \(\TT^2\).
+
+\section{Correct winding computation}
+
+Restrict to a loop \(C\subset\TT^2\) on which \(\theta=\omega-k\) winds once.  Define
+\begin{equation}
+  f(\theta)=\mu-e^{\ii\theta},
+  \qquad \theta\in[0,2\pi].
+\end{equation}
+For \(|\mu|\neq1\), this loop does not pass through the origin in the complex plane.  The winding number is
+\begin{equation}
+  \nu(C)=\frac{1}{2\pi\ii}\int_C \dd\log D
+       =\frac{1}{2\pi\ii}\int_0^{2\pi}\dd\theta\,\frac{f'(\theta)}{f(\theta)}.
+  \label{eq:winding}
+\end{equation}
+With \(z=e^{\ii\theta}\), one has \(f=\mu-z\), \(\dd\theta=\dd z/(\ii z)\), and
+\begin{equation}
+  \frac{f'(\theta)}{f(\theta)}\dd\theta
+  =\frac{-\ii z}{\mu-z}\frac{\dd z}{\ii z}
+  =\frac{\dd z}{z-\mu}.
+\end{equation}
+Therefore
+\begin{equation}
+  \nu(C)=\frac{1}{2\pi\ii}\oint_{|z|=1}\frac{\dd z}{z-\mu}
+  =
+  \begin{cases}
+    1, & |\mu|<1,\\[2pt]
+    0, & |\mu|>1.
+  \end{cases}
+\end{equation}
+
+\begin{proposition}
+For the scalar kernel \(D(\omega,k)=\mu-e^{\ii(\omega-k)}\), the pullback of \(D\) to any loop on which \(\theta=\omega-k\) winds once has winding number \(+1\) for \(|\mu|<1\) and \(0\) for \(|\mu|>1\).  Reversing the orientation of the loop reverses the sign.
+\end{proposition}
+
+\begin{remark}
+The sign is cycle-dependent.  If \(\omega\) winds once with \(k\) fixed, then \(\theta\) winds once and the invariant is \(+1\).  If \(k\) winds once with \(\omega\) fixed, then \(\theta\) winds in the opposite direction and the invariant is \(-1\) in the \(|\mu|<1\) phase.
+\end{remark}
+
+\section{What this does and does not show}
+
+The one-form
+\begin{equation}
+  a=\frac{1}{2\pi\ii}\dd\log D
+\end{equation}
+is closed wherever \(D\neq0\).  Its periods over one-cycles of the torus are integers.  This is the clean mathematical content of the example.
+
+It is tempting to write a Friedan-like current
+\begin{equation}
+  j^\mu=\frac{1}{2\pi\ii}\epsilon^{\mu\nu}\partial_\nu\log D.
+\end{equation}
+This is useful as notation, but it should not be oversold.  For \(|\mu|\neq1\), the kernel has no zero on the real torus.  Thus there is no literal two-dimensional divergence source sitting on \(\TT^2\).  The nontrivial invariant is instead the period of \(\dd\log D\) around a non-contractible one-cycle.
+
+This distinction matters.  Since \(\CC^\times\simeq S^1\), one has \(\pi_1(\CC^\times)=\mathbb Z\), which supports loop windings, but \(\pi_2(\CC^\times)=0\), so there is no scalar two-dimensional winding number of a map \(\TT^2\to\CC^\times\) analogous to a Chern number.
+
+\section{Relation to chiral propagation}
+
+The kernel \eqref{eq:D} also has a simple Fourier-series interpretation.  For \(|\mu|<1\),
+\begin{equation}
+  \frac{1}{\mu-e^{\ii\theta}}
+  =-e^{-\ii\theta}\sum_{n\ge0}\mu^n e^{-\ii n\theta}.
+\end{equation}
+For \(|\mu|>1\),
+\begin{equation}
+  \frac{1}{\mu-e^{\ii\theta}}
+  =\frac{1}{\mu}\sum_{n\ge0}\mu^{-n}e^{\ii n\theta}.
+\end{equation}
+Thus the two regimes correspond to opposite choices of allowed Fourier support along the discrete diagonal direction associated with \(\theta=\omega-k\).  With a fixed convention for Fourier transforms, this gives propagation along one directed lattice ray.  This is the sense in which the toy kernel resembles a chiral spacetime-lattice propagator.
+
+The continuum statement \(G(x,t)\propto\theta(t)\delta(x-vt)\) should be treated as a heuristic continuum limit, not as an exact result of the compact-torus model without specifying boundary conditions, Fourier conventions, and regularization.
+
+\section{Comparison with Nielsen--Ninomiya hypotheses}
+
+The safest way to state the relation to Nielsen--Ninomiya is a hypotheses table:
+
+\begin{center}
+\begin{tabular}{p{0.42\linewidth}p{0.42\linewidth}}
+\hline
+Static Nielsen--Ninomiya object & Floquet/spacetime toy object \\
+\hline
+Hermitian \(K(k)\) on spatial \(S^1_k\) & Non-Hermitian/inverse-propagator-like \(D(\omega,k)\) on \(S^1_\omega\times S^1_k\) \\
+Local static Hamiltonian & Frequency-momentum kernel / spacetime-lattice kernel \\
+Chirality from zeros of \(K(k)\) and Dirac-cone orientation & Loop winding of \(D\) around \(\CC^\times\) \\
+No-go theorem constrains net static chirality on the spatial BZ & The toy winding lies outside the static Hermitian hypotheses \\
+\hline
+\end{tabular}
+\end{center}
+
+Therefore the note should not say that the toy model ``violates'' Nielsen--Ninomiya.  It should say:
+
+\begin{quote}
+The toy model lies outside the assumptions of the static Hermitian Nielsen--Ninomiya theorem.  Its nontrivial integer is a loop winding of a frequency-momentum kernel on an extended torus, not the net chirality of a static Hamiltonian on the spatial Brillouin zone.
+\end{quote}
+
+\section{Possible upgrades}
+
+To turn this into a stronger project, one would need at least one of the following:
+\begin{enumerate}[label=(\alph*)]
+  \item a fully specified unitary Floquet operator \(U(k)\) whose inverse propagator reduces to \eqref{eq:D};
+  \item a precise Ginsparg--Wilson or overlap-fermion dictionary relating \(D\) to a lattice chiral symmetry;
+  \item a higher-dimensional analogue where the invariant is a genuine Chern number or Green's-function index;
+  \item a clean anomaly calculation showing quantized charge pumping or spectral flow.
+\end{enumerate}
+
+Until then, this note is best used as a compact worked example and a reminder of the difference between static Hamiltonian topology and extended frequency-momentum topology.
+
+\begin{thebibliography}{9}
+
+\bibitem{NielsenNinomiya}
+H. B. Nielsen and M. Ninomiya,
+\emph{Absence of Neutrinos on a Lattice. II. Intuitive Topological Proof},
+Nucl. Phys. B \textbf{193}, 173--194 (1981).
+
+\bibitem{Friedan}
+D. Friedan,
+\emph{A Proof of the Nielsen--Ninomiya Theorem},
+Commun. Math. Phys. \textbf{85}, 481--490 (1982).
+
+\bibitem{DeMarcoWen}
+M. DeMarco and X.-G. Wen,
+\emph{A Single Right-Moving Free Fermion Mode on an Ultra-Local 1+1D Spacetime Lattice with Exactly Lorentz Invariant Dynamics},
+\href{https://arxiv.org/abs/1805.03663}{arXiv:1805.03663}.
+
+\end{thebibliography}
+
+\end{document}
