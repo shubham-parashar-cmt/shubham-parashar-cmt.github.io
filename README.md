@@ -1,21 +1,22 @@
-# Personal Site — Pathak Shubham Parashar
+# P. Shubham Parashar — academic website
 
-Live: https://shubham-parashar-cmt.github.io
+Clean static GitHub Pages site for `shubham-parashar-cmt.github.io`.
 
-## Structure
-- `index.html`: homepage
-- `cv.html` / `cv.pdf`: curriculum vitae
-- `assets/`: CSS, JS, images, icons
-- `feed.xml`: simple news feed
+## Deploy
 
-## Update tips
-- **Avatar:** replace `assets/img/nav-avatar.jpg`
-- **OG preview:** update `assets/img/og-card.png`
-- **Publications:** edit array in `assets/js/site.js`
-- **CV PDF:** replace `cv.pdf` (or regenerate)
+Copy these files into the root of the GitHub Pages repository, then run:
 
-## Fonts
-Minion Pro (if installed) → fallback to Source Serif 4.
+```bash
+git add .
+git commit -m "Deploy clean academic research website"
+git push
+```
 
-## License
-Personal academic site.
+GitHub Pages should serve the site from the `main` branch root.
+
+## Notes
+
+- Static HTML/CSS only; no Jekyll build required.
+- `.nojekyll` is included intentionally.
+- The site links to publisher/arXiv pages instead of storing paper PDFs.
+- Public notes are intentionally omitted until they are cleaned.
