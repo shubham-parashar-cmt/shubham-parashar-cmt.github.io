@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functional RG Notes · P. Shubham Parashar</title>
+  <meta name="description" content="Working notes on functional renormalization group, Katanin substitution, and spin functional RG deformation schemes.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        macros: {
+          dd: '\\mathrm{d}',
+          Tr: '\\operatorname{Tr}',
+          T: '\\mathcal{T}'
+        }
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>Functional renormalization group notes</h1>
+      <p class="lead">A cleaned technical note on fermionic fRG, the Katanin substitution, and spin functional RG deformation schemes.</p>
+      <p class="status">Status: background / convention audit needed before manuscript use.</p>
+    </section>
+
+    <section class="section">
+      <h2>Purpose</h2>
+      <p>
+        These notes collect two related but distinct pieces of functional-renormalization-group machinery:
+        first, the standard fermionic fRG setup with a cutoff-dependent Gaussian part, a single-scale propagator,
+        and vertex/self-energy flow equations; second, the spin fRG formulation for an anisotropic Heisenberg
+        model, where longitudinal and transverse spin couplings are deformed separately.
+      </p>
+      <div class="callout">
+        <strong>Use with care.</strong> This is a working derivation note, not a polished review article. The main items
+        requiring a later line-by-line audit are signs, regulator conventions, factors of $\beta N$, and the precise
+        meaning of the Katanin replacement in each truncation.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. Fermionic fRG: minimal setup</h2>
+      <p>
+        Start from a Grassmann functional integral
+      </p>
+      $$
+      \mathcal Z = \int \mathcal D(\bar\psi,\psi)\, e^{-S(\bar\psi,\psi)} .
+      $$
+      <p>
+        Separate the quadratic and interacting parts as
+      </p>
+      $$
+      S(\bar\psi,\psi)=(\bar\psi,Q\psi)-\widetilde V(\bar\psi,\psi),
+      \qquad
+      (\bar\psi,Q\psi)=\sum_j \bar\psi_j Q_j \psi_j .
+      $$
+      <p>
+        For a translationally invariant fermion problem the composite index is typically
+        $j=(i\omega_n,\mathbf k,s)$ and $Q_j=i\omega_n-\xi_{\mathbf k}$, with
+        $\xi_{\mathbf k}=\varepsilon_{\mathbf k}-\mu$. The inverse of the quadratic kernel is the bare propagator,
+        $G_0=Q^{-1}$, up to the convention used for signs and normalization.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>2. Cutoff and single-scale propagator</h2>
+      <p>
+        A cutoff-dependent quadratic kernel can be introduced by
+      </p>
+      $$
+      Q^\Lambda = Q/\chi(\Lambda),
+      \qquad
+      \chi(\Lambda)\approx \Theta(|\xi|-\Lambda).
+      $$
+      <p>
+        The interpretation is that modes with $|\xi|>\Lambda$ have been integrated in. The flow starts near the
+        bandwidth scale $\Lambda_i\sim W$ and ends at $\Lambda_f=0$, where $\chi(0)=1$.
+      </p>
+      <p>
+        The full propagator is
+      </p>
+      $$
+      G^\Lambda = \left(Q^\Lambda-\Sigma^\Lambda\right)^{-1}.
+      $$
+      <p>
+        The single-scale propagator is the derivative of $G^\Lambda$ at fixed self-energy:
+      </p>
+      $$
+      S^\Lambda
+      =-G^\Lambda\,\dot Q^\Lambda\,G^\Lambda,
+      \qquad
+      \dot Q^\Lambda\equiv \partial_\Lambda Q^\Lambda .
+      $$
+      <p>
+        In a sharp-shell scheme, $\dot\chi$ produces a delta function on the running shell
+        $|\xi_{\mathbf k}|=\Lambda$.
+      </p>
+
+      <figure class="card">
+        <img src="/assets/images/notes/functional-rg/flow2.png" alt="Schematic fRG self-energy and vertex flow equations" style="width:100%;max-width:680px;display:block;margin:auto;">
+        <figcaption class="meta">Schematic self-energy and two-particle vertex flow. The vertex flow shown here uses the Katanin modification.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>3. One-loop flow and Katanin replacement</h2>
+      <p>
+        At the usual one-loop truncation level, the self-energy and two-particle vertex obey closed flow equations
+        after higher vertices are either neglected or approximated. Diagrammatically, the self-energy flow contains
+        one single-scale line and one two-particle vertex, while the two-particle vertex flow contains particle-particle
+        and particle-hole loop corrections.
+      </p>
+      <p>
+        The Katanin replacement promotes the single-scale structure in the two-particle flow according to
+      </p>
+      $$
+      S^\Lambda G^\Lambda + G^\Lambda S^\Lambda
+      \quad\longrightarrow\quad
+      \partial_\Lambda\left(G^\Lambda G^\Lambda\right).
+      $$
+      <p>
+        Equivalently, inside the corresponding two-particle loop, this accounts for the self-energy feedback term
+        contained in $\partial_\Lambda G^\Lambda$. This is often essential when the flow is used to approach symmetry-broken
+        regimes.
+      </p>
+      <div class="callout">
+        <strong>Convention check.</strong> Do not globally replace every $S^\Lambda$ by $\partial_\Lambda G^\Lambda$ without checking
+        the truncation. The Katanin substitution is a controlled modification of the two-particle flow, not a magic rule
+        for every line in every diagram.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Useful summation trick</h2>
+      <p>
+        Momentum sums can often be reduced to energy integrals of the form
+      </p>
+      $$
+      \sum_{\mathbf k} \longrightarrow \int_{-W}^{W} \dd\varepsilon\,\rho(\varepsilon).
+      $$
+      <p>
+        If the scale dependence enters only through $\chi$ and $\Sigma$, then for an integrand
+        $\mathcal I(\xi,\chi,\Sigma)$,
+      </p>
+      $$
+      \int_{-W}^{W}\dd\varepsilon\,\rho(\varepsilon)\,\partial_\Lambda\mathcal I
+      =\int_{-W}^{W}\dd\varepsilon\,\rho(\varepsilon)
+      \left(
+      \dot\chi\,\frac{\partial\mathcal I}{\partial\chi}
+      +\dot\Sigma\,\frac{\partial\mathcal I}{\partial\Sigma}
+      \right).
+      $$
+      <p>
+        For a sharp cutoff this becomes a shell contribution plus self-energy feedback:
+      </p>
+      $$
+      \int\dd\varepsilon\,\rho(\varepsilon)
+      \left[
+      \left.\mathcal I\right|_{\chi=1}\delta(|\varepsilon|-\Lambda)
+      +\dot\Sigma\,\frac{\partial\mathcal I}{\partial\Sigma}
+      \right].
+      $$
+    </section>
+
+    <section class="section">
+      <h2>5. Spin fRG deformation scheme</h2>
+      <p>
+        For the anisotropic Heisenberg model, write
+      </p>
+      $$
+      \mathcal H=\mathcal H_0+\mathcal V,
+      $$
+      $$
+      \mathcal V=-\frac12\sum_{ij}
+      \left[J_{ij}^{\perp}\left(S_i^+S_j^-+S_i^-S_j^+\right)
+      +J_{ij}^{z}S_i^zS_j^z\right].
+      $$
+      <p>
+        The deformation parameter $\Lambda$ is introduced through scale-dependent couplings
+      </p>
+      $$
+      J_{\Lambda,ij}^{\perp}=J_{ij}^{\perp}-R_{\Lambda,ij}^{\perp},
+      \qquad
+      J_{\Lambda,ij}^{z}=J_{ij}^{z}-R_{\Lambda,ij}^{z}.
+      $$
+      <p>
+        The regulator is chosen so that the initial point is solvable and the final point recovers the physical model.
+        The scheme may simply switch on the interaction, or it may deform the range of the interaction.
+      </p>
+
+      <figure class="card">
+        <img src="/assets/images/notes/functional-rg/deformation.png" alt="Longitudinal and transverse interaction deformation scheme" style="width:100%;max-width:520px;display:block;margin:auto;">
+        <figcaption class="meta">Example deformation: longitudinal fluctuations are switched on first, followed by transverse fluctuations.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>6. Generating functional and Wetterich-type structure</h2>
+      <p>
+        With source fields $\mathbf h_i(\tau)$, define
+      </p>
+      $$
+      \mathcal G_\Lambda[\mathbf h]
+      =\ln\Tr\left[e^{-\beta\mathcal H_0}
+      \mathcal T\exp\left\{\int_0^\beta\dd\tau
+      \left[\sum_i\mathbf h_i(\tau)\cdot\mathbf S_i(\tau)-\mathcal V_\Lambda(\tau)\right]
+      \right\}\right].
+      $$
+      <p>
+        Connected spin correlators follow by source differentiation:
+      </p>
+      $$
+      G_{\Lambda,I_1\cdots I_n}^{\alpha_1\cdots\alpha_n}
+      =\left.
+      \frac{\delta^n\mathcal G_\Lambda[\mathbf h]}
+      {\delta h_{I_1}^{\bar\alpha_1}\cdots\delta h_{I_n}^{\bar\alpha_n}}
+      \right|_{h=0}.
+      $$
+      <p>
+        After a modified Legendre transform, the irreducible functional satisfies a formal one-loop exact equation
+      </p>
+      $$
+      \partial_\Lambda\mathcal L_\Lambda[\mathbf M]
+      =\frac12\Tr\left[
+      \left(\mathcal L_\Lambda''[\mathbf M]+\mathcal R_\Lambda\right)^{-1}
+      \partial_\Lambda\mathcal R_\Lambda
+      \right].
+      $$
+      <p>
+        This is the spin analogue of a Wetterich equation, with the caveat that the spin variables are not ordinary
+        canonical bosonic fields and the longitudinal/transverse sectors carry different bookkeeping.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>7. Hybrid functional and longitudinal amputation</h2>
+      <p>
+        A useful construction decouples the longitudinal interaction using a Hubbard-Stratonovich field $\eta$ and
+        introduces a source $s$ for that field. The resulting hybrid functional is
+      </p>
+      $$
+      \mathcal F_\Lambda[\mathbf h^\perp,s]
+      =\mathcal G_\Lambda\left[\mathbf h^\perp,
+      h_i^z=\sum_jJ_{\Lambda,ij}^zs_j\right]
+      +\frac12\sum_{IJ}\mathbb J^z_{\Lambda,IJ}s_Is_J.
+      $$
+      <p>
+        Its derivatives define correlation functions that are connected in the transverse sector and amputated in the
+        longitudinal sector. For example,
+      </p>
+      $$
+      F_{\Lambda,I}^{z}=\sum_J\mathbb J^z_{\Lambda,IJ}G_{\Lambda,J}^{z},
+      $$
+      $$
+      F_{\Lambda,IJ}^{zz}
+      =\sum_{KL}\mathbb J^z_{\Lambda,IK}\mathbb J^z_{\Lambda,JL}G_{\Lambda,KL}^{zz}
+      +\mathbb J^z_{\Lambda,IJ}.
+      $$
+    </section>
+
+    <section class="section">
+      <h2>8. Symmetry-broken phase and exchange field</h2>
+      <p>
+        In the ordered phase the magnetization is taken along the $z$ direction,
+      </p>
+      $$
+      \langle S_I^\alpha\rangle_\Lambda=M_\Lambda\delta^{\alpha z}.
+      $$
+      <p>
+        In the hybrid representation the corresponding longitudinal exchange field is
+      </p>
+      $$
+      \bar\Phi_{I,\Lambda}^\alpha=\phi_\Lambda\delta^{\alpha z},
+      \qquad
+      \phi_\Lambda=J^z_{\Lambda,0}M_\Lambda.
+      $$
+      <p>
+        The Legendre transform to a vertex functional $\Gamma_\Lambda[\Phi]$ is then expanded about this running
+        extremum. This avoids a spurious linear term in the fluctuation fields provided $\phi_\Lambda$ is flowed consistently.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>9. Tree-level two-point identities</h2>
+      <p>
+        In momentum-frequency space, $K=(\mathbf k,i\omega)$, the transverse and longitudinal two-point functions obey
+      </p>
+      $$
+      F_\Lambda^{+-}(K)=\left[\Gamma_\Lambda^{+-}(K)+R_{\Lambda,k}^{\perp}\right]^{-1},
+      $$
+      $$
+      F_\Lambda^{zz}(K)=\left[\Gamma_\Lambda^{zz}(K)+R_{\Lambda,k}^{\phi}\right]^{-1}.
+      $$
+      <p>
+        The transverse connected and partially amputated functions coincide,
+      </p>
+      $$
+      G_\Lambda(K)=G_\Lambda^{+-}(K)=F_\Lambda^{+-}(K),
+      $$
+      <p>
+        while the longitudinal relation contains the exchange-line amputation,
+      </p>
+      $$
+      F_\Lambda(K)=F_\Lambda^{zz}(K)=\left(J^z_{\Lambda,k}\right)^2G_\Lambda^{zz}(K)+J^z_{\Lambda,k}.
+      $$
+      <p>
+        Therefore,
+      </p>
+      $$
+      \Gamma_\Lambda^{+-}(K)=G_\Lambda^{-1}(K)+J_{\Lambda,k}^{\perp}-J_k^{\perp},
+      $$
+      $$
+      \Gamma_\Lambda^{zz}(K)
+      =-\frac{G_\Lambda^{zz}(K)}{1+J^z_{\Lambda,k}G_\Lambda^{zz}(K)}+\frac{1}{J_k^z}.
+      $$
+    </section>
+
+    <section class="section">
+      <h2>10. Vertex-flow hierarchy</h2>
+      <p>
+        Expanding the exact functional flow in powers of the fields produces an infinite hierarchy of coupled
+        integro-differential equations for the vertices
+        $\Gamma_{\Lambda,K_1\cdots K_n}^{\alpha_1\cdots\alpha_n}$.
+      </p>
+
+      <figure class="card">
+        <img src="/assets/images/notes/functional-rg/vertex-flow.png" alt="Spin fRG vertex flow hierarchy" style="width:100%;max-width:500px;display:block;margin:auto;">
+        <figcaption class="meta">Representative vertex-flow hierarchy diagram from the original notes.</figcaption>
+      </figure>
+
+      <p>
+        The free-energy flow is schematically
+      </p>
+      $$
+      \partial_\Lambda f_\Lambda
+      =\int_KG_\Lambda(K)\partial_\Lambda R^\perp_{\Lambda,k}
+      +\frac12\int_K\left[F_\Lambda(K)-J^z_{\Lambda,k}\right]\partial_\Lambda R^\phi_{\Lambda,k}
+      -\frac12\phi_\Lambda^2\partial_\Lambda R^\phi_{\Lambda,0}.
+      $$
+      <p>
+        The exchange-field flow is fixed by demanding that the fluctuation expansion contain no linear term:
+      </p>
+      $$
+      \Gamma_\Lambda^{zz}(0)\partial_\Lambda\phi_\Lambda
+      =-\partial_\Lambda\left(R^\phi_{\Lambda,0}\phi_\Lambda\right)
+      -\int_K\dot G_\Lambda(K)\Gamma_\Lambda^{+-z}(K,-K,0)
+      -\frac12\int_K\dot F_\Lambda(K)\Gamma_\Lambda^{zzz}(K,-K,0).
+      $$
+      <p>
+        The transverse and longitudinal single-scale propagators are
+      </p>
+      $$
+      \dot G_\Lambda(K)=-G_\Lambda^2(K)\partial_\Lambda R^\perp_{\Lambda,k},
+      \qquad
+      \dot F_\Lambda(K)=-F_\Lambda^2(K)\partial_\Lambda R^\phi_{\Lambda,k}.
+      $$
+    </section>
+
+    <section class="section">
+      <h2>11. Infinite-range / Katanin benchmark</h2>
+      <p>
+        The original note also attempted a benchmark in an infinite-range limit, comparing a Katanin-corrected flow
+        against a tree-level vertex-corrected flow. The relevant self-consistency structure is the running gap
+      </p>
+      $$
+      \Delta_\Lambda=H\frac{M_0}{M_\Lambda},
+      $$
+      <p>
+        together with a flow for the magnetization of the schematic form
+      </p>
+      $$
+      \partial_\Lambda M_\Lambda
+      =\frac{M_0}{\beta N}\sum_{\mathbf k,\omega}
+      \frac{\Gamma^{+-z}_{\Lambda,\mathrm{Kat}}\delta(k-\Lambda)}
+      {\Delta_\Lambda+E_{\mathbf k}-i\omega}.
+      $$
+      <p>
+        After the Matsubara/momentum integrations, the notes reduce this to a scalar flow for $M_\Lambda$ and compare
+        the Katanin result with a vertex-corrected approximation.
+      </p>
+
+      <div class="two-col">
+        <figure class="card">
+          <img src="/assets/images/notes/functional-rg/katanin-0.01.png" alt="Katanin correction benchmark plot" style="width:100%;display:block;">
+          <figcaption class="meta">Original diagnostic plot: Katanin correction.</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="/assets/images/notes/functional-rg/vertex-0.001.png" alt="Vertex correction benchmark plot" style="width:100%;display:block;">
+          <figcaption class="meta">Original diagnostic plot: vertex correction.</figcaption>
+        </figure>
+      </div>
+
+      <div class="callout">
+        <strong>Audit needed.</strong> This benchmark is the least polished part of the note. The scaling statement for
+        the susceptibility and the $H\to0$ limit should be rederived from scratch before being reused.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What to do next</h2>
+      <ol class="compact-list">
+        <li>Decide whether the target is fermionic fRG, spin fRG, or only the Katanin benchmark. Do not keep all three as one active project.</li>
+        <li>Fix the regulator convention and write it in one boxed definition.</li>
+        <li>Redo the infinite-range benchmark independently in a two-page derivation.</li>
+        <li>Only then decide whether this connects to the quantum-Hall spin-splitting project.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
