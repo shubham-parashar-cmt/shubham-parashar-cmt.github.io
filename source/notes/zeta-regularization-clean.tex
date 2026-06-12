@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\Ree}{\operatorname{Re}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\FP}{\operatorname{FP}}
+
+\title{A clean route to zeta regularization:\\
+\large heat kernel, Mellin transform, and meromorphic continuation}
+\author{P. Shubham Parashar}
+\date{Cleaned working note}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note separates three distinct operations that are often conflated in informal discussions of zeta regularization: ordinary summation, regulator-dependent finite parts, and analytic continuation. The basic example is the exponential cutoff of $\sum_{n\ge 1} n$, followed by the Mellin-transform construction of the Riemann zeta function and its spectral generalization for Laplace-type operators on compact manifolds.
+\end{abstract}
+
+\section{Three notions that must be kept separate}
+There are three different objects in play.
+\begin{itemize}
+  \item An \emph{ordinary sum} $\sum_n a_n$ means the limit of partial sums, when that limit exists.
+  \item A \emph{regularization} replaces a divergent expression by a convergent family $F(\varepsilon)$, studies the asymptotics as $\varepsilon\to 0^+$, and may extract a finite part.
+  \item An \emph{analytic continuation} extends a holomorphic function from its initial domain to a larger domain, typically as a meromorphic function.
+\end{itemize}
+The slogan $1+2+3+\cdots=-1/12$ is therefore misleading unless it is explicitly interpreted as a statement about a particular regularized finite part or about the analytically continued value of the Riemann zeta function at $s=-1$.
+
+\section{A convergent cutoff calculation}
+For $\varepsilon>0$, define
+\begin{equation}
+  S(\varepsilon)=\sum_{n=1}^{\infty} n e^{-\varepsilon n}.
+\end{equation}
+This is an ordinary convergent sum for each positive $\varepsilon$. With $q=e^{-\varepsilon}$,
+\begin{equation}
+  \sum_{n\ge1} n q^n = \frac{q}{(1-q)^2},
+\end{equation}
+so
+\begin{equation}
+  S(\varepsilon)=\frac{e^{-\varepsilon}}{(1-e^{-\varepsilon})^2}.
+\end{equation}
+The Bernoulli expansion gives
+\begin{equation}
+  \frac{\varepsilon}{1-e^{-\varepsilon}}
+  =1+\frac{\varepsilon}{2}+\frac{\varepsilon^2}{12}-\frac{\varepsilon^4}{720}+O(\varepsilon^6),
+\end{equation}
+and hence
+\begin{equation}
+  S(\varepsilon)=\frac{1}{\varepsilon^2}-\frac{1}{12}+O(\varepsilon^2)
+  \qquad (\varepsilon\to0^+).
+\end{equation}
+The divergent part is $\varepsilon^{-2}$ and the cutoff-independent constant term is $-1/12$.
+
+\paragraph{Finite part in this scheme.}
+For this exponential cutoff one may define
+\begin{equation}
+  \sum_{n\ge1}^{(\mathrm{FP})} n
+  :=\FP_{\varepsilon\to0^+}\sum_{n=1}^{\infty}n e^{-\varepsilon n}
+  =-\frac{1}{12},
+\end{equation}
+where $\FP$ means the constant term in the small-$\varepsilon$ asymptotic expansion after divergent powers have been removed. This is not an ordinary sum.
+
+\section{Mellin transforms as the systematic mechanism}
+For a function $F(t)$ on $(0,\infty)$, its Mellin transform is
+\begin{equation}
+  \mathcal{M}[F](s)=\int_0^{\infty} t^{s-1}F(t)\dd t,
+\end{equation}
+where the integral converges. The important structural fact is that small-$t$ asymptotics of $F(t)$ control the pole structure of its Mellin transform.
+
+Suppose that as $t\to0^+$,
+\begin{equation}
+  F(t)\sim \sum_j c_j t^{\alpha_j}.
+\end{equation}
+Then the terms $c_j t^{\alpha_j}$ generate possible simple poles at $s=-\alpha_j$ in the Mellin transform. The standard continuation procedure is to subtract finitely many singular small-$t$ terms, integrate the subtracted expression in a larger strip, and then add back the subtracted terms as explicit meromorphic functions of $s$.
+
+\section{Riemann zeta from a heat-kernel type integral}
+For $\Ree(s)>1$,
+\begin{equation}
+  \zeta(s)=\sum_{n=1}^{\infty} n^{-s}.
+\end{equation}
+Using
+\begin{equation}
+  \frac{1}{e^t-1}=\sum_{n=1}^{\infty} e^{-nt}
+\end{equation}
+and
+\begin{equation}
+  \int_0^{\infty} t^{s-1}e^{-nt}\dd t=\Gamma(s)n^{-s},
+\end{equation}
+one obtains, again for $\Ree(s)>1$,
+\begin{equation}
+  \zeta(s)=\frac{1}{\Gamma(s)}\int_0^{\infty}\frac{t^{s-1}}{e^t-1}\dd t.
+\end{equation}
+Near $t=0$,
+\begin{equation}
+  \frac{1}{e^t-1}=\frac{1}{t}-\frac{1}{2}+\frac{t}{12}-\frac{t^3}{720}+\cdots.
+\end{equation}
+Subtracting finitely many terms of this expansion and adding them back explicitly produces the meromorphic continuation of $\zeta(s)$. In that analytically continued sense,
+\begin{equation}
+  \zeta(-1)=-\frac{1}{12}.
+\end{equation}
+This value agrees with the finite part of the exponential cutoff above, but the two statements should still be distinguished conceptually.
+
+\section{Spectral zeta functions and heat traces}
+Let $M$ be a compact Riemannian manifold and let $\Delta\ge0$ be the Laplace--Beltrami operator. Its spectrum is discrete,
+\begin{equation}
+  0=\lambda_0\le\lambda_1\le\lambda_2\le\cdots,
+  \qquad \lambda_k\to\infty.
+\end{equation}
+The heat trace is the convergent quantity
+\begin{equation}
+  \Theta(t)=\Tr(e^{-t\Delta})=\sum_{k\ge0}e^{-t\lambda_k},
+  \qquad t>0.
+\end{equation}
+As $t\to0^+$ it has an asymptotic expansion
+\begin{equation}
+  \Theta(t)\sim (4\pi t)^{-\dim M/2}\sum_{j\ge0}a_j t^{j/2}.
+\end{equation}
+The spectral zeta function is initially defined for $\Ree(s)$ large by
+\begin{equation}
+  \zeta_{\Delta}(s)=\sum_{k\ge1}\lambda_k^{-s}.
+\end{equation}
+Removing the zero mode from the heat trace gives the Mellin representation
+\begin{equation}
+  \zeta_{\Delta}(s)=\frac{1}{\Gamma(s)}\int_0^{\infty}t^{s-1}\bigl(\Theta(t)-1\bigr)\dd t,
+\end{equation}
+where this integral converges. The heat-kernel expansion at small $t$ then generates the meromorphic continuation of $\zeta_{\Delta}(s)$ to the complex plane. The coefficients $a_j$ determine the possible pole structure.
+
+\section{A good sentence and a bad sentence}
+A careful statement is:
+\begin{quote}
+In the exponential cutoff scheme, the finite part of $\sum_{n\ge1}n e^{-\varepsilon n}$ as $\varepsilon\to0^+$ is $-1/12$; equivalently, the analytically continued Riemann zeta function satisfies $\zeta(-1)=-1/12$.
+\end{quote}
+A bad statement is:
+\begin{quote}
+$1+2+3+\cdots=-1/12$.
+\end{quote}
+The second phrase erases the distinction between ordinary summation, regularization, and analytic continuation.
+
+\end{document}

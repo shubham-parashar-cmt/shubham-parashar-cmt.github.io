@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zeta regularization · P. Shubham Parashar</title>
+  <meta name="description" content="A cleaned working note on zeta regularization, finite parts, Mellin transforms, and spectral zeta functions.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        macros: {
+          dd: '\\,\\mathrm{d}',
+          Ree: '\\operatorname{Re}',
+          Tr: '\\operatorname{Tr}',
+          FP: '\\operatorname{FP}'
+        }
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>A clean route to zeta regularization</h1>
+      <p class="lead">Heat kernels, Mellin transforms, finite parts, and meromorphic continuation.</p>
+      <div class="pub-links">
+        <a href="/source/notes/zeta-regularization-clean.pdf">PDF</a>
+        <a href="/source/notes/zeta-regularization-clean.tex">TeX source</a>
+        <a href="/notes/">Back to notes</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Purpose</h2>
+      <p>
+        This note separates three operations that are often conflated in informal discussions of zeta
+        regularization: ordinary summation, regulator-dependent finite parts, and analytic continuation.
+        The basic example is the exponential cutoff of $\sum_{n\ge 1}n$, followed by the Mellin-transform
+        construction of the Riemann zeta function and its spectral generalization for Laplace-type operators.
+      </p>
+      <div class="callout">
+        The statement $1+2+3+\cdots=-1/12$ is not an ordinary summation statement. A careful statement is
+        that the exponential-cutoff finite part is $-1/12$, and the analytically continued Riemann zeta
+        function satisfies $\zeta(-1)=-1/12$.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Three notions</h2>
+      <ul class="compact-list">
+        <li><strong>Ordinary sum:</strong> $\sum_n a_n$ means the limit of partial sums, when that limit exists.</li>
+        <li><strong>Regularization:</strong> replace a divergent expression by a convergent family $F(\varepsilon)$ and study $\varepsilon\to0^+$.</li>
+        <li><strong>Analytic continuation:</strong> extend a holomorphic function from its original domain to a larger domain, usually meromorphically.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>A convergent cutoff calculation</h2>
+      <p>For $\varepsilon>0$, define the honest convergent sum</p>
+      $$
+        S(\varepsilon)=\sum_{n=1}^{\infty} n e^{-\varepsilon n}.
+      $$
+      <p>With $q=e^{-\varepsilon}$,</p>
+      $$
+        \sum_{n\ge1}nq^n=\frac{q}{(1-q)^2},
+        \qquad
+        S(\varepsilon)=\frac{e^{-\varepsilon}}{(1-e^{-\varepsilon})^2}.
+      $$
+      <p>The Bernoulli expansion gives</p>
+      $$
+        S(\varepsilon)=\frac{1}{\varepsilon^2}-\frac{1}{12}+O(\varepsilon^2),
+        \qquad \varepsilon\to0^+.
+      $$
+      <p>
+        Thus the divergent piece is $\varepsilon^{-2}$, while the cutoff-independent constant term is $-1/12$.
+        In this scheme,
+      </p>
+      $$
+        \sum_{n\ge1}^{(\mathrm{FP})} n
+        := \operatorname{FP}_{\varepsilon\to0^+}\sum_{n=1}^{\infty}n e^{-\varepsilon n}
+        = -\frac{1}{12}.
+      $$
+    </section>
+
+    <section class="section">
+      <h2>Mellin transforms</h2>
+      <p>For a function $F(t)$ on $(0,\infty)$, the Mellin transform is</p>
+      $$
+        \mathcal{M}[F](s)=\int_0^{\infty}t^{s-1}F(t)\,\mathrm{d}t.
+      $$
+      <p>
+        If $F(t)\sim\sum_j c_jt^{\alpha_j}$ as $t\to0^+$, then the terms $c_jt^{\alpha_j}$ generate
+        possible poles at $s=-\alpha_j$. The continuation mechanism is to subtract finitely many small-$t$
+        singular terms, integrate the subtracted expression in a larger strip, and add the subtracted terms
+        back as explicit meromorphic functions of $s$.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Riemann zeta</h2>
+      <p>For $\operatorname{Re}(s)>1$,</p>
+      $$
+        \zeta(s)=\sum_{n=1}^{\infty}n^{-s}
+        =\frac{1}{\Gamma(s)}\int_0^{\infty}\frac{t^{s-1}}{e^t-1}\,\mathrm{d}t.
+      $$
+      <p>Near $t=0$,</p>
+      $$
+        \frac{1}{e^t-1}=\frac{1}{t}-\frac{1}{2}+\frac{t}{12}-\frac{t^3}{720}+\cdots.
+      $$
+      <p>
+        Subtracting and adding back these terms produces the meromorphic continuation of $\zeta(s)$. In that
+        analytically continued sense,
+      </p>
+      $$
+        \zeta(-1)=-\frac{1}{12}.
+      $$
+    </section>
+
+    <section class="section">
+      <h2>Spectral zeta functions</h2>
+      <p>
+        Let $M$ be a compact Riemannian manifold and let $\Delta\ge0$ be the Laplace-Beltrami operator, with
+        discrete spectrum $0=\lambda_0\le\lambda_1\le\cdots$ and $\lambda_k\to\infty$. The heat trace is
+      </p>
+      $$
+        \Theta(t)=\operatorname{Tr}(e^{-t\Delta})=\sum_{k\ge0}e^{-t\lambda_k},\qquad t>0.
+      $$
+      <p>As $t\to0^+$,</p>
+      $$
+        \Theta(t)\sim (4\pi t)^{-\dim M/2}\sum_{j\ge0}a_jt^{j/2}.
+      $$
+      <p>The spectral zeta function is initially defined for $\operatorname{Re}(s)$ large by</p>
+      $$
+        \zeta_\Delta(s)=\sum_{k\ge1}\lambda_k^{-s},
+      $$
+      <p>and is related to the heat trace by</p>
+      $$
+        \zeta_\Delta(s)=\frac{1}{\Gamma(s)}\int_0^{\infty}t^{s-1}\bigl(\Theta(t)-1\bigr)\,\mathrm{d}t.
+      $$
+      <p>
+        The heat-kernel coefficients $a_j$ control the possible pole structure of the meromorphic continuation.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
