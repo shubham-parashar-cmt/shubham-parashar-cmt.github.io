@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worldline EFT, solitons, and Q-clouds · P. Shubham Parashar</title>
+  <meta name="description" content="Public-safe working note on worldline EFT, finite-size response, Love numbers, and synchronized scalar clouds on Kerr.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        macros: {
+          dd: '\\mathrm{d}',
+          e: '\\mathrm{e}',
+          ii: '\\mathrm{i}',
+          mpl: 'M_{\\rm Pl}',
+          rs: 'r_s'
+        }
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Public-safe working note</p>
+      <h1>Worldline EFT, solitons, and Q-clouds</h1>
+      <p class="lead">
+        A conservative synthesis of background material on compact-object effective field theory,
+        tidal response, and synchronized scalar clouds around Kerr black holes.
+      </p>
+      <p class="meta">
+        Status: abbreviated public version. Private model-building steps, implementation details,
+        and speculative claims are intentionally omitted.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Purpose</h2>
+      <p>
+        This note keeps only the reusable, non-proprietary background from a longer private set of notes.
+        The organizing question is how one should describe an extended compact object - such as a black hole,
+        neutron star, Q-ball, or scalar condensate - when it is probed at length scales much larger than its
+        internal size.
+      </p>
+      <div class="callout">
+        <strong>Scope guard.</strong> This is not a public proposal for a new hairy-black-hole mechanism.
+        It is a cleaned conceptual map: scale separation, worldline operators, matching, Love-number language,
+        and the standard synchronized-cloud setup.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Scale separation</h2>
+      <p>
+        The compact-binary problem is naturally organized into three regions. The internal zone resolves the
+        compact object itself, with characteristic radius \(r_s\). The near zone resolves the orbital separation
+        \(r\). The radiation zone resolves gravitational waves with wavelength of order \(r/v\), where \(v\) is
+        the orbital velocity. The useful hierarchy is therefore schematically
+      </p>
+      \[
+        r_s \ll r \ll \lambda_{\rm rad} .
+      \]
+      <p>
+        Effective field theory uses this hierarchy by integrating out the short-distance degrees of freedom and
+        replacing the compact object by a worldline decorated with all local operators allowed by symmetry. The
+        coefficients of those operators encode the unresolved internal physics.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Worldline EFT skeleton</h2>
+      <p>
+        At distances large compared with \(r_s\), the leading term is the point-particle action
+      </p>
+      \[
+        S_{\rm pp} = -m \int \dd\tau .
+      \]
+      <p>
+        Finite-size effects are added as a derivative expansion along the worldline:
+      </p>
+      \[
+        S_{\rm eff} = -m\int \dd\tau
+        + \sum_i C_i \int \dd\tau\, \mathcal O_i[g_{\mu\nu},u^\mu,\nabla_\alpha,\ldots] .
+      \]
+      <p>
+        The Wilson coefficients \(C_i\) are fixed by matching: compute an observable in the full theory and in
+        the EFT, expand both at low momentum, and choose \(C_i\) so the two descriptions agree to the desired
+        order in \(k r_s\).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Tidal response and Love-number language</h2>
+      <p>
+        For a nonspinning compact object, the first physically important finite-size operators are usually written
+        in terms of the electric and magnetic parts of the Weyl tensor,
+      </p>
+      \[
+        E_{\mu\nu}=C_{\mu\alpha\nu\beta}u^\alpha u^\beta,
+        \qquad
+        B_{\mu\nu}= {}^\star C_{\mu\alpha\nu\beta}u^\alpha u^\beta .
+      \]
+      <p>
+        A minimal tidal-response action has the schematic form
+      </p>
+      \[
+        S_{\rm tidal}
+        = \frac12 \int \dd\tau
+        \left[ C_E E_{\mu\nu}E^{\mu\nu}
+        + C_B B_{\mu\nu}B^{\mu\nu} + \cdots \right] .
+      \]
+      <p>
+        The coefficients \(C_E\) and \(C_B\) are the EFT representatives of static tidal response, often discussed
+        in terms of Love numbers. The same logic extends to higher multipoles and to frequency-dependent response
+        functions.
+      </p>
+      <div class="callout">
+        For this public note, the important point is methodological: Love numbers are not decorations added by hand;
+        they are matching coefficients in a long-distance effective action.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Potential modes and post-Newtonian organization</h2>
+      <p>
+        In the near zone, off-shell gravitational potential modes mediate conservative binding. They are integrated
+        out to produce an effective action for the worldlines. Radiation modes remain as long-distance degrees of
+        freedom and couple to multipole moments of the binary.
+      </p>
+      <p>
+        A useful bookkeeping device is the temporal Kaluza-Klein, or NRG, decomposition of the metric:
+      </p>
+      \[
+        \dd s^2
+        = e^{2\phi}(\dd t-A_i\dd x^i)^2
+        - e^{-2\phi/(d-2)}\gamma_{ij}\dd x^i\dd x^j .
+      \]
+      <p>
+        This separates a scalar gravitational potential \(\phi\), a gravimagnetic vector \(A_i\), and a spatial
+        metric \(\gamma_{ij}\). It is a convenient parametrization for post-Newtonian EFT calculations because
+        different fields have transparent velocity scaling.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Synchronized scalar clouds on Kerr</h2>
+      <p>
+        The scalar-cloud side of the problem can be stated without committing to any private model-building claim.
+        Consider a complex scalar field with a Q-ball-type self-interaction on a fixed Kerr background. A standard
+        synchronized ansatz is
+      </p>
+      \[
+        \Phi(t,r,\theta,\varphi)
+        = e^{-i\omega t+i m\varphi}\Psi(r,\theta),
+        \qquad
+        \omega=m\Omega_H,
+      \]
+      <p>
+        where \(\Omega_H\) is the horizon angular velocity. The synchronization condition makes the field stationary
+        in the co-rotating frame and removes net scalar flux through the horizon. Substituting the ansatz into the
+        scalar equation gives a nonlinear elliptic boundary-value problem for \(\Psi(r,\theta)\), with regularity at
+        the horizon and axis and decay at infinity.
+      </p>
+      <p>
+        This public note stops at the level of the standard setup. Numerical implementation choices, matching
+        strategies, and any proposed mechanism connecting clouds to worldline coefficients are deliberately not
+        included here.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What is omitted from the public version</h2>
+      <p>
+        The private notes contain exploratory questions, unpublished matching ideas, trial calculations, and solver
+        choices. Those details are not posted. In particular, this version omits:
+      </p>
+      <ul class="compact-list">
+        <li>private questions about scalar hair, Q-ball hair, or horizon matching mechanisms;</li>
+        <li>explicit unpublished perturbation ansätze and one-point-function calculations;</li>
+        <li>code-level tricks, numerical parameters, and solver implementation details;</li>
+        <li>any claim that a new hairy-black-hole mechanism has been established.</li>
+      </ul>
+      <p>
+        Future public versions should add only material that is either standard background, already published, or
+        converted into a checked manuscript-level argument.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Reading pointers</h2>
+      <ul class="compact-list">
+        <li>Worldline EFT for compact objects and post-Newtonian gravity.</li>
+        <li>Matching calculations for finite-size response and tidal Love numbers.</li>
+        <li>Temporal Kaluza-Klein / NRG variables in PN effective field theory.</li>
+        <li>Linear scalar clouds and synchronized scalar configurations on Kerr backgrounds.</li>
+        <li>Q-balls and self-interacting complex scalar field solitons.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
