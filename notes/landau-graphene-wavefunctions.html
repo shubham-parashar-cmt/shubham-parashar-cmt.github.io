@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landau Green's Functions and Graphene Wave Functions · P. Shubham Parashar</title>
+  <meta name="description" content="A cleaned technical note on Landau-level Green's functions, monolayer graphene Green's functions, and graphene partial-wave spinors.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>Landau Green's functions and graphene wave functions</h1>
+      <p class="lead">
+        A cleaned calculation note collecting Landau-level Green's functions, monolayer graphene Green's functions, Born approximation setup, and partial-wave spinors for circular graphene scattering.
+      </p>
+      <div class="pub-links">
+        <a href="/source/notes/landau-graphene-wavefunctions-clean.pdf">PDF</a>
+        <a href="/source/notes/landau-graphene-wavefunctions-clean.tex">TeX source</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nonrelativistic Landau-level Green's function</h2>
+      <p>For a two-dimensional electron in a perpendicular magnetic field and Landau gauge \(\mathbf A=(-By,0)\),</p>
+      <p>\[
+        \hat H_e=\frac{\hat{\boldsymbol\pi}^2}{2m},\qquad
+        \hat{\boldsymbol\pi}=\hat{\mathbf p}+e\mathbf A,
+        \qquad L=\sqrt{\frac{\hbar}{eB}}.
+      \]</p>
+      <p>The eigenstates may be written as</p>
+      <p>\[
+        \psi^e_{n k_x}(\boldsymbol\rho)=\frac{e^{i k_xx}}{\sqrt{2\pi}}\varphi_n(\xi),
+        \qquad \xi=\frac{y}{L}-k_xL,
+      \]</p>
+      <p>with</p>
+      <p>\[
+        \varphi_n(\xi)=\frac{1}{\sqrt{L2^n n!\sqrt\pi}}H_n(\xi)e^{-\xi^2/2},
+        \qquad E_n=\hbar\omega_c\left(n+\frac12\right).
+      \]</p>
+      <p>Using \(G_e=(H_e-E)^{-1}\), the spectral representation is</p>
+      <p>\[
+        G_e(\boldsymbol\rho,\boldsymbol\rho',E)=
+        \sum_{n=0}^{\infty}\int_{-\infty}^{\infty}
+        \frac{e^{ik_x(x-x')}\varphi_n(\xi)\varphi_n(\xi')}
+        {2\pi[\hbar\omega_c(n+1/2)-E]}\,dk_x.
+      \]</p>
+      <p>After the Gaussian-Hermite integral,</p>
+      <p>\[
+        G_e=\frac{e^{-R^2/2+i\chi}}{2\pi\hbar\omega_cL^2}
+        \sum_{n=0}^{\infty}\frac{L_n(R^2)}{n+1/2-\mathcal E},
+        \qquad \mathcal E=\frac{E}{\hbar\omega_c},
+      \]</p>
+      <p>where</p>
+      <p>\[
+        R^2=\frac{|\boldsymbol\rho-\boldsymbol\rho'|^2}{2L^2},
+        \qquad \chi=\frac{(x-x')(y+y')}{2L^2}.
+      \]</p>
+      <p>The Laguerre sum gives the Whittaker form</p>
+      <p>\[
+        \boxed{
+        G_e(\boldsymbol\rho,\boldsymbol\rho',E)=
+        \frac{e^{i\chi}}{2\pi\hbar\omega_cL^2|R|}
+        \Gamma\!\left(\frac12-\mathcal E\right)W_{\mathcal E,0}(R^2)}.
+      \]</p>
+    </section>
+
+    <section class="section">
+      <h2>Monolayer graphene Green's function</h2>
+      <p>At one valley of monolayer graphene,</p>
+      <p>\[
+        H_M=u(\sigma_x\pi_x+\sigma_y\pi_y),\qquad \omega=\frac{\sqrt2 u}{L}.
+      \]</p>
+      <p>The Landau levels are</p>
+      <p>\[
+        E_{ns}=s\hbar\omega\sqrt n,
+        \qquad s=\pm1,
+      \]</p>
+      <p>with spinors</p>
+      <p>\[
+        \psi^M_{n k_xs}(\boldsymbol\rho)=
+        \frac{e^{ik_xx}}{\sqrt{2\pi(2-\delta_{n0})}}
+        \begin{pmatrix}-s\varphi_{n-1}(\xi)\\ \varphi_n(\xi)\end{pmatrix}.
+      \]</p>
+      <p>Let \(\bar E=E/(\hbar\omega)\). The diagonal components reduce to</p>
+      <p>\[
+        G^M_{\sigma\sigma}=\frac{\bar E e^{-R^2/2+i\chi}}{2\pi\hbar\omega L^2}
+        \sum_{n=0}^{\infty}\frac{L_n(R^2)}{n+\sigma-\bar E^2},\qquad \sigma=0,1.
+      \]</p>
+      <p>Thus</p>
+      <p>\[
+        G^M_{00}=\frac{\bar E e^{i\chi}}{2\pi\hbar\omega L^2|R|}
+        \Gamma(-\bar E^2)W_{\bar E^2+1/2,0}(R^2),
+      \]</p>
+      <p>\[
+        G^M_{11}=\frac{\bar E e^{i\chi}}{2\pi\hbar\omega L^2|R|}
+        \Gamma(1-\bar E^2)W_{\bar E^2-1/2,0}(R^2).
+      \]</p>
+      <p>The off-diagonal components are obtained from the Laguerre identity</p>
+      <p>\[
+        L_{n-1}^{1}(R^2)=\frac{n}{R^2}\left[L_{n-1}(R^2)-L_n(R^2)\right],
+      \]</p>
+      <p>which gives</p>
+      <p>\[
+        G^M_{\sigma,1-\sigma}=\frac{r_{\sigma,1-\sigma}\bar E}{R^2}
+        \left(G^M_{11}-G^M_{00}\right).
+      \]</p>
+    </section>
+
+    <section class="section">
+      <h2>Born approximation</h2>
+      <p>For a weak scalar potential \(\widetilde V(\mathbf r)\), the Born wave function is</p>
+      <p>\[
+        \Psi(\mathbf r)=\frac{1}{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}e^{ikx}
+        +\int G^M(\mathbf r,\mathbf r';E)\widetilde V(\mathbf r')\Psi(\mathbf r')d^2r'.
+      \]</p>
+    </section>
+
+    <section class="section">
+      <h2>Massive Dirac spinors in symmetric gauge</h2>
+      <p>For</p>
+      <p>\[
+        H=v_F\boldsymbol\sigma\cdot(-i\hbar\boldsymbol\nabla-e\mathbf A)+\Delta\sigma_z,
+        \qquad \mathbf A=\frac{Br}{2}\hat{\boldsymbol\theta},
+      \]</p>
+      <p>the conserved angular momentum is \(J_z=-i\hbar\partial_\theta+\hbar\sigma_z/2\). Write</p>
+      <p>\[
+        \Phi(r,\theta)=\begin{pmatrix}\Phi_A(r)e^{im\theta}\\ i\Phi_B(r)e^{i(m+1)\theta}\end{pmatrix}.
+      \]</p>
+      <p>The radial equations are</p>
+      <p>\[
+        \left(\partial_r+\frac{r}{2l_B^2}-\frac{m}{r}\right)\Phi_A
+        =-\frac{E+\Delta}{\hbar v_F}\Phi_B,
+      \]</p>
+      <p>\[
+        \left(\partial_r+\frac{m+1}{r}-\frac{r}{2l_B^2}\right)\Phi_B
+        =\frac{E-\Delta}{\hbar v_F}\Phi_A.
+      \]</p>
+      <p>Eliminating \(\Phi_B\),</p>
+      <p>\[
+        \left[\partial_r^2+\frac1r\partial_r+\frac{m+1}{l_B^2}
+        -\frac{r^2}{4l_B^4}-\frac{m^2}{r^2}+q^2\right]\Phi_A=0,
+        \qquad q^2=\frac{E^2-\Delta^2}{(\hbar v_F)^2}.
+      \]</p>
+      <p>The regular solutions are</p>
+      <p>\[
+        \Phi_A^+(r)=\mathcal N_+r^m e^{-r^2/(4l_B^2)}
+        {}_1F_1\!\left(-\frac{l_B^2q^2}{2},m+1,\frac{r^2}{2l_B^2}\right),\quad m\ge0,
+      \]</p>
+      <p>\[
+        \Phi_A^-(r)=\mathcal N_-r^{|m|} e^{-r^2/(4l_B^2)}
+        {}_1F_1\!\left(-m-\frac{l_B^2q^2}{2},1-m,\frac{r^2}{2l_B^2}\right),\quad m<0.
+      \]</p>
+      <p>The lower component follows from</p>
+      <p>\[
+        \Phi_B=-\frac{\hbar v_F}{E+\Delta}
+        \left(\partial_r+\frac{r}{2l_B^2}-\frac{m}{r}\right)\Phi_A.
+      \]</p>
+    </section>
+
+    <section class="section">
+      <h2>Partial-wave expansion</h2>
+      <p>An incident massless Dirac plane wave moving along \(x\) has the expansion</p>
+      <p>\[
+        \Phi^i_k(r,\theta)=\frac{1}{\sqrt2}e^{ikr\cos\theta}
+        \begin{pmatrix}1\\1\end{pmatrix}
+        =\frac{1}{\sqrt2}\sum_{m=-\infty}^{\infty}i^m
+        \begin{pmatrix}J_m(kr)e^{im\theta}\\ iJ_{m+1}(kr)e^{i(m+1)\theta}\end{pmatrix}.
+      \]</p>
+      <p>The outgoing wave is</p>
+      <p>\[
+        \Phi^r_k(r,\theta)=\frac{1}{\sqrt2}\sum_{m=-\infty}^{\infty}a_m^r i^m
+        \begin{pmatrix}H_m^{(1)}(kr)e^{im\theta}\\ iH_{m+1}^{(1)}(kr)e^{i(m+1)\theta}\end{pmatrix}.
+      \]</p>
+      <p>The coefficients \(a_m^r\) are fixed by matching the spinor across the radius of the circular scatterer.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+</html>

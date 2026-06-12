@@ -1,0 +1,278 @@
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\brho}{\bm{\rho}}
+\newcommand{\bpi}{\bm{\pi}}
+\newcommand{\bsigma}{\bm{\sigma}}
+\DeclareMathOperator{\sgn}{sgn}
+
+\title{Landau Green's Functions and Graphene Wave Functions}
+\author{P. Shubham Parashar}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Nonrelativistic Landau-level Green's function}
+
+Consider a two-dimensional electron in a perpendicular magnetic field. With the Landau-gauge choice
+\begin{equation}
+  \bm A=(-By,0), \qquad L=\sqrt{\frac{\hbar}{eB}},
+\end{equation}
+the Hamiltonian is
+\begin{equation}
+  \hat H_e=\frac{\hat{\bpi}^{2}}{2m}, \qquad \hat{\bpi}=\hat{\bm p}+e\bm A .
+\end{equation}
+A convenient set of eigenstates is
+\begin{equation}
+  \psi^e_{n k_x}(\brho)=\frac{\ee^{\ii k_x x}}{\sqrt{2\pi}}\,\varphi_n(\xi),
+  \qquad \xi=\frac{y}{L}-k_xL,
+\end{equation}
+where
+\begin{equation}
+  \varphi_n(\xi)=\frac{1}{\sqrt{L\,2^n n!\sqrt\pi}}\,H_n(\xi)\ee^{-\xi^2/2}.
+\end{equation}
+The corresponding energies are
+\begin{equation}
+  E_n=\hbar\omega_c\left(n+\frac12\right), \qquad \omega_c=\frac{eB}{m}.
+\end{equation}
+Using the convention \(G_e=(H_e-E)^{-1}\), the Green's function is
+\begin{equation}
+  G_e(\brho,\brho',E)=
+  \sum_{n=0}^{\infty}\int_{-\infty}^{\infty}
+  \frac{\ee^{\ii k_x(x-x')}\varphi_n(\xi)\varphi_n(\xi')}
+       {2\pi[\hbar\omega_c(n+1/2)-E]}\dd k_x .
+\end{equation}
+The needed Hermite integral is
+\begin{equation}
+  \int_{-\infty}^{\infty}\ee^{-x^2}H_m(x+y)H_n(x+z)\dd x
+  =2^n\sqrt\pi\,m!\,z^{n-m}L_m^{n-m}(-2yz), \qquad m\le n .
+\end{equation}
+After the \(k_x\) integral one obtains
+\begin{equation}
+  G_e(\brho,\brho',E)=
+  \frac{\ee^{-R^2/2+\ii\chi}}{2\pi\hbar\omega_cL^2}
+  \sum_{n=0}^{\infty}\frac{L_n(R^2)}{n+1/2-\mathcal E},
+  \qquad \mathcal E=\frac{E}{\hbar\omega_c},
+\end{equation}
+where
+\begin{equation}
+  R^2=\frac{|\brho-\brho'|^2}{2L^2},
+  \qquad
+  \chi=\frac{(x-x')(y+y')}{2L^2}.
+\end{equation}
+The phase \(\chi\) is gauge dependent, while the decay and pole structure are gauge invariant.
+The Laguerre sum may be evaluated using
+\begin{equation}
+  t^{-\alpha}\sum_{n=0}^{\infty}\frac{L_n^{-\alpha}(t)}{n+a-\alpha}
+  =\Gamma(a-\alpha)\Psi(a,\alpha+1;t),
+\end{equation}
+where \(\Psi\) is the Tricomi confluent hypergeometric function. Equivalently,
+\begin{equation}
+  \Psi(a,c;t)=\ee^{t/2}t^{-1/2-\mu}W_{\kappa,\mu}(t),
+  \qquad \kappa=\frac{c}{2}-a,\quad \mu=\frac{c}{2}-\frac12 .
+\end{equation}
+Setting \(a=1/2-\mathcal E\), \(c=1\), and \(t=R^2\) gives
+\begin{equation}
+  \boxed{
+  G_e(\brho,\brho',E)=
+  \frac{\ee^{\ii\chi}}{2\pi\hbar\omega_cL^2 |R|}
+  \Gamma\left(\frac12-\mathcal E\right)
+  W_{\mathcal E,0}(R^2) .}
+\end{equation}
+Equivalently,
+\begin{equation}
+  \ee^{-R^2/2}\sum_{n=0}^{\infty}\frac{L_n(R^2)}{n+1/2-\mathcal E}
+  =\frac{1}{|R|}\Gamma\left(\frac12-\mathcal E\right)W_{\mathcal E,0}(R^2).
+\end{equation}
+
+\section{Monolayer graphene Landau-level Green's function}
+
+At one valley of monolayer graphene, the low-energy Hamiltonian is
+\begin{equation}
+  \hat H_M=u(\sigma_x\hat\pi_x+\sigma_y\hat\pi_y),
+\end{equation}
+where \(u\simeq 10^8\,\mathrm{cm/s}\). In the same Landau gauge, the eigenstates can be written as
+\begin{equation}
+  \psi^M_{n k_x s}(\brho)=
+  \frac{\ee^{\ii k_x x}}{\sqrt{2\pi(2-\delta_{n0})}}
+  \begin{pmatrix}
+    -s\varphi_{n-1}(\xi)\\
+    \varphi_n(\xi)
+  \end{pmatrix},
+  \qquad s=\pm1,
+\end{equation}
+with the convention \(\varphi_{-1}=0\). The energies are
+\begin{equation}
+  E_{ns}=s\hbar\omega\sqrt n,
+  \qquad \omega=\frac{\sqrt2 u}{L}.
+\end{equation}
+The stationary Green's function is a \(2\times2\) matrix. It is useful to introduce
+\begin{equation}
+  \bar E=\frac{E}{\hbar\omega}, \qquad
+  r_{10}=\frac{(y'-y)-\ii(x-x')}{L\sqrt2}, \qquad
+  r_{01}=\frac{(y-y')-\ii(x-x')}{L\sqrt2}.
+\end{equation}
+After summing over the band index \(s\) and doing the \(k_x\) integral, the diagonal components reduce to Laguerre sums,
+\begin{equation}
+  G^M_{\sigma\sigma}(\brho,\brho',E)=
+  \frac{\bar E\,\ee^{-R^2/2+\ii\chi}}{2\pi\hbar\omega L^2}
+  \sum_{n=0}^{\infty}\frac{L_n(R^2)}{n+\sigma-\bar E^2},
+  \qquad \sigma=0,1 .
+\end{equation}
+Using the Whittaker representation above gives
+\begin{align}
+  \boxed{G^M_{00}(\brho,\brho',E)}
+  &=\frac{\bar E\,\ee^{\ii\chi}}{2\pi\hbar\omega L^2|R|}
+    \Gamma(-\bar E^2)
+    W_{\bar E^2+1/2,0}(R^2),\\
+  \boxed{G^M_{11}(\brho,\brho',E)}
+  &=\frac{\bar E\,\ee^{\ii\chi}}{2\pi\hbar\omega L^2|R|}
+    \Gamma(1-\bar E^2)
+    W_{\bar E^2-1/2,0}(R^2).
+\end{align}
+For the off-diagonal components one uses
+\begin{equation}
+  L_{n-1}^{1}(R^2)=\frac{n}{R^2}\left[L_{n-1}(R^2)-L_n(R^2)\right]
+\end{equation}
+to obtain the compact relation
+\begin{equation}
+  \boxed{
+  G^M_{\sigma,1-\sigma}(\brho,\brho',E)=
+  \frac{r_{\sigma,1-\sigma}\bar E}{R^2}
+  \left(G^M_{11}-G^M_{00}\right).}
+\end{equation}
+The poles occur at
+\begin{equation}
+  \bar E=0,\ \pm1,\ \pm\sqrt2,\ \pm\sqrt3,\ldots,
+\end{equation}
+which reproduces the monolayer graphene Landau spectrum.
+
+A useful local expansion of the Whittaker function is
+\begin{equation}
+  W_{\lambda,0}(z)=\frac{\sqrt z\,\ee^{-z/2}}{\Gamma(1/2-\lambda)^2}
+  \sum_{k=0}^{\infty}\frac{\Gamma(k-\lambda+1/2)}{(k!)^2}z^k
+  \left[2\psi(k+1)-\psi(k-\lambda+1/2)-\ln z\right].
+\end{equation}
+
+\section{Born approximation}
+
+For a weak scalar potential \(\widetilde V(\bm r)\), the Born form of the scattering wave function is
+\begin{equation}
+  \Psi(\bm r)=\frac{1}{\sqrt2}
+  \begin{pmatrix}1\\1\end{pmatrix}\ee^{\ii kx}
+  +\int G^M(\bm r,\bm r';E)\,\widetilde V(\bm r')\,\Psi(\bm r')\dd^2r'.
+\end{equation}
+This formula is the starting point for weak-potential scattering from a graphene dot, impurity, or electrostatic island in a magnetic field.
+
+\section{Massive Dirac wave functions in symmetric gauge}
+
+Now consider the massive Dirac Hamiltonian
+\begin{equation}
+  H=v_F\bsigma\cdot(-\ii\hbar\bm\nabla-e\bm A)+\Delta\sigma_z,
+  \qquad \bm A=\frac{B r}{2}\,\hat{\bm\theta},
+\end{equation}
+with magnetic length \(l_B=\sqrt{\hbar/(eB)}\). In polar coordinates,
+\begin{equation}
+  \sigma_r=\begin{pmatrix}0&\ee^{-\ii\theta}\\ \ee^{\ii\theta}&0\end{pmatrix},
+  \qquad
+  \sigma_\theta=\begin{pmatrix}0&-\ii\ee^{-\ii\theta}\\ \ii\ee^{\ii\theta}&0\end{pmatrix}.
+\end{equation}
+With these conventions the Hamiltonian is
+\begin{equation}
+  H=
+  \begin{pmatrix}
+    \Delta & -\ii\hbar v_F\ee^{-\ii\theta}\left(\partial_r-\frac{\ii}{r}\partial_\theta-\frac{r}{2l_B^2}\right)\\
+    -\ii\hbar v_F\ee^{\ii\theta}\left(\partial_r+\frac{\ii}{r}\partial_\theta+\frac{r}{2l_B^2}\right)&-\Delta
+  \end{pmatrix}.
+\end{equation}
+The conserved total angular momentum is
+\begin{equation}
+  J_z=-\ii\hbar\partial_\theta+\frac{\hbar}{2}\sigma_z .
+\end{equation}
+An eigenstate of \(J_z\) may be written as
+\begin{equation}
+  \Phi(r,\theta)=
+  \begin{pmatrix}
+    \Phi_A(r)\ee^{\ii m\theta}\\
+    \ii\Phi_B(r)\ee^{\ii(m+1)\theta}
+  \end{pmatrix},
+  \qquad m\in\mathbb Z .
+\end{equation}
+The Dirac equation \(H\Phi=E\Phi\) gives the coupled radial equations
+\begin{align}
+  \left(\partial_r+\frac{r}{2l_B^2}-\frac{m}{r}\right)\Phi_A(r)
+    &=-\frac{E+\Delta}{\hbar v_F}\Phi_B(r),\\
+  \left(\partial_r+\frac{m+1}{r}-\frac{r}{2l_B^2}\right)\Phi_B(r)
+    &=\frac{E-\Delta}{\hbar v_F}\Phi_A(r).
+\end{align}
+Eliminating \(\Phi_B\) gives
+\begin{equation}
+  \left[\partial_r^2+\frac{1}{r}\partial_r+\frac{m+1}{l_B^2}
+  -\frac{r^2}{4l_B^4}-\frac{m^2}{r^2}+q^2\right]\Phi_A(r)=0,
+  \qquad
+  q^2=\frac{E^2-\Delta^2}{(\hbar v_F)^2}.
+\end{equation}
+Normalizable solutions decay as \(\ee^{-r^2/(4l_B^2)}\) at large radius and behave as \(r^{|m|}\) near the origin. Set
+\begin{equation}
+  \eta=\frac{r^2}{2l_B^2}.
+\end{equation}
+For \(m\ge0\),
+\begin{equation}
+  \Phi_A^+(r)=\mathcal N_+\,r^m\ee^{-r^2/(4l_B^2)}
+  {}_1F_1\left(-\frac{l_B^2q^2}{2},m+1,\frac{r^2}{2l_B^2}\right).
+\end{equation}
+For \(m<0\),
+\begin{equation}
+  \Phi_A^-(r)=\mathcal N_-\,r^{|m|}\ee^{-r^2/(4l_B^2)}
+  {}_1F_1\left(-m-\frac{l_B^2q^2}{2},1-m,\frac{r^2}{2l_B^2}\right).
+\end{equation}
+The lower component follows from the first-order equation,
+\begin{equation}
+  \Phi_B(r)=-\frac{\hbar v_F}{E+\Delta}
+  \left(\partial_r+\frac{r}{2l_B^2}-\frac{m}{r}\right)\Phi_A(r).
+\end{equation}
+For \(m\ge0\), this gives explicitly
+\begin{equation}
+  \Phi_B^+(r)=\mathcal N_+\frac{E-\Delta}{2\hbar v_F(m+1)}
+  r^{m+1}\ee^{-r^2/(4l_B^2)}
+  {}_1F_1\left(1-\frac{l_B^2q^2}{2},m+2,\frac{r^2}{2l_B^2}\right).
+\end{equation}
+For \(m<0\), if \(a=-m-l_B^2q^2/2\) and \(b=1-m\), then
+\begin{equation}
+  \Phi_B^-(r)=-\mathcal N_-\frac{\hbar v_F}{E+\Delta}
+  r^{|m|-1}\ee^{-r^2/(4l_B^2)}
+  \left[2|m|\,{}_1F_1(a,b,\eta)+\frac{a}{b}\frac{r^2}{l_B^2}{}_1F_1(a+1,b+1,\eta)\right].
+\end{equation}
+The normalization constants \(\mathcal N_\pm\) are fixed by the boundary conditions of the scattering or bound-state problem.
+
+\section{Partial-wave expansion for circular scattering}
+
+For a circular graphene quantum dot or circular electrostatic island, angular momentum diagonalizes the scattering problem. An incident massless Dirac plane wave moving along \(x\) can be expanded as
+\begin{equation}
+  \Phi^i_k(r,\theta)=\frac{1}{\sqrt2}\ee^{\ii kr\cos\theta}
+  \begin{pmatrix}1\\1\end{pmatrix}
+  =\frac{1}{\sqrt2}\sum_{m=-\infty}^{\infty}\ii^m
+  \begin{pmatrix}
+    J_m(kr)\ee^{\ii m\theta}\\
+    \ii J_{m+1}(kr)\ee^{\ii(m+1)\theta}
+  \end{pmatrix}.
+\end{equation}
+The outgoing reflected wave is expanded in Hankel functions,
+\begin{equation}
+  \Phi^r_k(r,\theta)=\frac{1}{\sqrt2}\sum_{m=-\infty}^{\infty}a_m^r\ii^m
+  \begin{pmatrix}
+    H_m^{(1)}(kr)\ee^{\ii m\theta}\\
+    \ii H_{m+1}^{(1)}(kr)\ee^{\ii(m+1)\theta}
+  \end{pmatrix}.
+\end{equation}
+The coefficients \(a_m^r\) are determined by matching the spinor wave functions at the radius of the circular scatterer.
+
+\end{document}
