@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gapping a Weyl semimetal · P. Shubham Parashar</title>
+  <meta name="description" content="Public-safe cleaned note on anomaly constraints, interacting gaps, and Z4 topological order in magnetic Weyl semimetals.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .note-body p { max-width: 880px; }
+    .note-body li { margin: 8px 0; }
+    .math { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page note-body">
+    <section class="project-header">
+      <p class="eyebrow">Working note · public-safe digest</p>
+      <h1>Gapping a Weyl semimetal</h1>
+      <p class="lead">
+        A cleaned course-note digest on anomaly constraints, translation symmetry, interacting gap formation, and
+        three-dimensional fractional Hall response in magnetic Weyl semimetals.
+      </p>
+      <p class="meta">
+        This page is a condensed public-facing version of an older course paper. It is presented as background and
+        pedagogy, not as a new research claim.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Core question</h2>
+      <p>
+        A magnetic Weyl semimetal with two Weyl nodes at momenta <span class="math">k_z = ±Q</span> has bulk
+        gaplessness protected not by an ordinary on-site symmetry alone, but by a combination of topology,
+        translation, and anomaly data. The natural question is:
+      </p>
+      <div class="callout">
+        Can strong interactions gap the Weyl fermions while preserving charge conservation, translation symmetry,
+        and the topological response associated with the Weyl-node separation?
+      </div>
+      <p>
+        The conservative answer is that a symmetric interacting gap is strongly constrained. In the construction
+        reviewed here, it is possible only at special commensurate node separations, and the resulting phase is not
+        a trivial insulator: it has intrinsic topological order.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Anomaly and Hall-response data</h2>
+      <p>
+        The separation between Weyl nodes controls anomalous response. In a continuum description, one can encode
+        the obstruction by coupling the system to a background electromagnetic field and to a background field for
+        lattice translation along the node-separation direction. Equivalently, one may view the anomalous Hall
+        conductivity as proportional to the Weyl-node separation.
+      </p>
+      <p>
+        A useful physical picture is that tuning <span class="math">2Q</span> interpolates between different integer
+        Hall responses through an intervening Weyl semimetal. Therefore an interaction-driven gap, if allowed, must
+        preserve the response data rather than simply erase the Weyl points as if they were accidental band crossings.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Warm-up: gapping a two-dimensional Dirac point</h2>
+      <p>
+        The two-dimensional Dirac problem is a useful analogy. A Dirac cone at a plateau transition carries parity-anomaly
+        data. A naive pairing construction introduces vortices carrying nontrivial charge and statistics; the smallest
+        condensable vortex may be a multiple vortex rather than the elementary one. The resulting symmetric gapped
+        state is then naturally described using fractionalized charge and neutral sectors.
+      </p>
+      <p>
+        This is the right lesson for the Weyl problem: interactions may gap a system without producing a featureless
+        band insulator, but only by leaving behind topological order that accounts for the anomaly.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Three-dimensional Weyl case</h2>
+      <p>
+        For a pair of Weyl nodes, ordinary pairing terms either fail to gap the spectrum in the required way or break
+        translation symmetry. Charge-density-wave-type terms can gap opposite chiralities, but the order parameter
+        carries momentum tied to the node separation. Translation can be preserved only at special commensurate values,
+        such as <span class="math">2Q = π</span> in lattice units.
+      </p>
+      <p>
+        Vortex-loop condensation gives another way to see the obstruction. In three dimensions, vortices are loops,
+        and their linking with lattice dislocations diagnoses how translation symmetry and Hall response are encoded.
+        Elementary vortex loops can carry nontrivial loop statistics; a higher-multiple condensation can be required
+        to obtain a symmetric gapped phase.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Resulting phase</h2>
+      <p>
+        At the commensurate point, the symmetric gapped phase can be understood as a three-dimensional analogue of
+        a fractional Hall state. A parton description schematically fractionalizes the electron into charged and neutral
+        degrees of freedom with an emergent discrete gauge structure, commonly described in this context as
+        <span class="math">Z₄</span> topological order.
+      </p>
+      <p>
+        The point of the construction is not merely to remove Weyl nodes. The gapped phase must match the electrical
+        and thermal response data that were previously carried by the gapless Weyl fermions and boundary Fermi arcs.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Safe takeaway</h2>
+      <ul class="compact-list">
+        <li>Generic magnetic Weyl semimetals cannot be symmetrically gapped by interactions without confronting anomaly and translation constraints.</li>
+        <li>At special commensurate node separations, an interaction-enabled symmetric gap can be possible.</li>
+        <li>The resulting state is not a trivial insulator; it carries intrinsic topological order and fractional Hall-type response.</li>
+        <li>This note should be read as a cleaned pedagogical summary of the anomaly-matching logic, not as an independent new construction.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>References and original note</h2>
+      <p>
+        The original course paper was written for a UC San Diego physics course and followed work by Wang, Gioia,
+        Burkov, Song, He, Vishwanath, and Wang on interacting Weyl semimetals and three-dimensional fractional
+        Hall phases.
+      </p>
+      <div class="pub-links">
+        <a href="https://mcgreevy.physics.ucsd.edu/s21/final-papers/2021S-211C-Parashar-Shubham.pdf">Original PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
