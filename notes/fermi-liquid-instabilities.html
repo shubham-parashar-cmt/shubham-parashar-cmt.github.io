@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fermi-liquid instabilities · P. Shubham Parashar</title>
+  <meta name="description" content="Public-safe working note on Fermi-liquid instabilities, van Hove scaling, and nematic quantum criticality.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>Fermi-liquid instabilities, van Hove scaling, and nematic quantum criticality</h1>
+      <p class="lead">
+        A cleaned background note on weak-coupling RG near Fermi surfaces, van Hove saddle points, Pomeranchuk/nematic order, and fermions coupled to soft nematic modes.
+      </p>
+      <p class="meta">
+        Status: public-safe pedagogical digest. The original scratch questions, unfinished calculations, and speculative research directions are intentionally omitted.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Purpose and cleanup verdict</h2>
+      <p>
+        The original note mixed a useful review of Fermi-liquid instabilities with private scratch calculations and open-ended research questions. This public version keeps the background structure: how marginal interactions arise near a Fermi surface, why van Hove points change the scaling problem, and how nematic order produces soft collective modes that can invalidate ordinary Landau quasiparticle phenomenology.
+      </p>
+      <div class="callout">
+        The safe public statement is limited: van Hove singularities and nematic quantum criticality provide controlled mechanisms by which Fermi-liquid behavior can become fragile. This note does not claim a complete theory of the cuprate normal state, an all-orders RG result, or a new marginal-Fermi-liquid fixed point.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Fermi liquids and the meaning of stability</h2>
+      <p>
+        A Landau Fermi liquid is organized around long-lived quasiparticles near a Fermi surface. Locally, one writes
+      </p>
+      \[
+        G(\omega,k) \simeq \frac{Z}{\omega - v_F k_\perp + i0^+},
+      \]
+      <p>
+        where \(k_\perp\) measures distance normal to the Fermi surface. The quasiparticle decay rate is parametrically small, usually \(1/\tau \sim \varepsilon^2\) in a clean Fermi liquid at low energy.
+      </p>
+      <p>
+        Landau's energy functional expands the energy in deformations of the distribution function,
+      </p>
+      \[
+        \delta E = \sum_{p} \epsilon_p\,\delta n_p
+        + \frac12\sum_{p,p'} f_{p p'}\,\delta n_p\delta n_{p'} + \cdots .
+      \]
+      <p>
+        The interaction function can be decomposed into angular momentum channels. A sufficiently attractive Landau parameter in a nonzero angular momentum channel triggers a Pomeranchuk instability: the Fermi surface itself becomes the order parameter.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Weak-coupling RG: three lessons</h2>
+      <h3>One dimension</h3>
+      <p>
+        In a one-dimensional spinless fermion problem, the low-energy theory is built from left- and right-moving modes near the Fermi points. Four-fermion interactions are marginal at tree level. At weak coupling, different one-loop channels can cancel in special cases, giving a stable gapless phase over a finite region of parameter space. Strong coupling requires methods beyond naive perturbation theory, such as bosonization or exact solutions where available.
+      </p>
+
+      <h3>A generic higher-dimensional Fermi surface</h3>
+      <p>
+        For a smooth Fermi surface in two or more dimensions, not every four-fermion process remains important in the infrared. Kinematics selects special channels: forward scattering and Cooper/BCS scattering. In the BCS channel, repulsive interactions are marginally irrelevant, while attractive interactions are marginally relevant and drive pairing.
+      </p>
+
+      <h3>A van Hove point</h3>
+      <p>
+        A square-lattice dispersion such as
+      </p>
+      \[
+        \epsilon(p)=-t\bigl[\cos(p_x a)+\cos(p_y a)\bigr]
+      \]
+      <p>
+        has saddle points at momenta such as \((\pi,0)\) and \((0,\pi)\). Near a saddle point,
+      </p>
+      \[
+        \epsilon(p) \simeq -t(p_x^2-p_y^2).
+      \]
+      <p>
+        The dynamical exponent is then \(z=2\), and a local four-fermion interaction is marginal by power counting. This is qualitatively different from a generic smooth Fermi-surface patch, because the density of states and available phase space are enhanced near the saddle.
+      </p>
+      <p>
+        The useful public lesson is that saddle-point kinematics can generate logarithmic structures and marginal-looking decay rates. The detailed channel analysis is regulator- and patch-dependent and should not be advertised as a complete fixed-point theory without a full RG treatment.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Charge nematic order as a Fermi-surface distortion</h2>
+      <p>
+        In two dimensions, a charge nematic order parameter can be represented by a symmetric traceless tensor,
+      </p>
+      \[
+        Q_{ij} \sim
+        \begin{pmatrix}
+          Q_{xx} & Q_{xy}\\
+          Q_{xy} & -Q_{xx}
+        \end{pmatrix} .
+      \]
+      <p>
+        Equivalently, the complex quadrupolar bilinear
+      </p>
+      \[
+        Q_2 \sim \left\langle
+        \psi^\dagger(\partial_x+i\partial_y)^2\psi
+        \right\rangle
+        = |Q_2|e^{2i\theta}
+      \]
+      <p>
+        transforms in the angular momentum \(l=2\) channel. A nonzero value distorts the Fermi surface from a circle into an ellipse and breaks rotational symmetry while preserving translation symmetry.
+      </p>
+      <p>
+        A schematic quadrupolar interaction has the form
+      </p>
+      \[
+        H = \int d^d r\; \psi^\dagger\epsilon(-i\nabla)\psi
+        + \int d^d r d^d r'\; F(r-r')\,\mathrm{Tr}\,Q(r)Q(r').
+      \]
+      <p>
+        When the corresponding Landau parameter crosses its Pomeranchuk threshold, the isotropic Fermi liquid becomes unstable to a nematic metal.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Spin-orbit Pomeranchuk order</h2>
+      <p>
+        In spinful systems, one can form order parameters carrying both spin and orbital indices. A representative \(l=1\) order parameter is
+      </p>
+      \[
+        n^{\mu a} \sim |f_1^a|\int d^d k\;
+        \langle \psi_\alpha^\dagger \sigma^\mu_{\alpha\beta} k^a \psi_\beta\rangle,
+      \]
+      <p>
+        where \(\mu\) labels spin space and \(a\) labels orbital space. A symmetry-respecting Landau free energy can be organized as
+      </p>
+      \[
+        F[n] = r\,\mathrm{Tr}(n^Tn)
+        + u\,\mathrm{Tr}\bigl[(n^Tn)^2\bigr]
+        + v\,[\mathrm{Tr}(n^Tn)]^2 + \cdots .
+      \]
+      <p>
+        Depending on the sign of quartic coefficients, different ordered phases are possible. A rank-one configuration resembles \(n^{\mu a}\sim \hat d^\mu \hat e^a\), while an isotropic spin-orbit locked configuration resembles \(n^{\mu a}\sim D_{\mu a}\) with \(D\in SO(3)\).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Nematic quantum criticality and fermion self-energies</h2>
+      <p>
+        A standard route to the critical theory is to decouple the four-fermion interaction with a Hubbard-Stratonovich field and integrate out high-energy fermions. The quadratic kernel for nematic fluctuations has the schematic form
+      </p>
+      \[
+        S_2[n] = \sum_{q,\omega} n_{\mu a}(q,\omega)\,
+        \mathcal K_{\mu a,\nu b}(q,\\omega)\,
+        n_{\nu b}(-q,-\omega),
+      \]
+      <p>
+        where \(\mathcal K\) contains the inverse Landau interaction and a fermion bubble. Near the critical point, soft bosonic modes couple back to the fermions. This feedback is the origin of non-Fermi-liquid behavior in nematic metals.
+      </p>
+      <p>
+        In three-dimensional versions of the problem, one often finds overdamped transverse collective modes with a dynamical exponent near \(z=3\) and less singular fermion self-energies than in two dimensions. In two dimensions, patch theories of a Fermi surface coupled to a Landau-damped boson famously produce stronger non-Fermi-liquid behavior, such as self-energies scaling schematically like \(\omega^{2/3}\), with additional subtleties beyond low-order perturbation theory.
+      </p>
+      <div class="callout">
+        The robust lesson is not a single exponent quoted out of context. It is the mechanism: near a nematic quantum critical point, the soft deformation mode of the Fermi surface remains gapless and strongly scatters low-energy fermions.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What this note deliberately does not claim</h2>
+      <ul class="compact-list">
+        <li>It does not claim that a van Hove singularity alone proves a marginal-Fermi-liquid phase.</li>
+        <li>It does not claim a complete explanation of the strange-metal normal state of doped cuprates.</li>
+        <li>It does not include private scratch calculations, channel-by-channel contour tricks, or unfinished RG questions.</li>
+        <li>It should be read as a cleaned conceptual map connecting Fermi-liquid stability, saddle-point scaling, and nematic criticality.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
