@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running Physics Problems · P. Shubham Parashar</title>
+  <meta name="description" content="A public running list of physics problems, derivations, and exercises maintained by P. Shubham Parashar.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <style>
+    .problem-list {
+      counter-reset: problem;
+    }
+
+    .problem-item {
+      counter-increment: problem;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .problem-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .problem-title {
+      font-weight: 750;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .problem-title::before {
+      content: "P" counter(problem, decimal-leading-zero) ". ";
+      color: var(--accent2);
+      font-weight: 800;
+    }
+
+    .problem-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .problem-body {
+      margin: 0;
+    }
+
+    .problem-body code {
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span>
+        <strong>P. Shubham Parashar</strong>
+        <small>Condensed Matter Theory</small>
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Exercises and derivations</p>
+      <h1>Running physics problems</h1>
+      <p class="lead">
+        A public list of compact physics problems, derivations, and technical checks. The goal is to
+        improve fluency with field theory, topology, quantum mechanics, and condensed-matter methods.
+        This is not a list of claimed original research problems.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>How to use this page</h2>
+      <p>
+        Each item is meant to be small enough to attack with pencil-and-paper work, but serious enough
+        to expose a useful physical or mathematical mechanism. I keep private research directions,
+        unpublished calculations, and implementation details off this public page.
+      </p>
+
+      <div>
+        <span class="tag">geometric phases</span>
+        <span class="tag">field theory</span>
+        <span class="tag">topology</span>
+        <span class="tag">condensed matter</span>
+        <span class="tag">quantum mechanics</span>
+      </div>
+    </section>
+
+    <section class="section problem-list">
+      <h2>Problem list</h2>
+
+      <article class="problem-item">
+        <div class="problem-title">Berry curvature of a two-level Hamiltonian</div>
+        <div class="problem-meta">Area: geometric phases, two-band models. Status: exercise.</div>
+        <p class="problem-body">
+          Let
+          \(H(\mathbf{k})=\mathbf{d}(\mathbf{k})\cdot\boldsymbol{\sigma}\), with
+          \(\hat{\mathbf d}=\mathbf d/|\mathbf d|\). Show that the Berry curvature of an isolated
+          band is proportional to the solid angle swept by \(\hat{\mathbf d}(\mathbf{k})\) on \(S^2\).
+          In coordinates, derive the standard form
+          \(F_{ij}=\pm \frac12\,\hat{\mathbf d}\cdot
+          (\partial_i\hat{\mathbf d}\times\partial_j\hat{\mathbf d})\).
+        </p>
+      </article>
+
+      <article class="problem-item">
+        <div class="problem-title">Screening of the background electric field in the \(CP^{N-1}\) model</div>
+        <div class="problem-meta">Area: 1+1D field theory, theta angle, confinement. Status: reading problem.</div>
+        <p class="problem-body">
+          In the \(CP^{N-1}\) model, review the large-\(N\) picture in which the theta angle acts like a
+          background electric field. Explain what happens near \(\theta=\pi\), how charged \(z\) quanta
+          screen the background field, and how this is reflected in the branch structure of the vacuum energy.
+        </p>
+      </article>
+
+      <article class="problem-item">
+        <div class="problem-title">Spin\(_c\) connections in \(2+1\)-dimensional Chern-Simons theory</div>
+        <div class="problem-meta">Area: Chern-Simons theory, spin structures, anomalies. Status: conceptual derivation.</div>
+        <p class="problem-body">
+          Clarify the distinction between an ordinary \(U(1)\) connection and a Spin\(_c\) connection in
+          \(2+1\) dimensions. Work out how this distinction enters the quantization of Chern-Simons terms
+          and the coupling of background gauge fields to fermionic systems.
+        </p>
+      </article>
+
+      <article class="problem-item">
+        <div class="problem-title">Particle on a ring with threaded flux</div>
+        <div class="problem-meta">Area: quantum mechanics, instantons, topology. Status: exercise.</div>
+        <p class="problem-body">
+          Compute the partition function of a particle on a ring threaded by flux by summing over winding
+          sectors. Show explicitly how integer flux can be gauged away, while half-integer flux produces a
+          twofold ground-state degeneracy.
+        </p>
+      </article>
+
+      <article class="problem-item">
+        <div class="problem-title">Fermi-surface deformation and a Pomeranchuk instability</div>
+        <div class="problem-meta">Area: Fermi liquids, symmetry breaking. Status: exercise to expand.</div>
+        <p class="problem-body">
+          Starting from Landau's energy functional, derive the criterion for a Pomeranchuk instability in
+          an angular-momentum channel. Then specialize to a two-dimensional quadrupolar distortion and
+          identify the nematic order parameter.
+        </p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Template for adding problems</h2>
+      <p>
+        Use the same compact structure for each entry: title, area, status, and a short statement. Do not
+        post solution tricks, private code, or unpublished research roadmaps here.
+      </p>
+
+      <div class="callout">
+        <strong>Public rule:</strong> phrase entries as exercises, derivations, or reading problems. If an item
+        contains a publishable idea, keep the detailed formulation private until it is in a manuscript.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage[hidelinks]{hyperref}
+
+\newcounter{problem}
+\newenvironment{problem}[3][]{%
+  \refstepcounter{problem}
+  \par\medskip
+  \noindent\textbf{P\ifnum\value{problem}<10 0\fi\arabic{problem}. #2}\par
+  \noindent\emph{Area: #3.%
+  \if\relax\detokenize{#1}\relax\else\ Status: #1.\fi}\par
+  \smallskip
+}{\par\medskip}
+
+\title{Running Physics Problems}
+\author{P. Shubham Parashar}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent
+These are compact problems, derivations, and reading exercises. This document is not a list of claimed original research problems. Private research directions, solution tricks, and unpublished implementation details should stay out of the public version.
+
+\begin{problem}[exercise]{Berry curvature of a two-level Hamiltonian}{geometric phases, two-band models}
+Let \(H(\mathbf{k})=\mathbf{d}(\mathbf{k})\cdot\boldsymbol{\sigma}\), with
+\(\hat{\mathbf d}=\mathbf d/|\mathbf d|\). Show that the Berry curvature of an isolated band
+is proportional to the solid angle swept by \(\hat{\mathbf d}(\mathbf{k})\) on \(S^2\). In coordinates,
+derive
+\[
+F_{ij}=\pm \frac12\,\hat{\mathbf d}\cdot
+(\partial_i\hat{\mathbf d}\times\partial_j\hat{\mathbf d}) .
+\]
+\end{problem}
+
+\begin{problem}[reading problem]{Screening of the background electric field in the \(CP^{N-1}\) model}{1+1D field theory, theta angle, confinement}
+In the \(CP^{N-1}\) model, review the large-\(N\) picture in which the theta angle acts like a
+background electric field. Explain what happens near \(\theta=\pi\), how charged \(z\) quanta
+screen the background field, and how this is reflected in the branch structure of the vacuum energy.
+\end{problem}
+
+\begin{problem}[conceptual derivation]{Spin\(_c\) connections in \(2+1\)-dimensional Chern-Simons theory}{Chern-Simons theory, spin structures, anomalies}
+Clarify the distinction between an ordinary \(U(1)\) connection and a Spin\(_c\) connection in
+\(2+1\) dimensions. Work out how this distinction enters the quantization of Chern-Simons terms
+and the coupling of background gauge fields to fermionic systems.
+\end{problem}
+
+\begin{problem}[exercise]{Particle on a ring with threaded flux}{quantum mechanics, instantons, topology}
+Compute the partition function of a particle on a ring threaded by flux by summing over winding
+sectors. Show explicitly how integer flux can be gauged away, while half-integer flux produces a
+twofold ground-state degeneracy.
+\end{problem}
+
+\begin{problem}[exercise to expand]{Fermi-surface deformation and a Pomeranchuk instability}{Fermi liquids, symmetry breaking}
+Starting from Landau's energy functional, derive the criterion for a Pomeranchuk instability in
+an angular-momentum channel. Then specialize to a two-dimensional quadrupolar distortion and
+identify the nematic order parameter.
+\end{problem}
+
+\end{document}
