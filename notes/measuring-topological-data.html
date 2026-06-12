@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measuring topological data · P. Shubham Parashar</title>
+  <meta name="description" content="Public-safe working note on operational measurements of fusion, F-symbol magnitudes, braiding data, and mapping-class-group data in anyon theories.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>Measuring topological data in anyon theories</h1>
+      <p class="lead">
+        A public-safe cleanup of an old course note on how fusion, associativity, braiding, and mapping-class-group data can be phrased as operational measurements in a topological phase.
+      </p>
+      <p class="meta">
+        Status: pedagogical background note. This page removes the original scratch question and does not present a new research proposal.
+      </p>
+      <div class="pub-links">
+        <a href="https://mcgreevy.physics.ucsd.edu/w21/final-papers/2021W-239-Parashar-Shubham.pdf">Original course PDF</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Purpose and cleanup verdict</h2>
+      <p>
+        The original note asked a useful operational question: if a two-dimensional topological phase is described by an anyon theory, what experiments would reveal the algebraic data of that theory? The cleaned version keeps the safe pedagogical content: fusion probabilities, associativity measurements, braiding data, and mapping-class-group actions. It omits an unfinished open-ended question at the end of the original draft.
+      </p>
+      <div class="callout">
+        Safe public statement: the modular matrices \(S\) and \(T\) are extremely informative, but they do not always determine a modular tensor category uniquely. Operational probes involving punctures, links, or mapping-class-group actions can contain additional information beyond ordinary modular data.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Data in an anyon theory</h2>
+      <p>
+        In a standard unitary modular tensor category description of a \(2+1\)-dimensional topological phase, particle types are labeled by topological charges \(a,b,c,\ldots\). The basic algebraic data include:
+      </p>
+      <ul class="compact-list">
+        <li>fusion coefficients \(N_{ab}^{c}\), specifying which charges can appear when \(a\) and \(b\) are combined;</li>
+        <li>quantum dimensions \(d_a\), which govern the growth of fusion spaces;</li>
+        <li>\(F\)-symbols, implementing associativity of fusion;</li>
+        <li>\(R\)-symbols, implementing exchange or braiding;</li>
+        <li>modular matrices \(S\) and \(T\), which encode operations on the torus and related link invariants.</li>
+      </ul>
+      <p>
+        The useful point is not that one directly sees an abstract category in the lab. Rather, the category predicts probabilities for carefully designed topological-charge measurements.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Operational assumptions</h2>
+      <p>
+        The thought experiments assume ideal topological control. One can create anyon-antianyon pairs from the vacuum, localize anyons with pinning potentials, separate them adiabatically, move them around one another, split composite charges, and measure the total topological charge of a collection of anyons.
+      </p>
+      <p>
+        These are not meant as immediate device prescriptions. They are a clean dictionary between categorical data and measurable probabilities in an idealized topological quantum computer.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Fusion coefficients and quantum dimensions</h2>
+      <p>
+        Prepare two vacuum pairs, \((a,\bar a)\) and \((b,\bar b)\), separate the quasiparticles, and measure the total charge of the pair \((a,b)\). The probability that \(a\) and \(b\) fuse to charge \(c\) is
+      </p>
+      \[
+        p_{ab}(c) = N_{ab}^{c}\,\frac{d_c}{d_a d_b}.
+      \]
+      <p>
+        Repeating this experiment for many pairs \((a,b)\) estimates which \(c\)'s are allowed and, together with normalization and consistency constraints, gives access to the fusion coefficients and quantum dimensions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Associativity and magnitudes of F-symbols</h2>
+      <p>
+        Associativity compares two different fusion bases for three anyons. One basis first fuses \(a\) with \(b\) to an intermediate charge \(e\), then fuses \(e\) with \(c\) to a total charge \(d\). Another basis first fuses \(b\) with \(c\) to \(f\), then fuses \(a\) with \(f\) to \(d\).
+      </p>
+      <p>
+        The change of basis is the \(F\)-move:
+      </p>
+      \[
+        |(a b)_e c; d\rangle
+        = \sum_f [F^{abc}_{d}]_{ef}\, |a (b c)_f; d\rangle .
+      \]
+      <p>
+        If the system is prepared in one fusion basis and measured in the other, the conditional probability is
+      </p>
+      \[
+        p(f|e) = \left|[F^{abc}_{d}]_{ef}\right|^2.
+      \]
+      <p>
+        This gives magnitudes of \(F\)-symbols. Phases require additional interferometric information or consistency constraints such as the pentagon equation.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Braiding data</h2>
+      <p>
+        Braiding is accessed by creating separated pairs \((a,\bar a)\) and \((b,\bar b)\), moving \(a\) and \(b\) around one another, and measuring an appropriate final total charge. The corresponding amplitude involves the double braid \(R_{ab}R_{ba}\).
+      </p>
+      <p>
+        In diagrammatic language, this experiment is related to a punctured-torus \(S	ext{-matrix}\). A schematic probability has the form
+      </p>
+      \[
+        p^{(2)}_{ab}(z)
+        \propto
+        \left|S^{(z)}_{ab}\right|^2,
+      \]
+      <p>
+        up to the conventional normalization factors involving the total quantum dimension \(D\) and individual quantum dimensions. The important lesson is that braiding experiments naturally expose link-type invariants, not only ordinary fusion data.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Mapping-class-group measurements on a torus</h2>
+      <p>
+        On a torus, ground states can be labeled by a topological charge threading a chosen cycle. Changing the choice of generating cycles is an action of the mapping class group of the torus,
+      </p>
+      \[
+        	ext{MCG}(T^2) \simeq SL(2,\mathbb Z),
+      \]
+      <p>
+        generated by the standard transformations
+      </p>
+      \[
+        S = \begin{pmatrix}0 & -1 \\ 1 & 0\end{pmatrix},
+        \qquad
+        T = \begin{pmatrix}1 & 1 \\ 0 & 1\end{pmatrix}.
+      \]
+      <p>
+        If a modular transformation \(q\) acts on the ground-state space as a matrix \(Q\), then charge measurements before and after the change of cycle can reveal probabilities
+      </p>
+      \[
+        p_q(b|a)=|Q_{ab}|^2.
+      \]
+      <p>
+        Thus modular and mapping-class-group data can be translated into measurement protocols based on choosing cycles and measuring topological fluxes.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What this note is, and is not</h2>
+      <p>
+        This note is a cleaned pedagogical summary of operational probes of topological data. It is useful background for thinking about anyon interferometry, modular tensor categories, and the limitations of ordinary \(S,T\) modular data.
+      </p>
+      <p>
+        It is not a claim of a new diagnostic theorem, and it does not expose unfinished private research questions. The natural research direction - how much categorical information is recoverable from experimentally realistic measurement families - is deliberately left at the level of broad motivation here.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>References and source</h2>
+      <ul class="compact-list">
+        <li><a href="https://mcgreevy.physics.ucsd.edu/w21/final-papers/2021W-239-Parashar-Shubham.pdf">Original 2021 course paper: <em>How to (in principle) measure topological data?</em></a></li>
+        <li>Parsa Bonderson, <em>Measuring Topological Order</em>, arXiv:2102.05677.</li>
+        <li>Mignard-Schauenburg examples and subsequent work on invariants beyond ordinary modular data are relevant background for the final caution about incompleteness of \(S,T\).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
