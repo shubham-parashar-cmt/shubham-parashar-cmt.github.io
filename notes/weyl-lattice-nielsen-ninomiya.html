@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weyl fermions on a lattice · P. Shubham Parashar</title>
+  <meta name="description" content="Clean working note on Weyl fermions, lattice doubling, Nielsen-Ninomiya, Wilson fermions, and anomaly intuition.">
+  <link rel="icon" href="/favicon-32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/images/headshot-square.jpg" alt="Portrait of P. Shubham Parashar">
+      <span><strong>P. Shubham Parashar</strong><small>Condensed Matter Theory</small></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/research.html">Research</a>
+      <a class="nav-link" href="/publications.html">Publications</a>
+      <a class="nav-link" href="/projects.html">Projects</a>
+      <a class="nav-link" href="/talks.html">Talks</a>
+      <a class="nav-link" href="/cv.html">CV</a>
+      <a class="nav-link active" href="/notes/">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="project-header">
+      <p class="eyebrow">Working note</p>
+      <h1>Weyl fermions on a lattice: doubling and the Nielsen-Ninomiya obstruction</h1>
+      <p class="lead">
+        A cleaned background note on chirality, lattice doubling, Wilson fermions, Ginsparg-Wilson structure, and the topological content of the Nielsen-Ninomiya theorem.
+      </p>
+      <p class="meta">
+        Status: public-safe pedagogical note. Speculative constructions, priority comments, and implementation sketches from the original draft are intentionally omitted.
+      </p>
+      <div class="pub-links">
+        <a href="/source/notes/weyl-lattice-nielsen-ninomiya-clean.pdf">PDF</a>
+        <a href="/source/notes/weyl-lattice-nielsen-ninomiya-clean.tex">TeX source</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Purpose and cleanup verdict</h2>
+      <p>
+        The original draft mixed a useful pedagogical review of the Nielsen-Ninomiya theorem with a private exploratory section on possible evasions. This public version keeps the review material and removes the speculative construction. The resulting note is best read as background: it explains what the standard theorem assumes, where doublers enter, and why any proposed evasion must carefully identify which assumption has been relaxed.
+      </p>
+      <div class="callout">
+        The safe public statement is: an isolated, static, local, Hermitian lattice Hamiltonian with the usual smooth Bloch description cannot realize a single unpaired Weyl fermion. Any apparent exception must leave the theorem's hypothesis class - for example through a boundary of a higher-dimensional bulk, a Floquet unitary, non-Hermiticity, nonlocality, interactions beyond the single-particle Bloch description, or anomaly inflow.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>One-dimensional intuition: slopes on a compact Brillouin zone</h2>
+      <p>
+        In one spatial dimension, a band crossing the Fermi energy near a Fermi point may be linearized as
+      </p>
+      \[
+        \epsilon(k) \simeq \epsilon(k_0) + v_F(k-k_0),
+        \qquad
+        v_F = \left.\frac{d\epsilon}{dk}\right|_{k_0}.
+      \]
+      <p>
+        A positive slope gives a right mover and a negative slope gives a left mover. Since the Brillouin zone is a circle, a smooth periodic dispersion cannot cross a fixed Fermi level with only one sign of slope. Crossings with positive and negative orientation must balance.
+      </p>
+      <p>
+        This is the elementary shadow of the Nielsen-Ninomiya theorem: compact momentum space makes chirality a global topological bookkeeping problem rather than a local low-energy choice.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Anomaly intuition from spectral flow</h2>
+      <p>
+        A useful way to remember why chirality is special is the spectral-flow picture of the \(1+1\)-dimensional chiral anomaly. In an electric field, states are accelerated through momentum space. After the field is switched off, the filled sea has been shifted: vector charge is conserved, but left- and right-moving occupations need not be separately conserved.
+      </p>
+      <p>
+        In continuum notation, the axial current obeys an anomalous equation of the schematic form
+      </p>
+      \[
+        \partial_\mu j_5^\mu \propto \epsilon^{\mu\nu}F_{\mu\nu}.
+      \]
+      <p>
+        On a lattice, the UV completion supplies the missing modes. The extra modes are not an accident; they are how the lattice regularization accounts for the same global spectral-flow bookkeeping.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Naive lattice fermions and doubling</h2>
+      <p>
+        Start with the continuum Euclidean Dirac operator and replace derivatives by symmetric lattice differences. In momentum space the naive lattice operator has the form
+      </p>
+      \[
+        D_{\rm naive}(p)=m+\frac{i}{a}\sum_\mu \gamma_\mu\sin(a p_\mu).
+      \]
+      <p>
+        In the massless limit this vanishes whenever \(\sin(a p_\mu)=0\) for each component. Thus each component can sit at either \(0\) or \(\pi/a\), producing \(2^d\) low-energy species in \(d\) lattice directions. These are the doublers.
+      </p>
+      <p>
+        The Wilson cure adds a momentum-dependent scalar mass,
+      </p>
+      \[
+        D_W(p)=m+\frac{r}{a}\sum_\mu \bigl[1-\cos(a p_\mu)\bigr]
+        +\frac{i}{a}\sum_\mu \gamma_\mu\sin(a p_\mu).
+      \]
+      <p>
+        The unwanted modes acquire masses of order \(1/a\), while the desired mode near \(p=0\) remains light after tuning \(m\). The price is that the Wilson term breaks the naive chiral symmetry. This is not a technical flaw; it is exactly the tradeoff required by the no-go theorem.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Ginsparg-Wilson viewpoint</h2>
+      <p>
+        Ginsparg-Wilson fermions do not preserve the naive continuum chiral symmetry on the lattice. Instead, the lattice Dirac operator satisfies
+      </p>
+      \[
+        \gamma_5 D + D\gamma_5 = a D\gamma_5 D.
+      \]
+      <p>
+        This relation gives a modified exact lattice chiral symmetry whose continuum limit becomes the usual chiral symmetry. It also packages the anomaly into an index of the lattice Dirac operator. In this way the lattice can treat chiral physics without pretending that the naive symmetry was exact at finite cutoff.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>A precise Nielsen-Ninomiya statement</h2>
+      <p>
+        A representative static free-fermion setting is a translationally invariant quadratic Hamiltonian
+      </p>
+      \[
+        H=\int_{\rm BZ} d^d k\; \psi_a^\dagger(k)K^a{}_b(k)\psi^b(k),
+      \]
+      <p>
+        where \(K(k)=K^\dagger(k)\) is a smooth local Bloch Hamiltonian on the Brillouin torus. In each charge sector, suppose the low-energy zeros are isolated and linear:
+      </p>
+      \[
+        K(k_\alpha+q)\simeq \sum_i v_i^{(\alpha)}q_i\Gamma_i.
+      \]
+      <p>
+        Each zero carries an integer orientation or chirality. For a simple Weyl point in three spatial dimensions this is the sign of the determinant of the velocity matrix. The theorem states that the sum of these chiralities over the compact Brillouin zone vanishes:
+      </p>
+      \[
+        \sum_\alpha \chi_\alpha = 0.
+      \]
+      <p>
+        In words: Weyl points are created and annihilated in oppositely charged pairs. A single isolated Weyl cone cannot be the entire spectrum of a strictly static local Hermitian lattice model.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Topological proof sketch</h2>
+      <p>
+        The proof is a conservation law in momentum space. Away from the zero set of \(K(k)\), one can construct a smooth topological current from the Green's function or flattened Hamiltonian. This current is divergenceless except at the isolated zeros. Each zero is a source or sink whose strength is the local chiral index.
+      </p>
+      <p>
+        But the Brillouin zone is compact and has no boundary. Integrating a divergence over it gives zero. Therefore the total source strength, i.e. the sum of all chiralities, must vanish.
+      </p>
+      <p>
+        The one-dimensional slope argument is the simplest version of this statement. The higher-dimensional theorem replaces slopes by degrees of maps around small spheres enclosing the nodes.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What the theorem does not forbid</h2>
+      <p>
+        The theorem is powerful because its assumptions are explicit. It does not by itself forbid:
+      </p>
+      <ul class="compact-list">
+        <li>boundary Weyl or chiral modes supported by anomaly inflow from a higher-dimensional bulk,</li>
+        <li>Floquet systems where the full invariant lives in a unitary time-evolution operator,</li>
+        <li>non-Hermitian or open-system kernels,</li>
+        <li>nonlocal constructions that violate the smooth-local Bloch assumption,</li>
+        <li>interacting systems whose anomaly matching is not captured by a single-particle static Hamiltonian.</li>
+      </ul>
+      <p>
+        This is why any proposed route around doubling should first state which assumption is being relaxed. Without that bookkeeping, the phrase "evading Nielsen-Ninomiya" is usually too imprecise.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Relation to the companion Floquet note</h2>
+      <p>
+        The companion note on a Floquet/spacetime kernel studies a winding of a frequency-momentum object on an extended torus. That calculation is not the same mathematical object as the static Hermitian Bloch Hamiltonian constrained here. The useful comparison is conceptual: both notes are about topological bookkeeping of low-energy modes, but they live in different hypothesis classes.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>References</h2>
+      <ol class="compact-list">
+        <li>H. B. Nielsen and M. Ninomiya, <em>Absence of neutrinos on a lattice: II. Intuitive topological proof</em>, Nuclear Physics B 193, 173-194 (1981).</li>
+        <li>D. Friedan, <em>A proof of the Nielsen-Ninomiya theorem</em>, Communications in Mathematical Physics 85, 481-490 (1982).</li>
+        <li>K. G. Wilson, <em>Confinement of quarks</em>, Physical Review D 10, 2445 (1974).</li>
+        <li>P. H. Ginsparg and K. G. Wilson, <em>A remnant of chiral symmetry on the lattice</em>, Physical Review D 25, 2649 (1982).</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 P. Shubham Parashar</span>
+    <span><a href="mailto:psparash@ucsd.edu">psparash@ucsd.edu</a></span>
+    <span><a href="/cv.pdf">CV PDF</a></span>
+  </footer>
+</body>
+</html>
