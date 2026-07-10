@@ -71,7 +71,7 @@ h1 {
 }
 
 .role { margin-bottom: 0; font-size: 1.12rem; font-weight: 550; }
-.affiliation { margin: 2px 0 28px; color: var(--muted); font-size: .92rem; }
+.profile-links { display: flex; gap: 8px; margin: 4px 0 28px; color: var(--muted); font-size: .92rem; }
 .summary { max-width: 760px; margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; line-height: 1.7; }
 .section { padding: 64px 0; border-bottom: 1px solid var(--line); }
 
