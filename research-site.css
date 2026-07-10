@@ -1,0 +1,127 @@
+:root {
+  --text: #171717;
+  --muted: #5a5a5a;
+  --line: #d8d8d8;
+  --link: #174ea6;
+  --background: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+
+.site-header {
+  display: flex;
+  width: min(900px, calc(100% - 40px));
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name { color: var(--text); font-weight: 650; }
+.site-name:hover { text-decoration: none; }
+.site-header nav { display: flex; gap: 24px; font-size: .9rem; }
+.page { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 48px;
+  align-items: start;
+  padding: 78px 0 68px;
+  border-bottom: 1px solid var(--line);
+}
+
+.portrait {
+  display: block;
+  width: 160px;
+  height: 200px;
+  margin-top: 4px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+h1, h2, h3, h4, p { margin-top: 0; }
+h1 {
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.role { margin-bottom: 0; font-size: 1.12rem; font-weight: 550; }
+.affiliation { margin: 2px 0 28px; color: var(--muted); font-size: .92rem; }
+.summary { max-width: 760px; margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; line-height: 1.7; }
+.section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+
+h2 {
+  margin-bottom: 36px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+.research-overview { max-width: 780px; }
+.research-item + .research-item { margin-top: 34px; }
+.research-item h3 { margin-bottom: 7px; font-size: 1rem; font-weight: 650; }
+.research-item p { margin-bottom: 0; color: #333; }
+.papers-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+.papers-heading > a { font-size: .9rem; }
+.paper-group + .paper-group { margin-top: 58px; }
+
+.paper-group > h3 {
+  margin-bottom: 14px;
+  padding-bottom: 9px;
+  border-bottom: 2px solid var(--text);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.paper { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.paper-year { margin: 3px 0 0; color: var(--muted); font-size: .86rem; }
+.paper h4 { margin-bottom: 7px; font-family: Georgia, "Times New Roman", serif; font-size: 1.22rem; font-weight: 600; line-height: 1.38; }
+.authors, .venue, .description, .paper-links { margin-bottom: 0; font-size: .9rem; }
+.authors { color: #333; }
+.venue { margin-top: 2px; font-style: italic; }
+.description { max-width: 720px; margin-top: 10px; color: var(--muted); }
+.paper-links { display: flex; gap: 16px; margin-top: 10px; }
+
+footer { display: flex; justify-content: space-between; padding: 30px 0 52px; color: var(--muted); font-size: .82rem; }
+footer p { margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .site-header { align-items: flex-start; flex-direction: column; gap: 6px; padding: 14px 0; }
+  .site-header nav { flex-wrap: wrap; gap: 8px 18px; }
+  .intro { grid-template-columns: 1fr; gap: 28px; padding: 56px 0 48px; }
+  .portrait { width: 128px; height: 160px; }
+  .section { padding: 48px 0; }
+  .papers-heading { align-items: flex-start; flex-direction: column; gap: 0; }
+  .paper { grid-template-columns: 1fr; gap: 4px; }
+  footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
