@@ -1,0 +1,81 @@
+\documentclass[10.5pt,a4paper]{article}
+\usepackage[a4paper,margin=13.5mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage[scaled=0.90]{sourcesanspro}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\definecolor{ink}{HTML}{171614}
+\definecolor{muted}{HTML}{625E58}
+\definecolor{accent}{HTML}{315B7D}
+\definecolor{rule}{HTML}{CFC8BC}
+\color{ink}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdfauthor={P. Shubham Parashar},pdftitle={P. Shubham Parashar - One-page Academic CV}}
+\newcommand{\sans}[1]{{\fontfamily{SourceSansPro-TLF}\selectfont #1}}
+\newcommand{\cvsection}[1]{%
+  \vspace{5.2pt}%
+  {\sans{\fontsize{8.4}{9.2}\selectfont\bfseries\color{accent}\MakeUppercase{#1}}}\par
+  \vspace{1.6pt}\color{rule}\hrule height 0.45pt\color{ink}\vspace{3.3pt}
+}
+\newcommand{\pub}[3]{%
+  \noindent\hangindent=1.15em\hangafter=1
+  {\bfseries #1} #2\\[-1.5pt]
+  {\sans{\fontsize{8.65}{10.2}\selectfont\color{muted}#3}}\par\vspace{2.8pt}
+}
+\begin{document}
+\raggedbottom
+
+{\fontsize{25}{27}\selectfont\bfseries P. Shubham Parashar}\hfill
+{\sans{\fontsize{9.2}{11}\selectfont\color{muted}THEORETICAL PHYSICIST}}\\[-0.5pt]
+{\sans{\fontsize{9.15}{11}\selectfont
+\href{mailto:pathaksparashar@gmail.com}{pathaksparashar@gmail.com} \enspace\textperiodcentered\enspace
+\href{https://shubham-parashar-cmt.github.io/}{website} \enspace\textperiodcentered\enspace
+\href{https://scholar.google.com/citations?user=XXOQp8wAAAAJ\&hl=en}{Google Scholar} \enspace\textperiodcentered\enspace
+\href{https://orcid.org/0009-0007-8741-9101}{ORCID} \enspace\textperiodcentered\enspace
+\href{https://github.com/shubham-parashar-cmt}{GitHub}}}
+
+\cvsection{Research profile}
+\fontsize{9.7}{11.5}\selectfont
+Theoretical condensed-matter physicist working on quantum transport, kinetic theory, electron hydrodynamics, magnetotransport, spatially resolved response, and quantum Hall systems. I develop controlled analytical and computational descriptions that connect microscopic kinetic structure to experimentally accessible observables and test where low-moment hydrodynamic closures cease to be complete.
+
+\cvsection{Selected research contributions}
+\begin{itemize}[leftmargin=1.15em,itemsep=1.6pt,topsep=0pt,parsep=0pt]
+  \item \textbf{Kinetic transport beyond hydrodynamic closure.} Derived higher-gradient and finite-wave-number structure that exposes angular harmonics omitted by stress-level hydrodynamics, including a fourth-order closure obstruction and its chiral nonlocal completion.
+  \item \textbf{Symmetry-selected kinetic observables.} Constructed a sixfold-driven local hydrodynamic null in which ordinary Ohmic and rank-two viscous dissipation vanish at the symmetry point while a higher kinetic harmonic survives as the leading local dissipative signal.
+  \item \textbf{Finite-resolution transport inference.} Developed observable-level tests for thermoelectric Hall contrast and Hall-viscous response in scanning-probe measurements while accounting for boundary, higher-gradient, and finite-resolution nuisance channels.
+\end{itemize}
+
+\cvsection{Education and research}
+\begin{tabularx}{\textwidth}{@{}>{\sans\bfseries}p{18mm} X@{}}
+2022--2026 & \textbf{Ph.D., Physics}, University of California San Diego. Advisor: Michael M. Fogler.\\[-0.3pt]
+2017--2022 & \textbf{Researcher}, University of California San Diego. Research with Benjamin Grinstein and Congjun Wu.\\[-0.3pt]
+2016--2017 & \textbf{M.S., Physics}, Indian Institute of Science, Bangalore. Advisor: Rahul Pandit.\\[-0.3pt]
+2012--2016 & \textbf{B.S., Physics}, Indian Institute of Science, Bangalore.\\
+\end{tabularx}
+
+\cvsection{Selected publications and manuscripts}
+\pub{Complete kinematic null for local kinetic dissipation in a sixfold-driven electron fluid.}{ P. Shubham Parashar.}{Under review at \textit{Physica B} (2026).}
+\pub{Fourth-order closure obstruction and chiral nonlocality in circular kinetic magnetotransport.}{ P. Shubham Parashar.}{Under review at \textit{Physical Review B} (2026). \href{https://arxiv.org/abs/2607.22730}{arXiv:2607.22730}.}
+\pub{Thermal and viscous contrast in quantum Hall scanning-probe images.}{ P. Shubham Parashar.}{Under review at \textit{Physica E} (2026). \href{https://arxiv.org/abs/2607.16315}{arXiv:2607.16315}.}
+\pub{Diffusive and hydrodynamic magnetotransport around a density perturbation in a two-dimensional electron gas.}{ P. Shubham Parashar and M. M. Fogler.}{\textit{Physical Review B} \textbf{113}, 155443 (2026). \href{https://arxiv.org/abs/2601.16402}{arXiv:2601.16402}.}
+\pub{Nanoscale imaging of magnetotransport around a circular p--n junction in graphene.}{ Z. J. Krebs \textit{et al.}, including P. Shubham Parashar.}{\textit{Physical Review Letters} \textbf{136}, 136301 (2026), Editors' Suggestion. \href{https://arxiv.org/abs/2409.19468}{arXiv:2409.19468}.}
+
+\cvsection{Methods and distinctions}
+{\sans{\fontsize{8.9}{10.4}\selectfont\bfseries Methods}}\enspace
+Boltzmann kinetic theory \textperiodcentered\ electron hydrodynamics \textperiodcentered\ semiclassical transport \textperiodcentered\ linear response \textperiodcentered\ asymptotics \textperiodcentered\ quantum transport \textperiodcentered\ numerical modeling \textperiodcentered\ Python / Mathematica / LaTeX\\[2.0pt]
+{\sans{\fontsize{8.9}{10.4}\selectfont\bfseries Distinctions}}\enspace
+Bhadra Fellowship (2024) \textperiodcentered\ UCSD Scholar's Grant (2017) \textperiodcentered\ KVPY Fellowship (2012--2017)
+
+\vfill
+{\sans{\fontsize{7.8}{9}\selectfont\color{muted}Updated 11 August 2026 \hfill Full publication record and research materials: \href{https://shubham-parashar-cmt.github.io/}{shubham-parashar-cmt.github.io}}}
+
+\end{document}
